@@ -1,0 +1,68 @@
+@import "tailwindcss";
+
+:root {
+  --primary: #1a1a1a;
+  --bg-main: #fafaf7;
+  --accent-orange: #FF6B35;
+  --accent-blue: #4361EE;
+  --accent-yellow: #FFD23F;
+  --accent-green: #06D6A0;
+  --surface-dark: #1a1a1a;
+  --surface-light: #ffffff;
+  --text-primary: #1a1a1a;
+  --text-secondary: #5a5a5a;
+  --text-light: #fafaf7;
+}
+
+@theme inline {
+  --color-background: var(--bg-main);
+  --color-foreground: var(--primary);
+  --color-primary: var(--primary);
+  --color-accent-orange: var(--accent-orange);
+  --color-accent-blue: var(--accent-blue);
+  --color-accent-yellow: var(--accent-yellow);
+  --color-accent-green: var(--accent-green);
+  --color-surface-dark: var(--surface-dark);
+  --color-surface-light: var(--surface-light);
+  --color-text-secondary: var(--text-secondary);
+  --color-text-light: var(--text-light);
+  --font-heading: "Sora", system-ui, sans-serif;
+  --font-body: "DM Sans", system-ui, sans-serif;
+}
+
+body {
+  background: var(--bg-main);
+  color: var(--primary);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.marquee-track {
+  display: flex;
+  animation: marquee 25s linear infinite;
+  width: max-content;
+}
+
+.marquee-track-slow {
+  display: flex;
+  animation: marquee 40s linear infinite;
+  width: max-content;
+}
+
+@keyframes marquee-reverse {
+  0% { transform: translateX(-50%); }
+  100% { transform: translateX(0); }
+}
+
+.marquee-track-reverse {
+  display: flex;
+  animation: marquee-reverse 35s linear infinite;
+  width: max-content;
+}
