@@ -27,12 +27,12 @@ export default function Hero() {
   return (
     <section
       ref={sectionRef}
-      className="relative flex min-h-[90vh] flex-col items-center justify-center overflow-hidden bg-bg-primary px-5 pt-[72px] md:px-10"
+      className="relative flex min-h-[90vh] flex-col items-center justify-center overflow-hidden px-5 pt-[72px] md:px-10"
     >
       {/* Animated gradient mesh background */}
       <div className="hero-gradient-mesh" aria-hidden="true" />
 
-      <div className="relative z-10 flex w-full max-w-[1200px] flex-col items-center gap-8 py-16 text-center md:py-24">
+      <div className="relative z-[2] flex w-full max-w-[1200px] flex-col items-center gap-8 py-16 text-center md:py-24">
         {/* Overline badge */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}

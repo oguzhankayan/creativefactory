@@ -115,24 +115,32 @@ body {
 
 .hero-gradient-mesh {
   position: absolute;
-  inset: 0;
-  z-index: 0;
-  opacity: 0.4;
+  inset: -40px;
+  z-index: 1;
   pointer-events: none;
   background:
     conic-gradient(from var(--mesh-angle-1) at var(--mesh-x) var(--mesh-y),
       transparent 0deg,
-      rgba(255, 107, 53, 0.3) 60deg,
+      rgba(255, 107, 53, 0.18) 60deg,
       transparent 120deg,
-      rgba(67, 97, 238, 0.2) 200deg,
+      rgba(67, 97, 238, 0.12) 200deg,
       transparent 260deg,
-      rgba(255, 207, 58, 0.25) 320deg,
+      rgba(255, 207, 58, 0.15) 320deg,
       transparent 360deg
     ),
-    radial-gradient(ellipse at 20% 50%, rgba(255, 107, 53, 0.15), transparent 60%),
-    radial-gradient(ellipse at 80% 50%, rgba(67, 97, 238, 0.1), transparent 60%);
-  filter: blur(80px);
+    radial-gradient(ellipse at 20% 50%, rgba(255, 107, 53, 0.1), transparent 60%),
+    radial-gradient(ellipse at 80% 50%, rgba(67, 97, 238, 0.08), transparent 60%);
+  filter: blur(60px);
   animation: mesh-rotate 20s ease-in-out infinite;
+  will-change: filter;
+}
+
+/* Disable gradient animation on mobile — static gradient only */
+@media (max-width: 768px) {
+  .hero-gradient-mesh {
+    animation: none;
+    filter: blur(40px);
+  }
 }
 
 /* Marquee */
@@ -153,8 +161,8 @@ body {
 
 /* Hide default cursor when custom cursor is active (desktop only, no reduced motion) */
 @media (pointer: fine) and (prefers-reduced-motion: no-preference) {
-  * {
-    cursor: none !important;
+  html {
+    cursor: none;
   }
 }
 
