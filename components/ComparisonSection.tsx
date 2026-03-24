@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { X, Check } from "lucide-react";
+import SplitText from "./SplitText";
 
 const ordinary = [
   "Hazır şablonlar, herkese aynı tasarım",
@@ -49,7 +50,7 @@ export default function ComparisonSection() {
           className="mb-12 text-center md:mb-16"
         >
           <h2 className="font-heading text-[32px] font-bold leading-[1.15] text-text-primary sm:text-[40px] md:text-[48px]">
-            Fark Nerede?
+            <SplitText>Fark Nerede?</SplitText>
           </h2>
         </motion.div>
 

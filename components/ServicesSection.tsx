@@ -2,6 +2,8 @@
 
 import { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
+import CardGlow from "./CardGlow";
+import SplitText from "./SplitText";
 
 const services = [
   {
@@ -68,6 +70,14 @@ function ServiceCard({
   const opacity = useTransform(scrollYProgress, [0, 0.4], [0, 1]);
   const y = useTransform(scrollYProgress, [0, 1], [60, 0]);
 
+  // Map dot color to glow color
+  const glowColorMap: Record<string, string> = {
+    "bg-accent-orange": "rgba(255, 107, 53, 0.10)",
+    "bg-accent-blue": "rgba(67, 97, 238, 0.10)",
+    "bg-accent-green": "rgba(6, 214, 160, 0.10)",
+    "bg-accent-yellow": "rgba(255, 207, 58, 0.10)",
+  };
+
   return (
     <motion.div
       ref={cardRef}
@@ -79,15 +89,21 @@ function ServiceCard({
         transformOrigin: "bottom center",
       }}
       role="listitem"
-      className={`rounded-2xl border border-white/[0.08] bg-bg-dark-subtle p-7 transition-[transform,border-color] duration-300 hover:-translate-y-1 md:p-9 ${service.hoverBorder} motion-reduce:!transform-none motion-reduce:!opacity-100`}
+      className="motion-reduce:!transform-none motion-reduce:!opacity-100"
     >
-      <div className={`h-3 w-3 rounded-full ${service.dotColor}`} />
-      <h3 className="mt-5 font-heading text-[18px] font-bold text-text-on-dark md:text-[22px]">
-        {service.title}
-      </h3>
-      <p className="mt-3 font-body text-[16px] leading-[1.65] text-white/75">
-        {service.description}
-      </p>
+      <CardGlow glowColor={glowColorMap[service.dotColor] || glowColorMap["bg-accent-orange"]}>
+        <div
+          className={`rounded-2xl border border-white/[0.08] bg-bg-dark-subtle p-7 transition-[transform,border-color] duration-300 hover:-translate-y-1 md:p-9 ${service.hoverBorder}`}
+        >
+          <div className={`h-3 w-3 rounded-full ${service.dotColor}`} />
+          <h3 className="mt-5 font-heading text-[18px] font-bold text-text-on-dark md:text-[22px]">
+            {service.title}
+          </h3>
+          <p className="mt-3 font-body text-[16px] leading-[1.65] text-white/75">
+            {service.description}
+          </p>
+        </div>
+      </CardGlow>
     </motion.div>
   );
 }
@@ -107,7 +123,7 @@ export default function ServicesSection() {
             HİZMETLERİMİZ
           </p>
           <h2 className="mt-4 font-heading text-[32px] font-bold leading-[1.15] text-text-on-dark sm:text-[40px] md:text-[48px]">
-            İşletmenizin Büyüme Ortağı
+            <SplitText>İşletmenizin Büyüme Ortağı</SplitText>
           </h2>
           <p className="mt-4 max-w-[500px] font-body text-[16px] leading-[1.6] text-white/75 md:text-[20px]">
             Fikir aşamasından uygulamaya, strateji geliştirmeden ölçümlemeye

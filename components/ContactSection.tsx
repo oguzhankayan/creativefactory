@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { Mail, MapPin, AtSign } from "lucide-react";
+import SplitText from "./SplitText";
 
 const ease: [number, number, number, number] = [0.25, 0.46, 0.45, 0.94];
 
@@ -25,15 +26,9 @@ export default function ContactSection() {
   return (
     <section id="iletisim" className="bg-bg-primary py-[120px]">
       <div className="mx-auto max-w-[1200px] px-5 md:px-10 lg:px-20">
-        <motion.h2
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-80px" }}
-          transition={{ duration: 0.6, ease }}
-          className="mb-12 font-heading text-[32px] font-bold leading-[1.15] text-text-primary sm:text-[40px] md:mb-16 md:text-[48px]"
-        >
-          İletişime Geçin
-        </motion.h2>
+        <h2 className="mb-12 font-heading text-[32px] font-bold leading-[1.15] text-text-primary sm:text-[40px] md:mb-16 md:text-[48px]">
+          <SplitText>İletişime Geçin</SplitText>
+        </h2>
 
         <div className="grid gap-[60px] md:grid-cols-2">
           {/* Form */}

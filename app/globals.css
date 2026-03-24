@@ -61,6 +61,80 @@ body {
   overflow-x: hidden;
 }
 
+/* Hero gradient mesh — animated via @property */
+@property --mesh-angle-1 {
+  syntax: "<angle>";
+  inherits: false;
+  initial-value: 0deg;
+}
+
+@property --mesh-angle-2 {
+  syntax: "<angle>";
+  inherits: false;
+  initial-value: 120deg;
+}
+
+@property --mesh-x {
+  syntax: "<percentage>";
+  inherits: false;
+  initial-value: 30%;
+}
+
+@property --mesh-y {
+  syntax: "<percentage>";
+  inherits: false;
+  initial-value: 40%;
+}
+
+@keyframes mesh-rotate {
+  0% {
+    --mesh-angle-1: 0deg;
+    --mesh-angle-2: 120deg;
+    --mesh-x: 30%;
+    --mesh-y: 40%;
+  }
+  33% {
+    --mesh-angle-1: 120deg;
+    --mesh-angle-2: 240deg;
+    --mesh-x: 70%;
+    --mesh-y: 30%;
+  }
+  66% {
+    --mesh-angle-1: 240deg;
+    --mesh-angle-2: 360deg;
+    --mesh-x: 50%;
+    --mesh-y: 70%;
+  }
+  100% {
+    --mesh-angle-1: 360deg;
+    --mesh-angle-2: 480deg;
+    --mesh-x: 30%;
+    --mesh-y: 40%;
+  }
+}
+
+.hero-gradient-mesh {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  opacity: 0.4;
+  pointer-events: none;
+  background:
+    conic-gradient(from var(--mesh-angle-1) at var(--mesh-x) var(--mesh-y),
+      transparent 0deg,
+      rgba(255, 107, 53, 0.3) 60deg,
+      transparent 120deg,
+      rgba(67, 97, 238, 0.2) 200deg,
+      transparent 260deg,
+      rgba(255, 207, 58, 0.25) 320deg,
+      transparent 360deg
+    ),
+    radial-gradient(ellipse at 20% 50%, rgba(255, 107, 53, 0.15), transparent 60%),
+    radial-gradient(ellipse at 80% 50%, rgba(67, 97, 238, 0.1), transparent 60%);
+  filter: blur(80px);
+  animation: mesh-rotate 20s ease-in-out infinite;
+}
+
 /* Marquee */
 @keyframes marquee {
   0% { transform: translateX(0); }
@@ -75,6 +149,13 @@ body {
   align-items: center;
   height: 56px;
   will-change: transform;
+}
+
+/* Hide default cursor when custom cursor is active (desktop only, no reduced motion) */
+@media (pointer: fine) and (prefers-reduced-motion: no-preference) {
+  * {
+    cursor: none !important;
+  }
 }
 
 /* Focus-visible styles for all interactive elements */

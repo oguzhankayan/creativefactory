@@ -2,6 +2,8 @@
 
 import { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
+import MagneticWrap from "./MagneticWrap";
+import SplitText from "./SplitText";
 
 const ease: [number, number, number, number] = [0.25, 0.46, 0.45, 0.94];
 
@@ -25,9 +27,12 @@ export default function Hero() {
   return (
     <section
       ref={sectionRef}
-      className="relative flex min-h-[90vh] flex-col items-center justify-center bg-bg-primary px-5 pt-[72px] md:px-10"
+      className="relative flex min-h-[90vh] flex-col items-center justify-center overflow-hidden bg-bg-primary px-5 pt-[72px] md:px-10"
     >
-      <div className="flex w-full max-w-[1200px] flex-col items-center gap-8 py-16 text-center md:py-24">
+      {/* Animated gradient mesh background */}
+      <div className="hero-gradient-mesh" aria-hidden="true" />
+
+      <div className="relative z-10 flex w-full max-w-[1200px] flex-col items-center gap-8 py-16 text-center md:py-24">
         {/* Overline badge */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -41,18 +46,19 @@ export default function Hero() {
           </span>
         </motion.div>
 
-        {/* Heading */}
-        <motion.h1
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.15, ease }}
+        {/* Heading — split text reveal */}
+        <motion.div
           style={{ y: headingY }}
-          className="font-heading text-[40px] font-extrabold leading-[1.05] tracking-tight text-text-primary sm:text-[56px] md:text-[72px] motion-reduce:!transform-none"
+          className="motion-reduce:!transform-none"
         >
-          Sadece tasarlamıyoruz.
-          <br />
-          <span className="text-accent-orange">Marka inşa ediyoruz.</span>
-        </motion.h1>
+          <h1 className="font-heading text-[40px] font-extrabold leading-[1.05] tracking-tight text-text-primary sm:text-[56px] md:text-[72px]">
+            <SplitText delay={0.2}>Sadece tasarlamıyoruz.</SplitText>
+            <br />
+            <span className="text-accent-orange">
+              <SplitText delay={0.5}>Marka inşa ediyoruz.</SplitText>
+            </span>
+          </h1>
+        </motion.div>
 
         {/* Subtitle */}
         <motion.p
@@ -74,18 +80,22 @@ export default function Hero() {
           style={{ y: ctaY, opacity: ctaOpacity, scale: ctaScale }}
           className="flex flex-col items-center gap-4 sm:flex-row motion-reduce:!transform-none motion-reduce:!opacity-100"
         >
-          <a
-            href="#iletisim"
-            className="rounded-xl bg-accent-orange px-9 py-4 font-body text-[16px] font-semibold tracking-[0.01em] text-white transition-[transform,box-shadow,filter] duration-200 hover:scale-[1.02] hover:shadow-lg hover:brightness-105 active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-orange focus-visible:ring-offset-2"
-          >
-            Projenizi Konuşalım
-          </a>
-          <a
-            href="#portfolio"
-            className="rounded-xl border-2 border-border px-9 py-4 font-body text-[16px] font-semibold tracking-[0.01em] text-text-primary transition-[border-color,background-color,color] duration-200 hover:border-bg-dark hover:bg-bg-dark hover:text-white active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-orange focus-visible:ring-offset-2"
-          >
-            Portfolyoyu İncele
-          </a>
+          <MagneticWrap strength={0.25}>
+            <a
+              href="#iletisim"
+              className="inline-block rounded-xl bg-accent-orange px-9 py-4 font-body text-[16px] font-semibold tracking-[0.01em] text-white transition-[transform,box-shadow,filter] duration-200 hover:scale-[1.02] hover:shadow-lg hover:brightness-105 active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-orange focus-visible:ring-offset-2"
+            >
+              Projenizi Konuşalım
+            </a>
+          </MagneticWrap>
+          <MagneticWrap strength={0.25}>
+            <a
+              href="#portfolio"
+              className="inline-block rounded-xl border-2 border-border px-9 py-4 font-body text-[16px] font-semibold tracking-[0.01em] text-text-primary transition-[border-color,background-color,color] duration-200 hover:border-bg-dark hover:bg-bg-dark hover:text-white active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-orange focus-visible:ring-offset-2"
+            >
+              Portfolyoyu İncele
+            </a>
+          </MagneticWrap>
         </motion.div>
       </div>
     </section>

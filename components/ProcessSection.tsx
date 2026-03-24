@@ -2,6 +2,7 @@
 
 import { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
+import SplitText from "./SplitText";
 
 const steps = [
   {
@@ -109,7 +110,7 @@ export default function ProcessSection() {
             SÜREÇ
           </p>
           <h2 className="mt-4 font-heading text-[32px] font-bold leading-[1.15] text-text-on-dark sm:text-[40px] md:text-[48px]">
-            Nasıl Çalışıyoruz?
+            <SplitText>Nasıl Çalışıyoruz?</SplitText>
           </h2>
         </motion.div>
 

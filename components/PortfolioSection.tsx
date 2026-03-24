@@ -2,6 +2,7 @@
 
 import { useRef, useState, useEffect } from "react";
 import { motion, useMotionValue, useSpring, PanInfo } from "framer-motion";
+import SplitText from "./SplitText";
 
 const portfolioItems = [
   { name: "Qualiko", sector: "GIDA & FMCG", bg: "bg-card-green" },
@@ -60,7 +61,7 @@ export default function PortfolioSection() {
             PORTFOLİO
           </p>
           <h2 className="mt-4 font-heading text-[32px] font-bold leading-[1.15] text-text-primary sm:text-[40px] md:text-[48px]">
-            Ürettiğimiz İşler
+            <SplitText>Ürettiğimiz İşler</SplitText>
           </h2>
           <p className="mt-4 font-body text-[16px] leading-[1.6] text-text-secondary md:text-[20px]">
             Farklı sektörlerden markalara hayat verdik.
