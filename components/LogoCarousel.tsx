@@ -40,11 +40,13 @@ export default function LogoCarousel() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-80px" }}
+          role="list"
           className="flex flex-wrap items-center justify-center gap-x-[60px] gap-y-[40px]"
         >
           {logos.map((logo) => (
             <span
               key={logo}
+              role="listitem"
               className="whitespace-nowrap font-heading text-[18px] font-semibold text-text-tertiary opacity-50 transition-opacity duration-300 hover:opacity-100"
             >
               {logo}

@@ -58,7 +58,7 @@ export default function ContactSection() {
                   required={field.name !== "phone"}
                   placeholder={field.placeholder}
                   aria-label={field.label}
-                  className="w-full rounded-xl border border-border bg-white px-5 py-4 font-body text-[16px] text-text-primary outline-none transition-all duration-200 placeholder:text-text-tertiary focus:border-accent-orange focus:shadow-[0_0_0_3px_rgba(255,107,53,0.1)]"
+                  className="w-full rounded-xl border border-border bg-white px-5 py-4 font-body text-[16px] text-text-primary outline-none transition-all duration-200 placeholder:text-text-tertiary focus-visible:border-accent-orange focus-visible:shadow-[0_0_0_3px_rgba(255,107,53,0.1)]"
                 />
               </motion.div>
             ))}
@@ -68,7 +68,7 @@ export default function ContactSection() {
                 required
                 placeholder="Projenizden bahsedin…"
                 aria-label="Projenizden bahsedin"
-                className="min-h-[140px] w-full resize-none rounded-xl border border-border bg-white px-5 py-4 font-body text-[16px] text-text-primary outline-none transition-all duration-200 placeholder:text-text-tertiary focus:border-accent-orange focus:shadow-[0_0_0_3px_rgba(255,107,53,0.1)]"
+                className="min-h-[140px] w-full resize-none rounded-xl border border-border bg-white px-5 py-4 font-body text-[16px] text-text-primary outline-none transition-all duration-200 placeholder:text-text-tertiary focus-visible:border-accent-orange focus-visible:shadow-[0_0_0_3px_rgba(255,107,53,0.1)]"
               />
             </motion.div>
             <motion.div variants={staggerChild}>
