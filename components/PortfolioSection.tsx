@@ -1,118 +1,125 @@
 "use client";
 
-import { useRef } from "react";
-import { motion, useScroll, useTransform } from "framer-motion";
+import { useRef, useState, useEffect } from "react";
+import { motion, useMotionValue, useSpring, PanInfo } from "framer-motion";
 
 const portfolioItems = [
-  { name: "Qualiko", sector: "Gıda & FMCG", gradient: "from-orange-400 to-red-500" },
-  { name: "ICONICA", sector: "Sağlık", gradient: "from-blue-400 to-indigo-600" },
-  { name: "Köpüklü", sector: "Yiyecek & İçecek", gradient: "from-yellow-400 to-orange-500" },
-  { name: "SCOPS", sector: "Lifestyle & Perakende", gradient: "from-emerald-400 to-teal-600" },
-  { name: "Akasya Token", sector: "Fintech & Blockchain", gradient: "from-violet-400 to-purple-600" },
-  { name: "Müzedenal", sector: "Kültür & Kamu", gradient: "from-amber-400 to-orange-600" },
-  { name: "Eurosport", sector: "Spor & Medya", gradient: "from-blue-500 to-cyan-500" },
-  { name: "Minnesota Timberwolves", sector: "Spor & Animasyon", gradient: "from-green-500 to-blue-600" },
+  { name: "Qualiko", sector: "GIDA & FMCG", bg: "bg-card-green" },
+  { name: "ICONICA", sector: "SAĞLIK", bg: "bg-card-blue" },
+  { name: "Köpüklü", sector: "YİYECEK & İÇECEK", bg: "bg-card-orange" },
+  { name: "SCOPS", sector: "LIFESTYLE", bg: "bg-card-purple" },
+  { name: "Akasya Token", sector: "FİNTECH", bg: "bg-card-yellow" },
+  { name: "Müzedenal", sector: "KÜLTÜR", bg: "bg-card-pink" },
+  { name: "Eurosport", sector: "SPOR & MEDYA", bg: "bg-card-blue" },
+  { name: "Timberwolves", sector: "SPOR & ANİMASYON", bg: "bg-card-green" },
 ];
+
+const CARD_WIDTH_DESKTOP = 340;
+const CARD_WIDTH_MOBILE = 280;
+const GAP = 24;
+
+const ease: [number, number, number, number] = [0.25, 0.46, 0.45, 0.94];
 
 export default function PortfolioSection() {
   const containerRef = useRef<HTMLDivElement>(null);
-  const { scrollYProgress } = useScroll({
-    target: containerRef,
-    offset: ["start end", "end start"],
-  });
-  const x = useTransform(scrollYProgress, [0, 1], ["5%", "-40%"]);
-  const x2 = useTransform(scrollYProgress, [0, 1], ["-15%", "10%"]);
+  const [activeIndex, setActiveIndex] = useState(0);
+  const [cardWidth, setCardWidth] = useState(CARD_WIDTH_DESKTOP);
 
-  const row1 = portfolioItems.slice(0, 4);
-  const row2 = portfolioItems.slice(4);
+  const x = useMotionValue(0);
+  const springX = useSpring(x, { stiffness: 300, damping: 40 });
+
+  useEffect(() => {
+    const update = () => {
+      setCardWidth(window.innerWidth < 768 ? CARD_WIDTH_MOBILE : CARD_WIDTH_DESKTOP);
+    };
+    update();
+    window.addEventListener("resize", update);
+    return () => window.removeEventListener("resize", update);
+  }, []);
+
+  const maxDrag = -(portfolioItems.length * (cardWidth + GAP) - (containerRef.current?.offsetWidth || 800));
+
+  const handleDragEnd = (_: MouseEvent | TouchEvent | PointerEvent, info: PanInfo) => {
+    const currentX = x.get();
+    const index = Math.round(-currentX / (cardWidth + GAP));
+    const clamped = Math.max(0, Math.min(index, portfolioItems.length - 1));
+    setActiveIndex(clamped);
+  };
 
   return (
-    <section id="portfolio" ref={containerRef} className="overflow-hidden bg-surface-dark py-20 md:py-32">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <section id="portfolio" className="bg-bg-primary py-[120px]">
+      <div className="mx-auto max-w-[1200px] px-5 md:px-10 lg:px-20">
+        {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5, type: "spring" as const, stiffness: 100, damping: 15 }}
-          className="mb-12 text-center md:mb-16"
+          viewport={{ once: true, margin: "-80px" }}
+          transition={{ duration: 0.6, ease }}
         >
-          <p className="font-body text-sm font-semibold uppercase tracking-[0.2em] text-accent-orange">
-            Portfolio
+          <p className="font-body text-[13px] font-semibold uppercase tracking-[0.12em] text-text-tertiary">
+            PORTFOLİO
           </p>
-          <h2 className="mt-4 font-heading text-4xl font-extrabold tracking-tight text-white sm:text-5xl md:text-6xl">
+          <h2 className="mt-4 font-heading text-[32px] font-bold leading-[1.15] text-text-primary sm:text-[40px] md:text-[48px]">
             Ürettiğimiz İşler
           </h2>
-          <p className="mx-auto mt-4 max-w-lg font-body text-lg text-white/50">
+          <p className="mt-4 font-body text-[16px] leading-[1.6] text-text-secondary md:text-[20px]">
             Farklı sektörlerden markalara hayat verdik.
           </p>
         </motion.div>
       </div>
 
-      {/* Row 1 - scrolls left */}
-      <motion.div style={{ x }} className="mb-6 flex gap-5 px-4">
-        {[...row1, ...row1].map((item, index) => (
-          <PortfolioCard key={`r1-${index}`} item={item} index={index} />
-        ))}
-      </motion.div>
+      {/* Carousel */}
+      <div ref={containerRef} className="mt-12 overflow-hidden pl-5 md:mt-16 md:pl-10 lg:pl-[calc((100vw-1200px)/2+80px)]">
+        <motion.div
+          style={{ x: springX }}
+          drag="x"
+          dragConstraints={{ left: maxDrag, right: 0 }}
+          onDragEnd={handleDragEnd}
+          className="flex cursor-grab gap-6 active:cursor-grabbing"
+        >
+          {portfolioItems.map((item, index) => (
+            <motion.div
+              key={item.name}
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: index * 0.08, duration: 0.5, ease }}
+              className="shrink-0"
+              style={{ width: cardWidth }}
+            >
+              <div
+                className={`flex h-[340px] flex-col items-center justify-center rounded-[20px] ${item.bg} transition-all duration-300 hover:scale-[1.03] hover:shadow-xl md:h-[400px]`}
+              >
+                <span className="font-heading text-[24px] font-bold text-text-primary md:text-[28px]">
+                  {item.name}
+                </span>
+                <span className="mt-3 font-body text-[13px] font-semibold uppercase tracking-[0.1em] text-text-secondary">
+                  {item.sector}
+                </span>
+              </div>
+            </motion.div>
+          ))}
+        </motion.div>
 
-      {/* Row 2 - scrolls right */}
-      <motion.div style={{ x: x2 }} className="flex gap-5 px-4">
-        {[...row2, ...row2, ...row2].map((item, index) => (
-          <PortfolioCard key={`r2-${index}`} item={item} index={index} />
-        ))}
-      </motion.div>
-
-      <motion.p
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        viewport={{ once: true }}
-        className="mt-12 text-center font-heading text-xl font-bold text-white/30"
-      >
-        ve daha fazlası...
-      </motion.p>
-    </section>
-  );
-}
-
-function PortfolioCard({ item, index }: { item: typeof portfolioItems[number]; index: number }) {
-  return (
-    <motion.div
-      initial={{ opacity: 0, scale: 0.85 }}
-      whileInView={{ opacity: 1, scale: 1 }}
-      viewport={{ once: true }}
-      transition={{ delay: index * 0.03, duration: 0.5 }}
-      whileHover={{ scale: 1.05, y: -8 }}
-      className="group relative flex-shrink-0 cursor-pointer"
-    >
-      <div
-        className={`relative h-64 w-64 overflow-hidden rounded-2xl bg-gradient-to-br ${item.gradient} sm:h-72 sm:w-72 md:h-80 md:w-80`}
-      >
-        {/* Grid pattern overlay */}
-        <div className="absolute inset-0 opacity-10"
-          style={{
-            backgroundImage: `url("data:image/svg+xml,%3csvg width='40' height='40' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M0 0h40v40H0z' fill='none' stroke='white' stroke-width='0.5'/%3e%3c/svg%3e")`,
-          }}
-        />
-
-        <div className="absolute inset-0 flex flex-col items-center justify-center p-6 text-center">
-          <span className="font-heading text-2xl font-extrabold text-white drop-shadow-lg sm:text-3xl">
-            {item.name}
-          </span>
+        {/* Dot indicators */}
+        <div className="mt-8 flex gap-2 pl-0 md:pl-0" role="tablist" aria-label="Portfolio sayfalari">
+          {portfolioItems.map((item, i) => (
+            <button
+              key={i}
+              aria-label={`${item.name} projesine git`}
+              aria-selected={i === activeIndex}
+              role="tab"
+              onClick={() => {
+                setActiveIndex(i);
+                x.set(-(i * (cardWidth + GAP)));
+              }}
+              className={`h-2 w-2 rounded-full transition-colors duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-orange focus-visible:ring-offset-2 ${
+                i === activeIndex ? "bg-accent-orange" : "bg-border"
+              }`}
+            />
+          ))}
         </div>
-
-        {/* Hover overlay */}
-        <div className="absolute inset-0 bg-black/0 transition-all duration-500 group-hover:bg-black/30" />
-
-        {/* Sector tag - slides up on hover */}
-        <div className="absolute bottom-0 left-0 right-0 translate-y-full p-4 transition-all duration-500 group-hover:translate-y-0">
-          <span className="inline-flex items-center rounded-full bg-white/20 px-4 py-2 font-body text-sm font-semibold text-white backdrop-blur-md">
-            {item.sector}
-          </span>
-        </div>
-
-        {/* Top-right glow on hover */}
-        <div className="pointer-events-none absolute -right-8 -top-8 h-32 w-32 rounded-full bg-white/0 blur-[40px] transition-all duration-500 group-hover:bg-white/20" />
       </div>
-    </motion.div>
+    </section>
   );
 }

@@ -1,183 +1,120 @@
 "use client";
 
-import { useRef } from "react";
-import { motion, useScroll, useTransform } from "framer-motion";
-import { Monitor, Palette, Share2, TrendingUp, Video, Lightbulb } from "lucide-react";
+import { motion } from "framer-motion";
 
 const services = [
   {
-    icon: Monitor,
-    title: "UI/UX & Web Sitesi",
+    title: "Web Tasarım & Geliştirme",
     description:
-      "İlk izlenim için asla ikinci bir şansınız olmaz. Web siteniz, potansiyel müşterilerinizin sizi keşfettiği ilk durak. Görünüşte etkileyici, kullanımda kusursuz, mobilde mükemmel ve arama motorlarında görünür web siteleri.",
-    bg: "bg-accent-green/10",
-    border: "border-accent-green/20",
-    accent: "bg-accent-green",
-    rotation: "md:-rotate-1",
+      "Modern, hızlı ve mobil uyumlu web siteleri. İlk izlenim için ikinci şansınız yok. Markanızı dijitalde en güçlü şekilde temsil ediyoruz.",
+    dotColor: "bg-accent-orange",
+    hoverBorder: "hover:border-accent-orange/40",
   },
   {
-    icon: TrendingUp,
-    title: "Performans Pazarlama",
-    description:
-      "Google, Meta ve TikTok Reklam harcamalarınızın gerçek getiriye dönüşmesini sağlayan veri odaklı stratejiler. Tahminler yerine somut sonuçlar, vaatler yerine ölçülebilir başarı sunuyoruz.",
-    bg: "bg-accent-yellow/15",
-    border: "border-accent-yellow/20",
-    accent: "bg-accent-yellow",
-    rotation: "md:rotate-1",
-  },
-  {
-    icon: Palette,
     title: "Marka Kimliği",
     description:
-      "Logo, kurumsal kimlik, marka dili ve görsel sistem. Sizi rakiplerinizden ayıran, akılda kalan, tutarlı ve güçlü bir marka kimliği oluşturuyoruz.",
-    bg: "bg-accent-blue/10",
-    border: "border-accent-blue/20",
-    accent: "bg-accent-blue",
-    rotation: "md:-rotate-2",
+      "Logo, kurumsal kimlik, marka dili ve görsel sistem. Sizi rakiplerinizden ayıran, akılda kalan bir marka kimliği oluşturuyoruz.",
+    dotColor: "bg-accent-blue",
+    hoverBorder: "hover:border-accent-blue/40",
   },
   {
-    icon: Share2,
     title: "Sosyal Medya Yönetimi",
     description:
       "Strateji, içerik üretimi ve topluluk yönetimi. Markanızın sosyal medyada tutarlı ve etkili bir varlık göstermesini sağlıyoruz.",
-    bg: "bg-accent-orange/10",
-    border: "border-accent-orange/20",
-    accent: "bg-accent-orange",
-    rotation: "md:rotate-2",
+    dotColor: "bg-accent-green",
+    hoverBorder: "hover:border-accent-green/40",
   },
   {
-    icon: Video,
+    title: "Dijital Reklam",
+    description:
+      "Google, Meta ve TikTok reklamlarında veri odaklı kampanyalar. Bütçenizden maksimum geri dönüş almak için optimize ediyoruz.",
+    dotColor: "bg-accent-yellow",
+    hoverBorder: "hover:border-accent-yellow/40",
+  },
+  {
     title: "İçerik Üretimi",
     description:
       "Fotoğraf, video, motion graphic ve grafik tasarım. Markanızın hikayesini görsel olarak en etkili şekilde anlatıyoruz.",
-    bg: "bg-purple-500/10",
-    border: "border-purple-500/20",
-    accent: "bg-purple-500",
-    rotation: "md:-rotate-1",
+    dotColor: "bg-accent-orange",
+    hoverBorder: "hover:border-accent-orange/40",
   },
   {
-    icon: Lightbulb,
     title: "Strateji & Danışmanlık",
     description:
       "Pazar analizi, rakip araştırması ve büyüme stratejileri. Doğru hamleyi doğru zamanda yapmanız için yol haritası çiziyoruz.",
-    bg: "bg-rose-500/10",
-    border: "border-rose-500/20",
-    accent: "bg-rose-500",
-    rotation: "md:rotate-1",
+    dotColor: "bg-accent-blue",
+    hoverBorder: "hover:border-accent-blue/40",
   },
 ];
 
+const ease: [number, number, number, number] = [0.25, 0.46, 0.45, 0.94];
+
+const staggerContainer = {
+  hidden: {},
+  visible: {
+    transition: { staggerChildren: 0.12, delayChildren: 0.1 },
+  },
+};
+
+const staggerChild = {
+  hidden: { opacity: 0, y: 24 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.5, ease },
+  },
+};
+
 export default function ServicesSection() {
-  const containerRef = useRef<HTMLDivElement>(null);
-  const { scrollYProgress } = useScroll({
-    target: containerRef,
-    offset: ["start end", "end start"],
-  });
-
   return (
-    <section id="hizmetler" ref={containerRef} className="relative bg-[var(--bg-main)] py-20 md:py-32">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        {/* Section title with scroll reveal */}
-        <SectionHeading scrollProgress={scrollYProgress} />
+    <section id="hizmetler" className="bg-bg-dark py-[120px]">
+      <div className="mx-auto max-w-[1200px] px-5 md:px-10 lg:px-20">
+        {/* Header */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-80px" }}
+          transition={{ duration: 0.6, ease }}
+        >
+          <p className="font-body text-[13px] font-semibold uppercase tracking-[0.12em] text-accent-orange">
+            HİZMETLERİMİZ
+          </p>
+          <h2 className="mt-4 font-heading text-[32px] font-bold leading-[1.15] text-text-on-dark sm:text-[40px] md:text-[48px]">
+            İşletmenizin Büyüme Ortağı
+          </h2>
+          <p className="mt-4 max-w-[500px] font-body text-[16px] leading-[1.6] text-white/75 md:text-[20px]">
+            Fikir aşamasından uygulamaya, strateji geliştirmeden ölçümlemeye
+            kadar yanınızdayız.
+          </p>
+        </motion.div>
 
-        {/* Service cards - stacked/scattered layout */}
-        <div className="mt-16 grid gap-6 sm:grid-cols-2 lg:grid-cols-3 md:mt-20">
-          {services.map((service, index) => (
-            <ServiceCard key={service.title} service={service} index={index} />
+        {/* Cards grid */}
+        <motion.div
+          variants={staggerContainer}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-80px" }}
+          role="list"
+          className="mt-12 grid gap-6 sm:grid-cols-2 md:mt-16"
+        >
+          {services.map((service) => (
+            <motion.div
+              key={service.title}
+              variants={staggerChild}
+              role="listitem"
+              className={`rounded-2xl border border-white/[0.08] bg-bg-dark-subtle p-7 transition-all duration-300 hover:-translate-y-1 md:p-9 ${service.hoverBorder}`}
+            >
+              <div className={`h-3 w-3 rounded-full ${service.dotColor}`} />
+              <h3 className="mt-5 font-heading text-[18px] font-bold text-text-on-dark md:text-[22px]">
+                {service.title}
+              </h3>
+              <p className="mt-3 font-body text-[16px] leading-[1.65] text-white/75">
+                {service.description}
+              </p>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
-  );
-}
-
-function SectionHeading({ scrollProgress }: { scrollProgress: ReturnType<typeof useScroll>["scrollYProgress"] }) {
-  const ref = useRef<HTMLDivElement>(null);
-  const { scrollYProgress } = useScroll({
-    target: ref,
-    offset: ["start 0.9", "start 0.4"],
-  });
-
-  const headingWords = "Yolculuğunuzun her adımında yanınızdayız.".split(" ");
-
-  return (
-    <div ref={ref} className="text-center">
-      <motion.p
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.5 }}
-        className="font-body text-sm font-semibold uppercase tracking-[0.2em] text-accent-orange"
-      >
-        Hizmetlerimiz
-      </motion.p>
-      <h2 className="mt-4 font-heading text-4xl font-extrabold leading-tight tracking-tight text-primary sm:text-5xl md:text-6xl">
-        {headingWords.map((word, i) => {
-          const start = i / headingWords.length;
-          const end = (i + 1) / headingWords.length;
-          return (
-            <ScrollWord key={i} progress={scrollYProgress} start={start} end={end}>
-              {word}
-            </ScrollWord>
-          );
-        })}
-      </h2>
-    </div>
-  );
-}
-
-function ScrollWord({
-  children,
-  progress,
-  start,
-  end,
-}: {
-  children: string;
-  progress: ReturnType<typeof useScroll>["scrollYProgress"];
-  start: number;
-  end: number;
-}) {
-  const opacity = useTransform(progress, [start, end], [0.15, 1]);
-  const y = useTransform(progress, [start, end], [8, 0]);
-
-  return (
-    <motion.span style={{ opacity, y }} className="mr-[0.3em] inline-block">
-      {children}
-    </motion.span>
-  );
-}
-
-function ServiceCard({ service, index }: { service: typeof services[number]; index: number }) {
-  const Icon = service.icon;
-  return (
-    <motion.div
-      initial={{ opacity: 0, y: 60, rotate: index % 2 === 0 ? -3 : 3, scale: 0.9 }}
-      whileInView={{ opacity: 1, y: 0, rotate: 0, scale: 1 }}
-      viewport={{ once: true, amount: 0.2 }}
-      transition={{
-        delay: index * 0.1,
-        duration: 0.7,
-        type: "spring" as const,
-        stiffness: 70,
-        damping: 14,
-      }}
-      whileHover={{ y: -8, scale: 1.02, rotate: 0 }}
-      className={`group relative overflow-hidden rounded-2xl ${service.bg} border ${service.border} p-6 transition-shadow duration-500 hover:shadow-2xl md:p-8 ${service.rotation}`}
-    >
-      {/* Accent dot */}
-      <div className={`absolute right-4 top-4 h-3 w-3 rounded-full ${service.accent} opacity-60`} />
-
-      <div className="relative z-10">
-        <h3 className="font-heading text-xl font-extrabold text-primary sm:text-2xl">
-          {service.title}
-        </h3>
-        <p className="mt-3 font-body text-base leading-relaxed text-text-secondary">
-          {service.description}
-        </p>
-      </div>
-
-      {/* Hover glow */}
-      <div className={`pointer-events-none absolute -bottom-10 -right-10 h-40 w-40 rounded-full ${service.accent} opacity-0 blur-[60px] transition-opacity duration-500 group-hover:opacity-20`} />
-    </motion.div>
   );
 }

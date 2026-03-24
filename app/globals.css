@@ -1,46 +1,67 @@
 @import "tailwindcss";
 
 :root {
-  --primary: #1a1a1a;
-  --bg-main: #fafaf7;
+  /* Ana renkler */
+  --bg-primary: #FAFAF7;
+  --bg-dark: #111111;
+  --bg-dark-subtle: #1A1A1A;
+
+  /* Accent renkler */
   --accent-orange: #FF6B35;
   --accent-blue: #4361EE;
-  --accent-yellow: #FFD23F;
+  --accent-yellow: #FFCF3A;
   --accent-green: #06D6A0;
-  --surface-dark: #1a1a1a;
-  --surface-light: #ffffff;
-  --text-primary: #1a1a1a;
-  --text-secondary: #5a5a5a;
-  --text-light: #fafaf7;
+
+  /* Nötr tonlar */
+  --text-primary: #111111;
+  --text-secondary: #6B6B6B;
+  --text-tertiary: #9A9A9A;
+  --text-on-dark: #F5F5F5;
+  --border: #E5E5E0;
+
+  /* Kart renkleri */
+  --card-green: #ECFDF5;
+  --card-orange: #FFF7ED;
+  --card-blue: #EEF2FF;
+  --card-yellow: #FEFCE8;
+  --card-pink: #FDF2F8;
+  --card-purple: #F5F3FF;
 }
 
 @theme inline {
-  --color-background: var(--bg-main);
-  --color-foreground: var(--primary);
-  --color-primary: var(--primary);
+  --color-bg-primary: var(--bg-primary);
+  --color-bg-dark: var(--bg-dark);
+  --color-bg-dark-subtle: var(--bg-dark-subtle);
   --color-accent-orange: var(--accent-orange);
   --color-accent-blue: var(--accent-blue);
   --color-accent-yellow: var(--accent-yellow);
   --color-accent-green: var(--accent-green);
-  --color-surface-dark: var(--surface-dark);
-  --color-surface-light: var(--surface-light);
+  --color-text-primary: var(--text-primary);
   --color-text-secondary: var(--text-secondary);
-  --color-text-light: var(--text-light);
-  --font-heading: "Sora", system-ui, sans-serif;
-  --font-body: "DM Sans", system-ui, sans-serif;
-}
-
-body {
-  background: var(--bg-main);
-  color: var(--primary);
-  overflow-x: hidden;
+  --color-text-tertiary: var(--text-tertiary);
+  --color-text-on-dark: var(--text-on-dark);
+  --color-border: var(--border);
+  --color-card-green: var(--card-green);
+  --color-card-orange: var(--card-orange);
+  --color-card-blue: var(--card-blue);
+  --color-card-yellow: var(--card-yellow);
+  --color-card-pink: var(--card-pink);
+  --color-card-purple: var(--card-purple);
+  --font-heading: "Sora", sans-serif;
+  --font-body: "DM Sans", sans-serif;
 }
 
 html {
   scroll-behavior: smooth;
 }
 
-/* Marquee animations */
+body {
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  overflow-x: hidden;
+}
+
+/* Marquee */
 @keyframes marquee {
   0% { transform: translateX(0); }
   100% { transform: translateX(-50%); }
@@ -48,95 +69,19 @@ html {
 
 .marquee-track {
   display: flex;
+  gap: 48px;
   animation: marquee 25s linear infinite;
   width: max-content;
+  align-items: center;
+  height: 56px;
+  will-change: transform;
 }
 
-.marquee-track-slow {
-  display: flex;
-  animation: marquee 40s linear infinite;
-  width: max-content;
-}
-
-@keyframes marquee-reverse {
-  0% { transform: translateX(-50%); }
-  100% { transform: translateX(0); }
-}
-
-.marquee-track-reverse {
-  display: flex;
-  animation: marquee-reverse 35s linear infinite;
-  width: max-content;
-}
-
-/* Glow pulse for hero */
-@keyframes glow-pulse {
-  0%, 100% { opacity: 0.4; transform: scale(1); }
-  50% { opacity: 0.8; transform: scale(1.15); }
-}
-
-.glow-orb {
-  animation: glow-pulse 4s ease-in-out infinite;
-}
-
-.glow-orb-delayed {
-  animation: glow-pulse 5s ease-in-out infinite;
-  animation-delay: 1.5s;
-}
-
-.glow-orb-slow {
-  animation: glow-pulse 6s ease-in-out infinite;
-  animation-delay: 3s;
-}
-
-/* Floating animation for badges */
-@keyframes float-gentle {
-  0%, 100% { transform: translateY(0) rotate(0deg); }
-  33% { transform: translateY(-12px) rotate(2deg); }
-  66% { transform: translateY(6px) rotate(-1deg); }
-}
-
-@keyframes float-gentle-2 {
-  0%, 100% { transform: translateY(0) rotate(0deg); }
-  33% { transform: translateY(8px) rotate(-2deg); }
-  66% { transform: translateY(-10px) rotate(1.5deg); }
-}
-
-.float-1 { animation: float-gentle 5s ease-in-out infinite; }
-.float-2 { animation: float-gentle-2 6s ease-in-out infinite; animation-delay: 0.5s; }
-.float-3 { animation: float-gentle 7s ease-in-out infinite; animation-delay: 1s; }
-.float-4 { animation: float-gentle-2 5.5s ease-in-out infinite; animation-delay: 1.5s; }
-.float-5 { animation: float-gentle 6.5s ease-in-out infinite; animation-delay: 2s; }
-.float-6 { animation: float-gentle-2 5s ease-in-out infinite; animation-delay: 2.5s; }
-
-/* SVG path draw animation */
-@keyframes draw-path {
-  to { stroke-dashoffset: 0; }
-}
-
-/* Gradient text */
-.gradient-text {
-  background: linear-gradient(135deg, var(--accent-orange), var(--accent-blue), var(--accent-yellow));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-/* Card glow borders */
-.card-glow-orange {
-  box-shadow: 0 0 0 1px rgba(255, 107, 53, 0.1), 0 0 40px rgba(255, 107, 53, 0.08);
-}
-.card-glow-orange:hover {
-  box-shadow: 0 0 0 2px rgba(255, 107, 53, 0.3), 0 0 60px rgba(255, 107, 53, 0.15);
-}
-
-.card-glow-green {
-  box-shadow: 0 0 0 1px rgba(6, 214, 160, 0.1), 0 0 40px rgba(6, 214, 160, 0.08);
-}
-
-/* Process step connector line */
-.step-connector {
-  position: absolute;
-  width: 2px;
-  background: linear-gradient(to bottom, var(--accent-orange), transparent);
+/* Focus-visible styles for all interactive elements */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid var(--accent-orange);
+  outline-offset: 2px;
 }

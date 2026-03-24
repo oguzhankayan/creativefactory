@@ -1,0 +1,69 @@
+"use client";
+
+import { motion } from "framer-motion";
+
+const ease: [number, number, number, number] = [0.25, 0.46, 0.45, 0.94];
+
+export default function Hero() {
+  return (
+    <section className="flex min-h-[90vh] flex-col items-center justify-center bg-bg-primary px-5 pt-[72px] md:px-10">
+      <div className="flex w-full max-w-[1200px] flex-col items-center gap-8 py-16 text-center md:py-24">
+        {/* Overline badge */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, ease }}
+          className="rounded-full bg-bg-dark px-5 py-2"
+        >
+          <span className="font-body text-[13px] font-medium text-white">
+            İstanbul Merkezli Kreatif Ajans
+          </span>
+        </motion.div>
+
+        {/* Heading */}
+        <motion.h1
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.15, ease }}
+          className="font-heading text-[40px] font-extrabold leading-[1.05] tracking-tight text-text-primary sm:text-[56px] md:text-[72px]"
+        >
+          Sadece tasarlamıyoruz.
+          <br />
+          <span className="text-accent-orange">Marka inşa ediyoruz.</span>
+        </motion.h1>
+
+        {/* Subtitle */}
+        <motion.p
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.3, ease }}
+          className="max-w-[560px] font-body text-[17px] leading-[1.6] text-text-secondary md:text-[20px]"
+        >
+          Web tasarım, marka kimliği, dijital strateji ve reklam yönetimi ile
+          işletmenizi bir sonraki seviyeye taşıyoruz.
+        </motion.p>
+
+        {/* CTA Buttons */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.45, ease }}
+          className="flex flex-col items-center gap-4 sm:flex-row"
+        >
+          <a
+            href="#iletisim"
+            className="rounded-xl bg-accent-orange px-9 py-4 font-body text-[16px] font-semibold tracking-[0.01em] text-white transition-all duration-200 hover:scale-[1.02] hover:shadow-lg hover:brightness-105 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-orange focus-visible:ring-offset-2"
+          >
+            Projenizi Konuşalım
+          </a>
+          <a
+            href="#portfolio"
+            className="rounded-xl border-2 border-border px-9 py-4 font-body text-[16px] font-semibold tracking-[0.01em] text-text-primary transition-all duration-200 hover:border-bg-dark hover:bg-bg-dark hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-orange focus-visible:ring-offset-2"
+          >
+            Portfolyoyu İncele
+          </a>
+        </motion.div>
+      </div>
+    </section>
+  );
+}
