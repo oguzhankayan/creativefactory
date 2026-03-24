@@ -18,7 +18,7 @@ export default function SplitText({
   delay = 0,
   staggerDelay = 0.04,
 }: SplitTextProps) {
-  const ref = useRef<HTMLDivElement>(null);
+  const ref = useRef<HTMLSpanElement>(null);
   const isInView = useInView(ref, { once: true, margin: "-60px" });
 
   const words = children.split(" ");

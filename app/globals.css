@@ -132,7 +132,6 @@ body {
     radial-gradient(ellipse at 80% 50%, rgba(67, 97, 238, 0.08), transparent 60%);
   filter: blur(60px);
   animation: mesh-rotate 20s ease-in-out infinite;
-  will-change: filter;
 }
 
 /* Disable gradient animation on mobile — static gradient only */
@@ -159,11 +158,9 @@ body {
   will-change: transform;
 }
 
-/* Hide default cursor when custom cursor is active (desktop only, no reduced motion) */
-@media (pointer: fine) and (prefers-reduced-motion: no-preference) {
-  html {
-    cursor: none;
-  }
+/* Hide default cursor when custom cursor JS is active (class added by CustomCursor component) */
+html.custom-cursor-active {
+  cursor: none;
 }
 
 /* Focus-visible styles for all interactive elements */

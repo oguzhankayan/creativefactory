@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { X, Check } from "lucide-react";
 import SplitText from "./SplitText";
+import { ease } from "@/lib/motion";
 
 const ordinary = [
   "Hazır şablonlar, herkese aynı tasarım",
@@ -19,8 +20,6 @@ const creative = [
   "Her zaman ulaşılabilir, hızlı iletişim",
   "Güzel görünsün ve sonuç getirsin",
 ];
-
-const ease: [number, number, number, number] = [0.25, 0.46, 0.45, 0.94];
 
 const staggerContainer = {
   hidden: {},
@@ -64,21 +63,21 @@ export default function ComparisonSection() {
           {/* Ordinary */}
           <motion.div
             variants={staggerChild}
-            className="rounded-2xl border border-border bg-[#F5F5F0] p-8 md:p-10"
+            className="rounded-2xl border border-border bg-bg-primary p-8 md:p-10"
           >
-            <h3 className="font-heading text-[24px] font-bold text-text-tertiary">
+            <h3 className="font-heading text-[24px] font-bold text-text-secondary">
               Sıradan Ajanslar
             </h3>
-            <ul className="mt-6 space-y-4" role="list">
+            <ul className="mt-6 space-y-4">
               {ordinary.map((item) => (
-                <li key={item} className="flex items-start gap-3" role="listitem">
+                <li key={item} className="flex items-start gap-3">
                   <X
                     size={18}
-                    className="mt-0.5 shrink-0 text-[#D4D4D4]"
+                    className="mt-0.5 shrink-0 text-border"
                     strokeWidth={2.5}
                     aria-hidden="true"
                   />
-                  <span className="font-body text-[16px] text-text-tertiary">
+                  <span className="font-body text-[16px] text-text-secondary">
                     {item}
                   </span>
                 </li>
@@ -94,9 +93,9 @@ export default function ComparisonSection() {
             <h3 className="font-heading text-[24px] font-bold text-text-primary">
               Creative Factory
             </h3>
-            <ul className="mt-6 space-y-4" role="list">
+            <ul className="mt-6 space-y-4">
               {creative.map((item) => (
-                <li key={item} className="flex items-start gap-3" role="listitem">
+                <li key={item} className="flex items-start gap-3">
                   <Check
                     size={18}
                     className="mt-0.5 shrink-0 text-accent-orange"

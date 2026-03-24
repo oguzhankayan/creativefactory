@@ -8,11 +8,11 @@ export default function CustomCursor() {
   const [isVisible, setIsVisible] = useState(false);
   const posRef = useRef({ x: -100, y: -100 });
   const ringPosRef = useRef({ x: -100, y: -100 });
-  const hoveringRef = useRef(false);
   const rafRef = useRef<number>(0);
+  const movingRef = useRef(false);
+  const idleTimerRef = useRef<ReturnType<typeof setTimeout>>(undefined);
 
   useEffect(() => {
-    // Only enable on desktop with fine pointer
     const isTouchDevice = window.matchMedia("(pointer: coarse)").matches;
     if (isTouchDevice) return;
 
@@ -20,15 +20,21 @@ export default function CustomCursor() {
     if (prefersReducedMotion) return;
 
     setIsVisible(true);
+    document.documentElement.classList.add("custom-cursor-active");
 
     const onMouseMove = (e: MouseEvent) => {
       posRef.current = { x: e.clientX, y: e.clientY };
+      if (!movingRef.current) {
+        movingRef.current = true;
+        rafRef.current = requestAnimationFrame(tick);
+      }
+      clearTimeout(idleTimerRef.current);
+      idleTimerRef.current = setTimeout(() => { movingRef.current = false; }, 100);
     };
 
     const onMouseOver = (e: MouseEvent) => {
       const target = e.target as HTMLElement;
       if (target.closest("a, button, [data-magnetic]")) {
-        hoveringRef.current = true;
         if (ringRef.current) {
           ringRef.current.style.width = "48px";
           ringRef.current.style.height = "48px";
@@ -40,7 +46,6 @@ export default function CustomCursor() {
     const onMouseOut = (e: MouseEvent) => {
       const target = e.target as HTMLElement;
       if (target.closest("a, button, [data-magnetic]")) {
-        hoveringRef.current = false;
         if (ringRef.current) {
           ringRef.current.style.width = "32px";
           ringRef.current.style.height = "32px";
@@ -59,19 +64,22 @@ export default function CustomCursor() {
         dot.style.transform = `translate3d(${posRef.current.x}px, ${posRef.current.y}px, 0) translate(-50%, -50%)`;
         ring.style.transform = `translate3d(${ringPosRef.current.x}px, ${ringPosRef.current.y}px, 0) translate(-50%, -50%)`;
       }
-      rafRef.current = requestAnimationFrame(tick);
+      if (movingRef.current) {
+        rafRef.current = requestAnimationFrame(tick);
+      }
     }
 
     window.addEventListener("mousemove", onMouseMove, { passive: true });
     document.addEventListener("mouseover", onMouseOver, { passive: true });
     document.addEventListener("mouseout", onMouseOut, { passive: true });
-    rafRef.current = requestAnimationFrame(tick);
 
     return () => {
       window.removeEventListener("mousemove", onMouseMove);
       document.removeEventListener("mouseover", onMouseOver);
       document.removeEventListener("mouseout", onMouseOut);
       cancelAnimationFrame(rafRef.current);
+      clearTimeout(idleTimerRef.current);
+      document.documentElement.classList.remove("custom-cursor-active");
     };
   }, []);
 

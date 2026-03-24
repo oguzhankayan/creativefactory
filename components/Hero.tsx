@@ -5,7 +5,7 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import MagneticWrap from "./MagneticWrap";
 import SplitText from "./SplitText";
 
-const ease: [number, number, number, number] = [0.25, 0.46, 0.45, 0.94];
+import { ease } from "@/lib/motion";
 
 export default function Hero() {
   const sectionRef = useRef<HTMLElement>(null);

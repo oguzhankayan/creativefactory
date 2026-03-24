@@ -39,16 +39,14 @@ const steps = [
   },
 ];
 
-const ease: [number, number, number, number] = [0.25, 0.46, 0.45, 0.94];
+import { ease } from "@/lib/motion";
 
 function ProcessStep({
   step,
   index,
-  isLast,
 }: {
   step: (typeof steps)[number];
   index: number;
-  isLast: boolean;
 }) {
   const stepRef = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
@@ -137,7 +135,6 @@ export default function ProcessSection() {
                 key={step.number}
                 step={step}
                 index={index}
-                isLast={index === steps.length - 1}
               />
             ))}
           </div>

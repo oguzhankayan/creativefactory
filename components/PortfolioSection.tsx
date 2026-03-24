@@ -1,8 +1,9 @@
 "use client";
 
-import { useRef, useState, useEffect } from "react";
+import { useRef, useState, useEffect, useMemo } from "react";
 import { motion, useMotionValue, useSpring, PanInfo } from "framer-motion";
 import SplitText from "./SplitText";
+import { ease } from "@/lib/motion";
 
 const portfolioItems = [
   { name: "Qualiko", sector: "GIDA & FMCG", bg: "bg-card-green" },
@@ -19,12 +20,11 @@ const CARD_WIDTH_DESKTOP = 340;
 const CARD_WIDTH_MOBILE = 280;
 const GAP = 24;
 
-const ease: [number, number, number, number] = [0.25, 0.46, 0.45, 0.94];
-
 export default function PortfolioSection() {
   const containerRef = useRef<HTMLDivElement>(null);
   const [activeIndex, setActiveIndex] = useState(0);
   const [cardWidth, setCardWidth] = useState(CARD_WIDTH_DESKTOP);
+  const [containerWidth, setContainerWidth] = useState(800);
 
   const x = useMotionValue(0);
   const springX = useSpring(x, { stiffness: 300, damping: 40 });
@@ -32,23 +32,34 @@ export default function PortfolioSection() {
   useEffect(() => {
     const update = () => {
       setCardWidth(window.innerWidth < 768 ? CARD_WIDTH_MOBILE : CARD_WIDTH_DESKTOP);
+      if (containerRef.current) {
+        setContainerWidth(containerRef.current.offsetWidth);
+      }
     };
     update();
-    window.addEventListener("resize", update);
+    window.addEventListener("resize", update, { passive: true });
     return () => window.removeEventListener("resize", update);
   }, []);
 
-  const maxDrag = -(portfolioItems.length * (cardWidth + GAP) - (containerRef.current?.offsetWidth || 800));
+  const maxDrag = useMemo(
+    () => -(portfolioItems.length * (cardWidth + GAP) - containerWidth),
+    [cardWidth, containerWidth]
+  );
+
+  const snapTo = (index: number) => {
+    const clamped = Math.max(0, Math.min(index, portfolioItems.length - 1));
+    setActiveIndex(clamped);
+    x.set(-(clamped * (cardWidth + GAP)));
+  };
 
   const handleDragEnd = (_: MouseEvent | TouchEvent | PointerEvent, info: PanInfo) => {
     const currentX = x.get();
     const index = Math.round(-currentX / (cardWidth + GAP));
-    const clamped = Math.max(0, Math.min(index, portfolioItems.length - 1));
-    setActiveIndex(clamped);
+    snapTo(index);
   };
 
   return (
-    <section id="portfolio" className="bg-bg-primary py-[120px]">
+    <section id="portfolio" className="bg-bg-primary py-[120px]" aria-label="Portfolio">
       <div className="mx-auto max-w-[1200px] px-5 md:px-10 lg:px-20">
         {/* Header */}
         <motion.div
@@ -77,6 +88,7 @@ export default function PortfolioSection() {
           dragConstraints={{ left: maxDrag, right: 0 }}
           onDragEnd={handleDragEnd}
           className="flex cursor-grab gap-6 active:cursor-grabbing"
+          aria-label="Portfolio projeleri"
         >
           {portfolioItems.map((item, index) => (
             <motion.div
@@ -108,10 +120,8 @@ export default function PortfolioSection() {
             <button
               key={i}
               aria-label={`${item.name} projesine git`}
-              onClick={() => {
-                setActiveIndex(i);
-                x.set(-(i * (cardWidth + GAP)));
-              }}
+              aria-current={i === activeIndex ? "true" : undefined}
+              onClick={() => snapTo(i)}
               className="group flex h-11 w-11 items-center justify-center focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-orange focus-visible:ring-offset-2"
             >
               <span

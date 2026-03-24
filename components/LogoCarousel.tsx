@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { ease } from "@/lib/motion";
 
 const logos = [
   "Qualiko",
@@ -17,7 +18,7 @@ const fadeUp = {
   visible: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.6, ease: [0.25, 0.46, 0.45, 0.94] as [number, number, number, number] },
+    transition: { duration: 0.6, ease },
   },
 };
 
@@ -30,7 +31,7 @@ export default function LogoCarousel() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-80px" }}
-          className="mb-10 text-center font-body text-[13px] font-semibold uppercase tracking-[0.12em] text-text-tertiary"
+          className="mb-10 text-center font-body text-[13px] font-semibold uppercase tracking-[0.12em] text-text-secondary"
         >
           BİRLİKTE ÇALIŞTIĞIMIZ MARKALAR
         </motion.p>
@@ -47,7 +48,7 @@ export default function LogoCarousel() {
             <span
               key={logo}
               role="listitem"
-              className="cursor-default whitespace-nowrap font-heading text-[18px] font-semibold text-text-tertiary/70 transition-[color,opacity] duration-300 hover:text-text-primary"
+              className="cursor-default whitespace-nowrap font-heading text-[18px] font-semibold text-text-secondary transition-colors duration-300 hover:text-text-primary"
             >
               {logo}
             </span>

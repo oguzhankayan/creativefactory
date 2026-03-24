@@ -3,8 +3,7 @@
 import { motion } from "framer-motion";
 import { Mail, MapPin, AtSign } from "lucide-react";
 import SplitText from "./SplitText";
-
-const ease: [number, number, number, number] = [0.25, 0.46, 0.45, 0.94];
+import { ease } from "@/lib/motion";
 
 const staggerContainer = {
   hidden: {},
@@ -22,6 +21,12 @@ const staggerChild = {
   },
 };
 
+const fields = [
+  { name: "name", type: "text", label: "Adınız", required: true },
+  { name: "email", type: "email", label: "E-posta adresiniz", required: true },
+  { name: "phone", type: "tel", label: "Telefon numaranız", required: false },
+];
+
 export default function ContactSection() {
   return (
     <section id="iletisim" className="bg-bg-primary py-[120px]">
@@ -37,32 +42,36 @@ export default function ContactSection() {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: "-80px" }}
-            action="https://formspree.io/f/your-form-id"
+            action="https://formspree.io/f/xyzformid"
             method="POST"
             className="space-y-5"
           >
-            {[
-              { name: "name", type: "text", placeholder: "Adınız", label: "Adınız" },
-              { name: "email", type: "email", placeholder: "E-posta adresiniz", label: "E-posta adresiniz" },
-              { name: "phone", type: "tel", placeholder: "Telefon numaranız", label: "Telefon numaranız" },
-            ].map((field) => (
+            {fields.map((field) => (
               <motion.div key={field.name} variants={staggerChild}>
+                <label htmlFor={field.name} className="mb-1.5 block font-body text-[14px] font-medium text-text-primary">
+                  {field.label}
+                  {field.required && <span className="ml-1 text-accent-orange" aria-hidden="true">*</span>}
+                </label>
                 <input
+                  id={field.name}
                   type={field.type}
                   name={field.name}
-                  required={field.name !== "phone"}
-                  placeholder={field.placeholder}
-                  aria-label={field.label}
+                  required={field.required}
+                  placeholder={field.label}
                   className="w-full rounded-xl border border-border bg-white px-5 py-4 font-body text-[16px] text-text-primary outline-none transition-[border-color,box-shadow] duration-200 placeholder:text-text-tertiary focus-visible:border-accent-orange focus-visible:shadow-[0_0_0_3px_rgba(255,107,53,0.1)]"
                 />
               </motion.div>
             ))}
             <motion.div variants={staggerChild}>
+              <label htmlFor="message" className="mb-1.5 block font-body text-[14px] font-medium text-text-primary">
+                Mesajınız
+                <span className="ml-1 text-accent-orange" aria-hidden="true">*</span>
+              </label>
               <textarea
+                id="message"
                 name="message"
                 required
                 placeholder="Projenizden bahsedin…"
-                aria-label="Projenizden bahsedin"
                 className="min-h-[140px] w-full resize-none rounded-xl border border-border bg-white px-5 py-4 font-body text-[16px] text-text-primary outline-none transition-[border-color,box-shadow] duration-200 placeholder:text-text-tertiary focus-visible:border-accent-orange focus-visible:shadow-[0_0_0_3px_rgba(255,107,53,0.1)]"
               />
             </motion.div>
@@ -88,7 +97,7 @@ export default function ContactSection() {
               <Mail size={20} className="shrink-0 text-accent-orange" />
               <a
                 href="mailto:info@creativefactory.com.tr"
-                className="font-body text-[16px] font-medium text-text-primary transition-colors duration-200 hover:text-accent-orange focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-orange focus-visible:ring-offset-2 rounded-sm"
+                className="rounded-sm font-body text-[16px] font-medium text-text-primary transition-colors duration-200 hover:text-accent-orange focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-orange focus-visible:ring-offset-2"
               >
                 info@creativefactory.com.tr
               </a>
@@ -105,7 +114,7 @@ export default function ContactSection() {
                 href="https://instagram.com/creativefactory.tr"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="font-body text-[16px] font-medium text-text-primary transition-colors duration-200 hover:text-accent-orange focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-orange focus-visible:ring-offset-2 rounded-sm"
+                className="rounded-sm font-body text-[16px] font-medium text-text-primary transition-colors duration-200 hover:text-accent-orange focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-orange focus-visible:ring-offset-2"
               >
                 @creativefactory.tr
               </a>
