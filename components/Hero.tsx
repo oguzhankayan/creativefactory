@@ -76,13 +76,13 @@ export default function Hero() {
         >
           <a
             href="#iletisim"
-            className="rounded-xl bg-accent-orange px-9 py-4 font-body text-[16px] font-semibold tracking-[0.01em] text-white transition-all duration-200 hover:scale-[1.02] hover:shadow-lg hover:brightness-105 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-orange focus-visible:ring-offset-2"
+            className="rounded-xl bg-accent-orange px-9 py-4 font-body text-[16px] font-semibold tracking-[0.01em] text-white transition-[transform,box-shadow,filter] duration-200 hover:scale-[1.02] hover:shadow-lg hover:brightness-105 active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-orange focus-visible:ring-offset-2"
           >
             Projenizi Konuşalım
           </a>
           <a
             href="#portfolio"
-            className="rounded-xl border-2 border-border px-9 py-4 font-body text-[16px] font-semibold tracking-[0.01em] text-text-primary transition-all duration-200 hover:border-bg-dark hover:bg-bg-dark hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-orange focus-visible:ring-offset-2"
+            className="rounded-xl border-2 border-border px-9 py-4 font-body text-[16px] font-semibold tracking-[0.01em] text-text-primary transition-[border-color,background-color,color] duration-200 hover:border-bg-dark hover:bg-bg-dark hover:text-white active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-orange focus-visible:ring-offset-2"
           >
             Portfolyoyu İncele
           </a>

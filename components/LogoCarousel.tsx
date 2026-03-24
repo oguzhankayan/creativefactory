@@ -47,7 +47,7 @@ export default function LogoCarousel() {
             <span
               key={logo}
               role="listitem"
-              className="whitespace-nowrap font-heading text-[18px] font-semibold text-text-tertiary opacity-50 transition-opacity duration-300 hover:opacity-100"
+              className="cursor-default whitespace-nowrap font-heading text-[18px] font-semibold text-text-tertiary/70 transition-[color,opacity] duration-300 hover:text-text-primary"
             >
               {logo}
             </span>

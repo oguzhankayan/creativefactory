@@ -23,12 +23,12 @@ export default function Footer() {
           </div>
 
           {/* Center */}
-          <nav className="flex items-center gap-6" aria-label="Alt menü">
+          <nav className="flex items-center gap-1 md:gap-2" aria-label="Alt menü">
             {footerLinks.map((link) => (
               <a
                 key={link.href}
                 href={link.href}
-                className="font-body text-[14px] font-medium text-white/75 transition-colors duration-200 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-orange focus-visible:ring-offset-2 focus-visible:ring-offset-bg-dark rounded-sm"
+                className="rounded-sm px-3 py-2 font-body text-[14px] font-medium text-white/75 transition-colors duration-200 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-orange focus-visible:ring-offset-2 focus-visible:ring-offset-bg-dark"
               >
                 {link.label}
               </a>

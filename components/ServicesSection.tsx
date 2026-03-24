@@ -79,7 +79,7 @@ function ServiceCard({
         transformOrigin: "bottom center",
       }}
       role="listitem"
-      className={`rounded-2xl border border-white/[0.08] bg-bg-dark-subtle p-7 transition-all duration-300 hover:-translate-y-1 md:p-9 ${service.hoverBorder} motion-reduce:!transform-none motion-reduce:!opacity-100`}
+      className={`rounded-2xl border border-white/[0.08] bg-bg-dark-subtle p-7 transition-[transform,border-color] duration-300 hover:-translate-y-1 md:p-9 ${service.hoverBorder} motion-reduce:!transform-none motion-reduce:!opacity-100`}
     >
       <div className={`h-3 w-3 rounded-full ${service.dotColor}`} />
       <h3 className="mt-5 font-heading text-[18px] font-bold text-text-on-dark md:text-[22px]">

@@ -28,14 +28,14 @@ export default function CTASection() {
               href="https://wa.me/90XXXXXXXXXX"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-3 rounded-xl bg-bg-dark px-8 py-4 font-body text-[16px] font-semibold text-white transition-all duration-200 hover:scale-[1.02] hover:shadow-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-accent-orange"
+              className="inline-flex items-center gap-3 rounded-xl bg-bg-dark px-8 py-4 font-body text-[16px] font-semibold text-white transition-[transform,box-shadow] duration-200 hover:scale-[1.02] hover:shadow-lg active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-accent-orange"
             >
               <MessageCircle size={20} />
               WhatsApp&apos;tan Yazın
             </a>
             <a
               href="mailto:info@creativefactory.com.tr"
-              className="inline-flex items-center gap-3 rounded-xl border-2 border-white px-8 py-4 font-body text-[16px] font-semibold text-white transition-all duration-200 hover:scale-[1.02] hover:shadow-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-accent-orange"
+              className="inline-flex items-center gap-3 rounded-xl border-2 border-white px-8 py-4 font-body text-[16px] font-semibold text-white transition-[transform,box-shadow] duration-200 hover:scale-[1.02] hover:shadow-lg active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-accent-orange"
             >
               <Mail size={20} />
               E-posta Gönderin

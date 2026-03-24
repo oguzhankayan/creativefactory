@@ -88,7 +88,7 @@ export default function PortfolioSection() {
               style={{ width: cardWidth }}
             >
               <div
-                className={`flex h-[340px] flex-col items-center justify-center rounded-[20px] ${item.bg} transition-all duration-300 hover:scale-[1.03] hover:shadow-xl md:h-[400px]`}
+                className={`flex h-[340px] flex-col items-center justify-center rounded-[20px] ${item.bg} transition-transform duration-300 hover:scale-[1.03] hover:shadow-xl md:h-[400px]`}
               >
                 <span className="font-heading text-[24px] font-bold text-text-primary md:text-[28px]">
                   {item.name}
@@ -102,21 +102,23 @@ export default function PortfolioSection() {
         </motion.div>
 
         {/* Dot indicators */}
-        <div className="mt-8 flex gap-2 pl-0 md:pl-0" role="tablist" aria-label="Portfolio sayfalari">
+        <div className="mt-8 flex gap-1" aria-label="Portfolio gezinme">
           {portfolioItems.map((item, i) => (
             <button
               key={i}
               aria-label={`${item.name} projesine git`}
-              aria-selected={i === activeIndex}
-              role="tab"
               onClick={() => {
                 setActiveIndex(i);
                 x.set(-(i * (cardWidth + GAP)));
               }}
-              className={`h-2 w-2 rounded-full transition-colors duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-orange focus-visible:ring-offset-2 ${
-                i === activeIndex ? "bg-accent-orange" : "bg-border"
-              }`}
-            />
+              className="group flex h-11 w-11 items-center justify-center focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-orange focus-visible:ring-offset-2"
+            >
+              <span
+                className={`block h-2.5 w-2.5 rounded-full transition-colors duration-200 ${
+                  i === activeIndex ? "bg-accent-orange" : "bg-border group-hover:bg-text-tertiary"
+                }`}
+              />
+            </button>
           ))}
         </div>
       </div>

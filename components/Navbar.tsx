@@ -66,7 +66,7 @@ export default function Navbar() {
             ))}
             <a
               href="#iletisim"
-              className="rounded-[10px] bg-accent-orange px-6 py-2.5 font-body text-[14px] font-semibold text-white transition-all duration-200 hover:-translate-y-px hover:shadow-lg hover:brightness-[1.08] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-orange focus-visible:ring-offset-2"
+              className="rounded-[10px] bg-accent-orange px-6 py-2.5 font-body text-[14px] font-semibold text-white transition-[transform,box-shadow,filter] duration-200 hover:-translate-y-px hover:shadow-lg hover:brightness-[1.08] active:scale-[0.97] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-orange focus-visible:ring-offset-2"
             >
               Ücretsiz Görüşme
             </a>

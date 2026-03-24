@@ -58,7 +58,7 @@ export default function ContactSection() {
                   required={field.name !== "phone"}
                   placeholder={field.placeholder}
                   aria-label={field.label}
-                  className="w-full rounded-xl border border-border bg-white px-5 py-4 font-body text-[16px] text-text-primary outline-none transition-all duration-200 placeholder:text-text-tertiary focus-visible:border-accent-orange focus-visible:shadow-[0_0_0_3px_rgba(255,107,53,0.1)]"
+                  className="w-full rounded-xl border border-border bg-white px-5 py-4 font-body text-[16px] text-text-primary outline-none transition-[border-color,box-shadow] duration-200 placeholder:text-text-tertiary focus-visible:border-accent-orange focus-visible:shadow-[0_0_0_3px_rgba(255,107,53,0.1)]"
                 />
               </motion.div>
             ))}
@@ -68,13 +68,13 @@ export default function ContactSection() {
                 required
                 placeholder="Projenizden bahsedin…"
                 aria-label="Projenizden bahsedin"
-                className="min-h-[140px] w-full resize-none rounded-xl border border-border bg-white px-5 py-4 font-body text-[16px] text-text-primary outline-none transition-all duration-200 placeholder:text-text-tertiary focus-visible:border-accent-orange focus-visible:shadow-[0_0_0_3px_rgba(255,107,53,0.1)]"
+                className="min-h-[140px] w-full resize-none rounded-xl border border-border bg-white px-5 py-4 font-body text-[16px] text-text-primary outline-none transition-[border-color,box-shadow] duration-200 placeholder:text-text-tertiary focus-visible:border-accent-orange focus-visible:shadow-[0_0_0_3px_rgba(255,107,53,0.1)]"
               />
             </motion.div>
             <motion.div variants={staggerChild}>
               <button
                 type="submit"
-                className="w-full rounded-xl bg-accent-orange px-6 py-4 font-body text-[16px] font-semibold text-white transition-all duration-200 hover:brightness-105 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-orange focus-visible:ring-offset-2"
+                className="w-full rounded-xl bg-accent-orange px-6 py-4 font-body text-[16px] font-semibold text-white transition-[transform,filter] duration-200 hover:brightness-105 active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-orange focus-visible:ring-offset-2"
               >
                 Gönder
               </button>
