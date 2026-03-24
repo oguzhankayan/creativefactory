@@ -1,6 +1,7 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { useRef } from "react";
+import { motion, useScroll, useTransform } from "framer-motion";
 
 const services = [
   {
@@ -49,21 +50,47 @@ const services = [
 
 const ease: [number, number, number, number] = [0.25, 0.46, 0.45, 0.94];
 
-const staggerContainer = {
-  hidden: {},
-  visible: {
-    transition: { staggerChildren: 0.12, delayChildren: 0.1 },
-  },
-};
+function ServiceCard({
+  service,
+  index,
+}: {
+  service: (typeof services)[number];
+  index: number;
+}) {
+  const cardRef = useRef<HTMLDivElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: cardRef,
+    offset: ["start end", "center center"],
+  });
 
-const staggerChild = {
-  hidden: { opacity: 0, y: 24 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.5, ease },
-  },
-};
+  // 3D perspective: card rotates from tilted to flat
+  const rotateX = useTransform(scrollYProgress, [0, 1], [16, 0]);
+  const opacity = useTransform(scrollYProgress, [0, 0.4], [0, 1]);
+  const y = useTransform(scrollYProgress, [0, 1], [60, 0]);
+
+  return (
+    <motion.div
+      ref={cardRef}
+      style={{
+        rotateX,
+        opacity,
+        y,
+        transformPerspective: 800,
+        transformOrigin: "bottom center",
+      }}
+      role="listitem"
+      className={`rounded-2xl border border-white/[0.08] bg-bg-dark-subtle p-7 transition-all duration-300 hover:-translate-y-1 md:p-9 ${service.hoverBorder} motion-reduce:!transform-none motion-reduce:!opacity-100`}
+    >
+      <div className={`h-3 w-3 rounded-full ${service.dotColor}`} />
+      <h3 className="mt-5 font-heading text-[18px] font-bold text-text-on-dark md:text-[22px]">
+        {service.title}
+      </h3>
+      <p className="mt-3 font-body text-[16px] leading-[1.65] text-white/75">
+        {service.description}
+      </p>
+    </motion.div>
+  );
+}
 
 export default function ServicesSection() {
   return (
@@ -89,31 +116,15 @@ export default function ServicesSection() {
         </motion.div>
 
         {/* Cards grid */}
-        <motion.div
-          variants={staggerContainer}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-80px" }}
+        <div
           role="list"
           className="mt-12 grid gap-6 sm:grid-cols-2 md:mt-16"
+          style={{ perspective: "1200px" }}
         >
-          {services.map((service) => (
-            <motion.div
-              key={service.title}
-              variants={staggerChild}
-              role="listitem"
-              className={`rounded-2xl border border-white/[0.08] bg-bg-dark-subtle p-7 transition-all duration-300 hover:-translate-y-1 md:p-9 ${service.hoverBorder}`}
-            >
-              <div className={`h-3 w-3 rounded-full ${service.dotColor}`} />
-              <h3 className="mt-5 font-heading text-[18px] font-bold text-text-on-dark md:text-[22px]">
-                {service.title}
-              </h3>
-              <p className="mt-3 font-body text-[16px] leading-[1.65] text-white/75">
-                {service.description}
-              </p>
-            </motion.div>
+          {services.map((service, index) => (
+            <ServiceCard key={service.title} service={service} index={index} />
           ))}
-        </motion.div>
+        </div>
       </div>
     </section>
   );

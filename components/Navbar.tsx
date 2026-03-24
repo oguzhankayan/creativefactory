@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence, useScroll, useSpring } from "framer-motion";
 import { Menu, X } from "lucide-react";
 
 const navLinks = [
@@ -14,6 +14,9 @@ const navLinks = [
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
+
+  const { scrollYProgress } = useScroll();
+  const scaleX = useSpring(scrollYProgress, { stiffness: 100, damping: 30, restDelta: 0.001 });
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 50);
@@ -83,6 +86,12 @@ export default function Navbar() {
           </button>
         </div>
       </nav>
+
+      {/* Scroll progress bar */}
+      <motion.div
+        className="h-[3px] origin-left bg-accent-orange motion-reduce:hidden"
+        style={{ scaleX }}
+      />
 
       {/* Mobile overlay */}
       <AnimatePresence>

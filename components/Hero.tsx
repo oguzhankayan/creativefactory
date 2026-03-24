@@ -1,19 +1,40 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { useRef } from "react";
+import { motion, useScroll, useTransform } from "framer-motion";
 
 const ease: [number, number, number, number] = [0.25, 0.46, 0.45, 0.94];
 
 export default function Hero() {
+  const sectionRef = useRef<HTMLElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: sectionRef,
+    offset: ["start start", "end start"],
+  });
+
+  // Parallax transforms — heading moves slower, subtitle fades, CTA shrinks
+  const headingY = useTransform(scrollYProgress, [0, 1], [0, -120]);
+  const subtitleY = useTransform(scrollYProgress, [0, 1], [0, -60]);
+  const subtitleOpacity = useTransform(scrollYProgress, [0, 0.4], [1, 0]);
+  const ctaY = useTransform(scrollYProgress, [0, 1], [0, -40]);
+  const ctaOpacity = useTransform(scrollYProgress, [0, 0.35], [1, 0]);
+  const ctaScale = useTransform(scrollYProgress, [0, 0.35], [1, 0.95]);
+  const badgeY = useTransform(scrollYProgress, [0, 1], [0, -80]);
+  const badgeOpacity = useTransform(scrollYProgress, [0, 0.3], [1, 0]);
+
   return (
-    <section className="flex min-h-[90vh] flex-col items-center justify-center bg-bg-primary px-5 pt-[72px] md:px-10">
+    <section
+      ref={sectionRef}
+      className="relative flex min-h-[90vh] flex-col items-center justify-center bg-bg-primary px-5 pt-[72px] md:px-10"
+    >
       <div className="flex w-full max-w-[1200px] flex-col items-center gap-8 py-16 text-center md:py-24">
         {/* Overline badge */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, ease }}
-          className="rounded-full bg-bg-dark px-5 py-2"
+          style={{ y: badgeY, opacity: badgeOpacity }}
+          className="rounded-full bg-bg-dark px-5 py-2 motion-reduce:!transform-none motion-reduce:!opacity-100"
         >
           <span className="font-body text-[13px] font-medium text-white">
             İstanbul Merkezli Kreatif Ajans
@@ -25,7 +46,8 @@ export default function Hero() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.15, ease }}
-          className="font-heading text-[40px] font-extrabold leading-[1.05] tracking-tight text-text-primary sm:text-[56px] md:text-[72px]"
+          style={{ y: headingY }}
+          className="font-heading text-[40px] font-extrabold leading-[1.05] tracking-tight text-text-primary sm:text-[56px] md:text-[72px] motion-reduce:!transform-none"
         >
           Sadece tasarlamıyoruz.
           <br />
@@ -37,7 +59,8 @@ export default function Hero() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.3, ease }}
-          className="max-w-[560px] font-body text-[17px] leading-[1.6] text-text-secondary md:text-[20px]"
+          style={{ y: subtitleY, opacity: subtitleOpacity }}
+          className="max-w-[560px] font-body text-[17px] leading-[1.6] text-text-secondary md:text-[20px] motion-reduce:!transform-none motion-reduce:!opacity-100"
         >
           Web tasarım, marka kimliği, dijital strateji ve reklam yönetimi ile
           işletmenizi bir sonraki seviyeye taşıyoruz.
@@ -48,7 +71,8 @@ export default function Hero() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.45, ease }}
-          className="flex flex-col items-center gap-4 sm:flex-row"
+          style={{ y: ctaY, opacity: ctaOpacity, scale: ctaScale }}
+          className="flex flex-col items-center gap-4 sm:flex-row motion-reduce:!transform-none motion-reduce:!opacity-100"
         >
           <a
             href="#iletisim"
