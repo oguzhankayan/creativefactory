@@ -1,8 +1,9 @@
 "use client";
 
-import { useState } from "react";
+import { useRef, useState } from "react";
 import Reveal from "./Reveal";
 import { TypewriterEffectSmooth } from "./ui/typewriter-effect";
+import { Balloons, type BalloonsHandle } from "./ui/balloons";
 import { SERVICES } from "@/lib/services";
 
 const HEADLINE_WORDS = [
@@ -12,6 +13,7 @@ const HEADLINE_WORDS = [
 
 export default function CTA() {
   const [sent, setSent] = useState(false);
+  const balloonsRef = useRef<BalloonsHandle>(null);
   return (
     <section className="cta" id="iletisim">
       <div className="cta__grid">
@@ -57,6 +59,7 @@ export default function CTA() {
           onSubmit={(e: React.FormEvent) => {
             e.preventDefault();
             setSent(true);
+            balloonsRef.current?.launchAnimation();
           }}
         >
           {sent ? (
@@ -117,6 +120,7 @@ export default function CTA() {
           )}
         </Reveal>
       </div>
+      <Balloons ref={balloonsRef} />
     </section>
   );
 }
