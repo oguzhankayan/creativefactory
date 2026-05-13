@@ -110,7 +110,7 @@ export function HeroGeometric({ badge, children }: HeroGeometricProps) {
       </div>
 
       <div className="relative z-10 flex min-h-screen w-full items-center justify-center px-5 md:px-10 pt-28 md:pt-32 pb-24">
-        <div className="mx-auto flex w-full max-w-[1080px] flex-col items-center gap-12 md:gap-20 text-center">
+        <div className="mx-auto w-full max-w-[1080px] text-center">
           {badge ? (
             <motion.div
               initial={{ opacity: 0, y: 30 }}
