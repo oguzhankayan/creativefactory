@@ -14,9 +14,9 @@ export default function Hero() {
     <HeroGeometric>
       <motion.h1
         {...fadeUp(0.7)}
-        className="flex flex-col gap-4 md:gap-6 font-bold tracking-tight mb-20 md:mb-28"
+        className="flex flex-col gap-4 md:gap-6 font-bold tracking-tight"
         style={{
-          fontSize: "clamp(32px, 5.5vw, 72px)",
+          fontSize: "clamp(36px, 6.5vw, 88px)",
           letterSpacing: "-0.03em",
           lineHeight: 1.15,
         }}
@@ -31,14 +31,14 @@ export default function Hero() {
 
       <motion.p
         {...fadeUp(0.95)}
-        className="max-w-[640px] text-base sm:text-lg text-white/50 mb-20 md:mb-28 leading-relaxed font-light tracking-wide"
+        className="max-w-[640px] text-base sm:text-lg text-white/55 leading-relaxed font-light tracking-wide"
       >
         Web, kimlik, içerik ve performans pazarlaması — sözleşmeyle değil sonuçla bağlı.
       </motion.p>
 
       <motion.div
         {...fadeUp(1.15)}
-        className="flex flex-wrap items-center justify-center gap-8"
+        className="flex flex-wrap items-center justify-center gap-6"
       >
         <a href="#iletisim" className="bigbtn">
           <span className="bigbtn__label">Projeni getir</span>
