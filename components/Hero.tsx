@@ -27,7 +27,7 @@ export default function Hero() {
 
       <motion.p
         {...fadeUp(0.95)}
-        className="mx-auto max-w-[640px] text-base sm:text-lg md:text-xl text-white/55 mb-12 md:mb-16 leading-relaxed font-light tracking-wide"
+        className="max-w-[820px] text-base sm:text-lg md:text-xl text-white/55 mb-12 md:mb-16 leading-relaxed font-light tracking-wide"
       >
         Web, kimlik, içerik ve performans pazarlaması — sözleşmeyle değil sonuçla bağlı.
       </motion.p>

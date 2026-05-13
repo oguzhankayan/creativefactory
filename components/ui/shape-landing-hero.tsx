@@ -77,48 +77,40 @@ export function HeroGeometric({ badge, children }: HeroGeometricProps) {
       <div className="pointer-events-none absolute inset-0 overflow-hidden">
         <ElegantShape
           delay={0.3}
-          width={600}
-          height={140}
-          rotate={12}
-          gradient="from-[#c8ff3d]/[0.14]"
-          className="left-[-10%] md:left-[-5%] top-[15%] md:top-[20%]"
+          width={520}
+          height={130}
+          rotate={14}
+          gradient="from-[#c8ff3d]/[0.10]"
+          className="left-[-14%] md:left-[-10%] top-[8%] md:top-[12%]"
         />
         <ElegantShape
           delay={0.5}
-          width={500}
-          height={120}
-          rotate={-15}
-          gradient="from-white/[0.10]"
-          className="right-[-5%] md:right-[0%] top-[70%] md:top-[75%]"
-        />
-        <ElegantShape
-          delay={0.4}
-          width={300}
-          height={80}
-          rotate={-8}
-          gradient="from-violet-400/[0.10]"
-          className="left-[5%] md:left-[10%] bottom-[8%] md:bottom-[12%]"
-        />
-        <ElegantShape
-          delay={0.6}
-          width={200}
-          height={60}
-          rotate={20}
-          gradient="from-[#c8ff3d]/[0.12]"
-          className="right-[15%] md:right-[20%] top-[10%] md:top-[15%]"
-        />
-        <ElegantShape
-          delay={0.7}
-          width={150}
-          height={40}
-          rotate={-25}
+          width={520}
+          height={130}
+          rotate={-14}
           gradient="from-white/[0.08]"
-          className="left-[20%] md:left-[25%] top-[5%] md:top-[10%]"
+          className="right-[-14%] md:right-[-10%] top-[8%] md:top-[12%]"
+        />
+        <ElegantShape
+          delay={0.45}
+          width={380}
+          height={95}
+          rotate={-18}
+          gradient="from-[#c8ff3d]/[0.10]"
+          className="right-[-8%] md:right-[-4%] bottom-[10%] md:bottom-[14%]"
+        />
+        <ElegantShape
+          delay={0.55}
+          width={380}
+          height={95}
+          rotate={18}
+          gradient="from-violet-400/[0.08]"
+          className="left-[-8%] md:left-[-4%] bottom-[10%] md:bottom-[14%]"
         />
       </div>
 
       <div className="relative z-10 flex min-h-screen w-full items-center justify-center px-5 md:px-10 pt-28 md:pt-32 pb-24">
-        <div className="mx-auto w-full max-w-[1080px] text-center">
+        <div className="mx-auto flex w-full max-w-[1080px] flex-col items-center text-center">
           {badge ? (
             <motion.div
               initial={{ opacity: 0, y: 30 }}
