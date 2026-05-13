@@ -3,7 +3,6 @@
 import { useState } from "react";
 import Reveal from "./Reveal";
 import { TypewriterEffectSmooth } from "./ui/typewriter-effect";
-import ShapeBackdrop from "./ui/shape-backdrop";
 import { SERVICES } from "@/lib/services";
 
 const HEADLINE_WORDS = [
@@ -14,13 +13,8 @@ const HEADLINE_WORDS = [
 export default function CTA() {
   const [sent, setSent] = useState(false);
   return (
-    <section
-      className="cta"
-      id="iletisim"
-      style={{ position: "relative", overflow: "hidden" }}
-    >
-      <ShapeBackdrop variant="section" />
-      <div className="cta__grid" style={{ position: "relative", zIndex: 1 }}>
+    <section className="cta" id="iletisim">
+      <div className="cta__grid">
         <div className="cta__left">
           <Reveal as="div">
             <span className="kicker">İletişim</span>
