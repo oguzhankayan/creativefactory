@@ -5,7 +5,7 @@ import { Circle } from "lucide-react";
 import { cn } from "@/lib/utils";
 import type { ReactNode } from "react";
 
-function ElegantShape({
+export function ElegantShape({
   className,
   delay = 0,
   width = 400,
