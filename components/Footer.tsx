@@ -1,58 +1,44 @@
-import { AtSign } from "lucide-react";
-
-const footerLinks = [
-  { label: "Hizmetler", href: "#hizmetler" },
-  { label: "Portfolio", href: "#portfolio" },
-  { label: "Süreç", href: "#surec" },
-  { label: "İletişim", href: "#iletisim" },
-];
+import { NAV } from "@/lib/services";
 
 export default function Footer() {
   return (
-    <footer className="bg-bg-dark px-5 pb-10 pt-[120px] md:px-10 lg:px-20">
-      <div className="mx-auto max-w-[1200px]">
-        <div className="flex flex-col items-start justify-between gap-8 md:flex-row md:items-center">
-          {/* Left */}
-          <div>
-            <span className="font-heading text-[18px] font-bold text-white">
-              Creative Factory
-            </span>
-            <p className="mt-2 font-body text-[14px] text-white/65">
-              İstanbul&apos;dan markalara değer katıyoruz.
-            </p>
-          </div>
-
-          {/* Center */}
-          <nav className="flex items-center gap-1 md:gap-2" aria-label="Alt menü">
-            {footerLinks.map((link) => (
-              <a
-                key={link.href}
-                href={link.href}
-                className="rounded-sm px-3 py-2 font-body text-[14px] font-medium text-white/75 transition-colors duration-200 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-orange focus-visible:ring-offset-2 focus-visible:ring-offset-bg-dark"
-              >
-                {link.label}
-              </a>
-            ))}
-          </nav>
-
-          {/* Right */}
-          <a
-            href="https://instagram.com/creativefactory.tr"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-white/75 transition-colors duration-200 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-orange focus-visible:ring-offset-2 focus-visible:ring-offset-bg-dark rounded-sm"
-            aria-label="Instagram"
-          >
-            <AtSign size={20} />
-          </a>
-        </div>
-
-        {/* Bottom */}
-        <div className="mt-10 border-t border-white/[0.08] pt-6">
-          <p className="font-body text-[13px] text-white/65">
-            &copy; 2026 Creative Factory. Tüm hakları saklıdır.
-          </p>
-        </div>
+    <footer className="footer" id="studyo">
+      <div className="footer__row">
+        <a className="footer__brand" href="#top">
+          <span className="brand-mark" aria-hidden="true">
+            <span className="brand-mark__dot" />
+            <span className="brand-mark__dot" />
+            <span className="brand-mark__dot" />
+            <span className="brand-mark__dot" />
+          </span>
+          <span>
+            Creative Factory<sup>©</sup>
+          </span>
+        </a>
+        <nav className="footer__nav" aria-label="Alt menü">
+          {NAV.map((l) => (
+            <a key={l.href} href={l.href}>
+              {l.label}
+            </a>
+          ))}
+          <span className="footer__sep" aria-hidden="true">
+            /
+          </span>
+          <a href="#">Instagram</a>
+          <a href="#">LinkedIn</a>
+          <a href="#">Behance</a>
+        </nav>
+      </div>
+      <div className="footer__bottom">
+        <span>© 2026 Creative Factory · Bomonti, İstanbul</span>
+        <span className="footer__legal">
+          <a href="#">KVKK</a>
+          <a href="#">Çerez</a>
+          <a href="#">Kullanım</a>
+        </span>
+        <a href="#top" className="footer__up">
+          Yukarı ↑
+        </a>
       </div>
     </footer>
   );
