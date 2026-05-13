@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import Nav from "@/components/Nav";
 import Hero from "@/components/Hero";
 import Marquee from "@/components/Marquee";
+import RevealStatement from "@/components/RevealStatement";
 import Clients from "@/components/Clients";
 import Services from "@/components/Services";
 import Process from "@/components/Process";
@@ -72,6 +73,7 @@ export default function Home() {
       <main>
         <Hero />
         <Marquee />
+        <RevealStatement />
         <Clients />
         <Services onOpen={openService} />
         <Process />
