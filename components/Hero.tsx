@@ -25,10 +25,10 @@ export default function Hero() {
           marginBottom: "clamp(28px, 3vw, 44px)",
         }}
       >
-        <span className="bg-clip-text text-transparent bg-gradient-to-b from-white to-white/80">
+        <span className="bg-clip-text text-transparent bg-gradient-to-br from-white via-white/70 to-white/40 drop-shadow-[0_0_24px_rgba(255,255,255,0.12)]">
           Tasarlamıyoruz.
         </span>
-        <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#c8ff3d] via-white/95 to-[#c8ff3d]/70">
+        <span className="bg-clip-text text-transparent bg-gradient-to-br from-[#c8ff3d] via-white to-[#c8ff3d]/50 drop-shadow-[0_0_32px_rgba(200,255,61,0.25)]">
           Marka inşa ederiz.
         </span>
       </motion.h1>
