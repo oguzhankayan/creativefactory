@@ -16,13 +16,13 @@ export default function Hero() {
         {...fadeUp(0.7)}
         className="font-bold tracking-tight"
         style={{
-          fontSize: "clamp(40px, 6.2vw, 80px)",
+          fontSize: "clamp(40px, 5.8vw, 76px)",
           letterSpacing: "-0.035em",
           lineHeight: 1.08,
           display: "flex",
           flexDirection: "column",
-          gap: "clamp(10px, 1.2vw, 20px)",
-          marginBottom: "clamp(48px, 7vw, 112px)",
+          gap: "clamp(6px, 0.6vw, 12px)",
+          marginBottom: "clamp(28px, 3vw, 44px)",
         }}
       >
         <span className="text-white/95">Tasarlamıyoruz.</span>
@@ -31,8 +31,12 @@ export default function Hero() {
 
       <motion.p
         {...fadeUp(0.95)}
-        className="mx-auto max-w-[560px] text-base sm:text-lg text-white/55 leading-relaxed font-light tracking-wide"
-        style={{ marginBottom: "clamp(40px, 6vw, 96px)" }}
+        className="mx-auto text-lg sm:text-xl md:text-2xl text-white/65 font-light tracking-wide"
+        style={{
+          maxWidth: "min(780px, 100%)",
+          lineHeight: 1.5,
+          marginBottom: "clamp(40px, 4.5vw, 72px)",
+        }}
       >
         Web, kimlik, içerik ve performans pazarlaması — sözleşmeyle değil sonuçla bağlı.
       </motion.p>
