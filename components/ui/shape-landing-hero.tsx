@@ -117,7 +117,7 @@ export function HeroGeometric({ badge = "Bağımsız kreatif stüdyo · İstanbu
       </div>
 
       <div className="relative z-10 container mx-auto px-5 md:px-10 pt-32 md:pt-40 pb-20">
-        <div className="max-w-3xl mx-auto text-center">
+        <div className="max-w-5xl mx-auto text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}

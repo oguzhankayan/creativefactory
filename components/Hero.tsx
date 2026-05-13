@@ -14,13 +14,13 @@ export default function Hero() {
     <HeroGeometric badge="Bağımsız kreatif stüdyo · İstanbul">
       <motion.h1
         {...fadeUp(0.9)}
-        className="text-5xl sm:text-7xl md:text-8xl font-bold mb-6 md:mb-8 tracking-tight leading-[1.02]"
+        className="font-bold mb-6 md:mb-8 tracking-tight leading-[1.02]"
+        style={{ fontSize: "clamp(36px, 8vw, 108px)", letterSpacing: "-0.035em" }}
       >
-        <span className="bg-clip-text text-transparent bg-gradient-to-b from-white to-white/80">
+        <span className="block bg-clip-text text-transparent bg-gradient-to-b from-white to-white/80">
           Tasarlamıyoruz.
         </span>
-        <br />
-        <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#c8ff3d] via-white/95 to-[#c8ff3d]/70">
+        <span className="block bg-clip-text text-transparent bg-gradient-to-r from-[#c8ff3d] via-white/95 to-[#c8ff3d]/70">
           Marka inşa ederiz.
         </span>
       </motion.h1>
