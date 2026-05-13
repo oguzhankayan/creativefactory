@@ -11,11 +11,11 @@ const fadeUp = (delay: number) => ({
 
 export default function Hero() {
   return (
-    <HeroGeometric badge="Bağımsız kreatif stüdyo · İstanbul">
+    <HeroGeometric>
       <motion.h1
-        {...fadeUp(0.9)}
-        className="font-bold mb-6 md:mb-8 tracking-tight leading-[1.02]"
-        style={{ fontSize: "clamp(36px, 8vw, 108px)", letterSpacing: "-0.035em" }}
+        {...fadeUp(0.7)}
+        className="mx-auto font-bold tracking-tight leading-[1.02] mb-10 md:mb-14"
+        style={{ fontSize: "clamp(36px, 7.5vw, 104px)", letterSpacing: "-0.035em" }}
       >
         <span className="block bg-clip-text text-transparent bg-gradient-to-b from-white to-white/80">
           Tasarlamıyoruz.
@@ -26,15 +26,15 @@ export default function Hero() {
       </motion.h1>
 
       <motion.p
-        {...fadeUp(1.1)}
-        className="text-base sm:text-lg md:text-xl text-white/45 mb-10 leading-relaxed font-light tracking-wide max-w-xl mx-auto px-4"
+        {...fadeUp(0.95)}
+        className="mx-auto max-w-[640px] text-base sm:text-lg md:text-xl text-white/55 mb-12 md:mb-16 leading-relaxed font-light tracking-wide"
       >
         Web, kimlik, içerik ve performans pazarlaması — sözleşmeyle değil sonuçla bağlı.
       </motion.p>
 
       <motion.div
-        {...fadeUp(1.3)}
-        className="flex flex-wrap items-center justify-center gap-5 md:gap-6"
+        {...fadeUp(1.15)}
+        className="flex flex-wrap items-center justify-center gap-6"
       >
         <a href="#iletisim" className="bigbtn">
           <span className="bigbtn__label">Projeni getir</span>

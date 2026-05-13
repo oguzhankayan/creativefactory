@@ -64,16 +64,17 @@ type HeroGeometricProps = {
  * - Background koyu lacivert (matches --bg #13161c)
  * - Shape paleti: lime aksan + nötr tonlar (rainbow yerine markaya sadık)
  * - Children olarak hero içeriği (başlık, copy, CTA'lar) dışarıdan veriliyor
+ * - badge undefined ise badge render edilmez
  */
-export function HeroGeometric({ badge = "Bağımsız kreatif stüdyo · İstanbul", children }: HeroGeometricProps) {
+export function HeroGeometric({ badge, children }: HeroGeometricProps) {
   return (
-    <div
+    <section
       id="top"
-      className="relative min-h-[92vh] w-full flex items-center justify-center overflow-hidden bg-[#13161c]"
+      className="relative min-h-screen w-full overflow-hidden bg-[#13161c]"
     >
-      <div className="absolute inset-0 bg-gradient-to-br from-[#c8ff3d]/[0.04] via-transparent to-white/[0.03] blur-3xl" />
+      <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-[#c8ff3d]/[0.04] via-transparent to-white/[0.03] blur-3xl" />
 
-      <div className="absolute inset-0 overflow-hidden">
+      <div className="pointer-events-none absolute inset-0 overflow-hidden">
         <ElegantShape
           delay={0.3}
           width={600}
@@ -96,7 +97,7 @@ export function HeroGeometric({ badge = "Bağımsız kreatif stüdyo · İstanbu
           height={80}
           rotate={-8}
           gradient="from-violet-400/[0.10]"
-          className="left-[5%] md:left-[10%] bottom-[5%] md:bottom-[10%]"
+          className="left-[5%] md:left-[10%] bottom-[8%] md:bottom-[12%]"
         />
         <ElegantShape
           delay={0.6}
@@ -116,29 +117,25 @@ export function HeroGeometric({ badge = "Bağımsız kreatif stüdyo · İstanbu
         />
       </div>
 
-      <div className="relative z-10 container mx-auto px-5 md:px-10 pt-32 md:pt-40 pb-20">
-        <div className="max-w-5xl mx-auto text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, delay: 0.5, ease: [0.25, 0.4, 0.25, 1] }}
-            className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/[0.03] border border-white/[0.08] mb-8 md:mb-10"
-          >
-            <Circle className="h-2 w-2 fill-[#c8ff3d] text-[#c8ff3d]" />
-            <span className="text-[12px] uppercase tracking-[0.14em] text-white/60">{badge}</span>
-          </motion.div>
+      <div className="relative z-10 flex min-h-screen w-full items-center justify-center px-5 md:px-10 pt-28 md:pt-32 pb-24">
+        <div className="mx-auto w-full max-w-[1080px] text-center">
+          {badge ? (
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1, delay: 0.5, ease: [0.25, 0.4, 0.25, 1] }}
+              className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/[0.03] border border-white/[0.08] mb-10 md:mb-14"
+            >
+              <Circle className="h-2 w-2 fill-[#c8ff3d] text-[#c8ff3d]" />
+              <span className="text-[12px] uppercase tracking-[0.14em] text-white/60">{badge}</span>
+            </motion.div>
+          ) : null}
 
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, delay: 0.7, ease: [0.25, 0.4, 0.25, 1] }}
-          >
-            {children}
-          </motion.div>
+          {children}
         </div>
       </div>
 
-      <div className="absolute inset-0 bg-gradient-to-t from-[#13161c] via-transparent to-[#13161c]/80 pointer-events-none" />
-    </div>
+      <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#13161c] via-transparent to-[#13161c]/80" />
+    </section>
   );
 }
