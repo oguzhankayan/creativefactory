@@ -11,26 +11,25 @@ const fadeUp = (delay: number) => ({
 
 export default function Hero() {
   return (
-    <HeroGeometric badge="Bağımsız kreatif stüdyo · İstanbul · 2026">
+    <HeroGeometric badge="Bağımsız kreatif stüdyo · İstanbul">
       <motion.h1
         {...fadeUp(0.9)}
-        className="font-bold tracking-tight leading-[0.94] mb-8 md:mb-10"
-        style={{ fontSize: "clamp(56px, 10.5vw, 172px)", letterSpacing: "-0.04em" }}
+        className="text-5xl sm:text-7xl md:text-8xl font-bold mb-6 md:mb-8 tracking-tight leading-[1.02]"
       >
-        <span className="block bg-clip-text text-transparent bg-gradient-to-b from-white to-white/85">
+        <span className="bg-clip-text text-transparent bg-gradient-to-b from-white to-white/80">
           Tasarlamıyoruz.
         </span>
-        <span className="block text-[#c8ff3d]">
-          Marka <em className="not-italic">inşa</em> ederiz.
+        <br />
+        <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#c8ff3d] via-white/95 to-[#c8ff3d]/70">
+          Marka inşa ederiz.
         </span>
       </motion.h1>
 
       <motion.p
         {...fadeUp(1.1)}
-        className="text-[16px] md:text-[18px] leading-[1.5] text-white/55 max-w-[560px] mx-auto mb-10"
+        className="text-base sm:text-lg md:text-xl text-white/45 mb-10 leading-relaxed font-light tracking-wide max-w-xl mx-auto px-4"
       >
-        Web, kimlik, içerik ve performans pazarlaması. Stratejiden lansman sonrasına kadar
-        markanızı uzun vadeli büyütecek tek bir ekip — sözleşmeyle değil sonuçla bağlı.
+        Web, kimlik, içerik ve performans pazarlaması — sözleşmeyle değil sonuçla bağlı.
       </motion.p>
 
       <motion.div
