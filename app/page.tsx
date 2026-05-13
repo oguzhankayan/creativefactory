@@ -8,6 +8,7 @@ import Clients from "@/components/Clients";
 import Services from "@/components/Services";
 import Process from "@/components/Process";
 import Comparison from "@/components/Comparison";
+import TestimonialsSection from "@/components/TestimonialsSection";
 import CTA from "@/components/CTA";
 import Footer from "@/components/Footer";
 import ServiceDetail from "@/components/ServiceDetail";
@@ -75,6 +76,7 @@ export default function Home() {
         <Services onOpen={openService} />
         <Process />
         <Comparison />
+        <TestimonialsSection />
         <CTA />
       </main>
       <Footer />
