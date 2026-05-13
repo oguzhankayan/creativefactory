@@ -101,13 +101,14 @@ export function Testimonials() {
                       ? "rgba(255,255,255,0.10)"
                       : "transparent",
                   boxShadow: isActive ? "0 10px 25px -5px rgba(0,0,0,0.3)" : "none",
+                  paddingTop: showName ? "8px" : "2px",
+                  paddingBottom: showName ? "8px" : "2px",
+                  paddingLeft: showName ? "8px" : "2px",
+                  paddingRight: showName ? "16px" : "2px",
                   transition:
                     "background 500ms cubic-bezier(0.4,0,0.2,1), box-shadow 500ms cubic-bezier(0.4,0,0.2,1), padding 500ms cubic-bezier(0.4,0,0.2,1)",
                 }}
-                className={cn(
-                  "relative flex items-center gap-0 rounded-full cursor-pointer",
-                  showName ? "pr-4 pl-2 py-2" : "p-0.5"
-                )}
+                className="relative flex items-center gap-0 rounded-full cursor-pointer"
               >
                 {/* Avatar */}
                 <div className="relative flex-shrink-0">
