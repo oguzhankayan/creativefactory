@@ -95,13 +95,17 @@ export function Testimonials() {
                 onMouseEnter={() => setHoveredIndex(index)}
                 onMouseLeave={() => setHoveredIndex(null)}
                 style={{
-                  background: isActive ? "#ffffff" : "transparent",
+                  background: isActive
+                    ? "#ffffff"
+                    : isHovered
+                      ? "rgba(255,255,255,0.10)"
+                      : "transparent",
                   boxShadow: isActive ? "0 10px 25px -5px rgba(0,0,0,0.3)" : "none",
-                  transition: "background 500ms cubic-bezier(0.4,0,0.2,1), box-shadow 500ms cubic-bezier(0.4,0,0.2,1), padding 500ms cubic-bezier(0.4,0,0.2,1)",
+                  transition:
+                    "background 500ms cubic-bezier(0.4,0,0.2,1), box-shadow 500ms cubic-bezier(0.4,0,0.2,1), padding 500ms cubic-bezier(0.4,0,0.2,1)",
                 }}
                 className={cn(
                   "relative flex items-center gap-0 rounded-full cursor-pointer",
-                  !isActive && "hover:bg-white/[0.06]",
                   showName ? "pr-4 pl-2 py-2" : "p-0.5"
                 )}
               >
@@ -121,15 +125,25 @@ export function Testimonials() {
                 </div>
 
                 <div
-                  className={cn(
-                    "grid transition-all duration-500 ease-[cubic-bezier(0.4,0,0.2,1)]",
-                    showName ? "grid-cols-[1fr] opacity-100 ml-3" : "grid-cols-[0fr] opacity-0 ml-0"
-                  )}
+                  style={{
+                    display: "grid",
+                    gridTemplateColumns: showName ? "1fr" : "0fr",
+                    opacity: showName ? 1 : 0,
+                    marginLeft: showName ? "0.625rem" : "0",
+                    transition:
+                      "grid-template-columns 500ms cubic-bezier(0.4,0,0.2,1), opacity 500ms cubic-bezier(0.4,0,0.2,1), margin-left 500ms cubic-bezier(0.4,0,0.2,1)",
+                  }}
                 >
-                  <div className="overflow-hidden">
+                  <div style={{ overflow: "hidden" }}>
                     <span
-                      style={{ color: isActive ? "#13161c" : "#ffffff" }}
-                      className="text-sm font-medium whitespace-nowrap block transition-colors duration-300"
+                      style={{
+                        color: isActive ? "#13161c" : "#ffffff",
+                        whiteSpace: "nowrap",
+                        display: "block",
+                        fontSize: "0.875rem",
+                        fontWeight: 500,
+                        transition: "color 300ms",
+                      }}
                     >
                       {testimonial.author}
                     </span>
