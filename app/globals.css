@@ -1,5 +1,13 @@
 @import "tailwindcss";
 
+/* shadcn-compatible theme tokens (resolve text-foreground, bg-background, etc.) */
+@theme inline {
+  --color-background: #13161c;
+  --color-foreground: #ffffff;
+  --color-muted: #1e222b;
+  --color-muted-foreground: rgba(255, 255, 255, 0.55);
+}
+
 /* ──────────────────────────────────────────────────────────────────
    Creative Factory — design system tokens
    ────────────────────────────────────────────────────────────────── */
