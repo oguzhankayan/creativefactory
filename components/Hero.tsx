@@ -14,24 +14,24 @@ export default function Hero() {
     <HeroGeometric>
       <motion.h1
         {...fadeUp(0.7)}
-        className="font-bold tracking-tight mb-16 md:mb-24"
+        className="flex flex-col gap-4 md:gap-6 font-bold tracking-tight mb-20 md:mb-28"
         style={{
-          fontSize: "clamp(36px, 6.5vw, 88px)",
-          letterSpacing: "-0.035em",
-          lineHeight: 1.12,
+          fontSize: "clamp(32px, 5.5vw, 72px)",
+          letterSpacing: "-0.03em",
+          lineHeight: 1.15,
         }}
       >
-        <span className="block bg-clip-text text-transparent bg-gradient-to-b from-white to-white/80">
+        <span className="bg-clip-text text-transparent bg-gradient-to-b from-white to-white/80">
           Tasarlamıyoruz.
         </span>
-        <span className="block bg-clip-text text-transparent bg-gradient-to-r from-[#c8ff3d] via-white/95 to-[#c8ff3d]/70">
+        <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#c8ff3d] via-white/95 to-[#c8ff3d]/70">
           Marka inşa ederiz.
         </span>
       </motion.h1>
 
       <motion.p
         {...fadeUp(0.95)}
-        className="max-w-[760px] text-base sm:text-lg md:text-xl text-white/55 mb-16 md:mb-24 leading-relaxed font-light tracking-wide"
+        className="max-w-[640px] text-base sm:text-lg text-white/50 mb-20 md:mb-28 leading-relaxed font-light tracking-wide"
       >
         Web, kimlik, içerik ve performans pazarlaması — sözleşmeyle değil sonuçla bağlı.
       </motion.p>
