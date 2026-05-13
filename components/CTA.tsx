@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Reveal from "./Reveal";
 import { TypewriterEffectSmooth } from "./ui/typewriter-effect";
+import ShapeBackdrop from "./ui/shape-backdrop";
 import { SERVICES } from "@/lib/services";
 
 const HEADLINE_WORDS = [
@@ -13,18 +14,30 @@ const HEADLINE_WORDS = [
 export default function CTA() {
   const [sent, setSent] = useState(false);
   return (
-    <section className="cta" id="iletisim">
-      <div className="cta__grid">
+    <section
+      className="cta"
+      id="iletisim"
+      style={{ position: "relative", overflow: "hidden" }}
+    >
+      <ShapeBackdrop variant="section" />
+      <div className="cta__grid" style={{ position: "relative", zIndex: 1 }}>
         <div className="cta__left">
           <Reveal as="div">
             <span className="kicker">İletişim</span>
           </Reveal>
-          <Reveal as="h2" delay={100} className="cta__h" style={{ margin: 0, padding: 0 }}>
-            <TypewriterEffectSmooth
-              words={HEADLINE_WORDS}
-              className="my-0"
-              cursorClassName="bg-[#c8ff3d] h-[0.7em] self-end mb-2"
-            />
+          <Reveal as="h2" delay={100} className="cta__h" style={{ margin: 0, padding: 0, position: "relative" }}>
+            {/* Invisible sizing reference — reserves final width so animation doesn't push the form */}
+            <span aria-hidden="true" style={{ visibility: "hidden", whiteSpace: "nowrap" }}>
+              Önce konuşalım.
+            </span>
+            {/* Animated overlay */}
+            <span style={{ position: "absolute", inset: 0, display: "block" }}>
+              <TypewriterEffectSmooth
+                words={HEADLINE_WORDS}
+                className="my-0"
+                cursorClassName="bg-[#c8ff3d] h-[0.7em] self-end mb-2"
+              />
+            </span>
           </Reveal>
           <Reveal as="p" delay={180} className="cta__copy">
             Ücretsiz 30 dakikalık keşif görüşmesinde projeni anlıyoruz, neye ihtiyacın olduğunu
