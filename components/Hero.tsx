@@ -31,10 +31,16 @@ export default function Hero() {
 
       <motion.p
         {...fadeUp(0.95)}
-        className="mx-auto text-lg sm:text-xl md:text-2xl text-white/65 font-light tracking-wide"
+        className="text-white/65 font-light tracking-wide"
         style={{
-          maxWidth: "min(780px, 100%)",
-          lineHeight: 1.5,
+          display: "block",
+          width: "100%",
+          maxWidth: "720px",
+          marginLeft: "auto",
+          marginRight: "auto",
+          fontSize: "clamp(17px, 1.5vw, 21px)",
+          lineHeight: 1.55,
+          textAlign: "center",
           marginBottom: "clamp(40px, 4.5vw, 72px)",
         }}
       >
