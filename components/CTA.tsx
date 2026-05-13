@@ -2,7 +2,13 @@
 
 import { useState } from "react";
 import Reveal from "./Reveal";
+import { TypewriterEffectSmooth } from "./ui/typewriter-effect";
 import { SERVICES } from "@/lib/services";
+
+const HEADLINE_WORDS = [
+  { text: "Önce" },
+  { text: "konuşalım.", className: "text-[#c8ff3d]" },
+];
 
 export default function CTA() {
   const [sent, setSent] = useState(false);
@@ -13,8 +19,12 @@ export default function CTA() {
           <Reveal as="div">
             <span className="kicker">İletişim</span>
           </Reveal>
-          <Reveal as="h2" delay={100} className="cta__h">
-            Önce konuşalım.
+          <Reveal as="h2" delay={100} className="cta__h" style={{ margin: 0, padding: 0 }}>
+            <TypewriterEffectSmooth
+              words={HEADLINE_WORDS}
+              className="my-0"
+              cursorClassName="bg-[#c8ff3d] h-[0.7em] self-end mb-2"
+            />
           </Reveal>
           <Reveal as="p" delay={180} className="cta__copy">
             Ücretsiz 30 dakikalık keşif görüşmesinde projeni anlıyoruz, neye ihtiyacın olduğunu
