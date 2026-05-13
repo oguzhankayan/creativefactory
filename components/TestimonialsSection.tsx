@@ -14,7 +14,7 @@ export default function TestimonialsSection() {
           Müşterilerimiz <span className="ink">ne diyor.</span>
         </Reveal>
       </div>
-      <div style={{ padding: "0 var(--gutter)" }}>
+      <div style={{ padding: "0 var(--gutter) 120px" }}>
         <Testimonials />
       </div>
     </section>

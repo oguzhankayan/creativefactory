@@ -6,27 +6,28 @@ import { cn } from "@/lib/utils";
 const testimonials = [
   {
     id: 1,
-    quote: "This changed everything for me.",
-    author: "Sarah Chen",
-    role: "Designer at Figma",
+    quote: "Sıfırdan brand sistemi kurduk, lansmanda hazırız. Tek elden uçtan uca.",
+    author: "Aylin Karaca",
+    role: "Marka Direktörü · Iconica",
     avatar:
-      "https://images.unsplash.com/photo-1701615004837-40d8573b6652?q=80&w=1480&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1701615004837-40d8573b6652?q=80&w=400&auto=format&fit=crop",
   },
   {
     id: 2,
-    quote: "Simply brilliant. Nothing else compares.",
-    author: "Marcus Johnson",
-    role: "Engineer at Vercel",
+    quote:
+      "Web tarafı hem hızlı hem ölçeklenebilir çıktı. Üç ay süren işi altı haftada bitirdiler.",
+    author: "Burak Demir",
+    role: "CTO · Akasya Token",
     avatar:
-      "https://plus.unsplash.com/premium_photo-1671656349218-5218444643d8?q=80&w=1287&auto=format&fit=crop",
+      "https://plus.unsplash.com/premium_photo-1671656349218-5218444643d8?q=80&w=400&auto=format&fit=crop",
   },
   {
     id: 3,
-    quote: "The attention to detail is unmatched.",
-    author: "Elena Rodriguez",
-    role: "Founder at Craft",
+    quote: "Sosyal medya tonu nihayet markamıza benziyor. Topluluk kendini anlatıyor şimdi.",
+    author: "Ezgi Yıldız",
+    role: "Pazarlama · Köpüklü",
     avatar:
-      "https://images.unsplash.com/photo-1607746882042-944635dfe10e?q=80&w=2670&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1607746882042-944635dfe10e?q=80&w=400&auto=format&fit=crop",
   },
 ];
 
