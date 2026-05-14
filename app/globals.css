@@ -1873,32 +1873,6 @@ img { display: block; max-width: 100%; }
   display: block;
 }
 
-/* Process step thumbnail */
-.proc__media {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: clamp(56px, 8vw, 88px);
-  height: clamp(56px, 8vw, 88px);
-  margin-right: clamp(20px, 2.5vw, 32px);
-  border: 1px solid var(--border);
-  background: var(--bg-elev);
-  overflow: hidden;
-  flex-shrink: 0;
-  align-self: center;
-}
-.proc__img {
-  width: 100%; height: 100%;
-  object-fit: cover;
-  display: block;
-  opacity: 0.85;
-  transition: opacity .3s, transform .5s cubic-bezier(.2,.7,.2,1);
-}
-.proc__row:hover .proc__img { opacity: 1; transform: scale(1.05); }
-.proc__row {
-  align-items: center;
-}
-
 /* About — studio image */
 .about__studio-media {
   max-width: var(--container);
