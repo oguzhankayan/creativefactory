@@ -17,6 +17,7 @@ const SECTION_MESSAGES: Record<string, string> = {
 
 const PATH_MESSAGES: Record<string, string> = {
   "/kvkk": "Merhaba, KVKK ile ilgili sormak istediklerim var.",
+  "/cerez-politikasi": "Merhaba, çerez politikası ile ilgili sormak istediklerim var.",
   "/kullanim-kosullari": "Merhaba, kullanım koşulları ile ilgili sormak istediklerim var.",
 };
 

@@ -31,6 +31,7 @@ export default function Footer() {
         <span>© 2026 Creative Factory · Silivri, İstanbul</span>
         <span className="footer__legal">
           <a href="/kvkk">KVKK</a>
+          <a href="/cerez-politikasi">Çerez politikası</a>
           <a href="/kullanim-kosullari">Kullanım koşulları</a>
         </span>
         <a href="#top" className="footer__up">

@@ -34,7 +34,7 @@ export default function CookieConsent() {
     <div className="cookie" role="dialog" aria-live="polite" aria-label="Çerez tercihi">
       <p className="cookie__text">
         Siteyi geliştirmek için temel çerezler kullanıyoruz. Detaylar için{" "}
-        <a href="/kvkk">KVKK</a>.
+        <a href="/cerez-politikasi">Çerez Politikası</a>.
       </p>
       <div className="cookie__actions">
         <button type="button" className="cookie__btn cookie__btn--ghost" onClick={() => decide("reject")}>

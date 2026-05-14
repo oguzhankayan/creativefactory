@@ -13,7 +13,7 @@ const KEY = "27b440b3be5fe7d9af1821a147277aa2";
 const KEY_LOCATION = `https://${HOST}/${KEY}.txt`;
 const ENDPOINT = "https://api.indexnow.org/indexnow";
 
-const STATIC_PATHS = ["/", "/hakkimizda", "/kvkk", "/kullanim-kosullari"];
+const STATIC_PATHS = ["/", "/hakkimizda", "/kvkk", "/cerez-politikasi", "/kullanim-kosullari"];
 
 function extractServiceSlugs() {
   const src = readFileSync(join(ROOT, "lib/services.ts"), "utf8");
