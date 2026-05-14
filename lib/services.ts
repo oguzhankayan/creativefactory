@@ -168,5 +168,6 @@ export const SERVICES: Service[] = [
 export const NAV = [
   { label: "Hizmetler", href: "/#hizmetler" },
   { label: "Süreç", href: "/#surec" },
+  { label: "Insights", href: "/blog" },
   { label: "Hakkımızda", href: "/hakkimizda" },
 ];

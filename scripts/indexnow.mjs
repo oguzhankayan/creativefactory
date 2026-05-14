@@ -16,6 +16,7 @@ const ENDPOINT = "https://api.indexnow.org/indexnow";
 const STATIC_PATHS = [
   "/",
   "/hakkimizda",
+  "/blog",
   "/en",
   "/en/about",
   "/en/contact",
@@ -24,8 +25,8 @@ const STATIC_PATHS = [
   "/kullanim-kosullari",
 ];
 
-function extractServiceSlugs() {
-  const src = readFileSync(join(ROOT, "lib/services.ts"), "utf8");
+function extractSlugs(file) {
+  const src = readFileSync(join(ROOT, file), "utf8");
   const slugs = [];
   const rx = /slug:\s*"([^"]+)"/g;
   let m;
@@ -34,10 +35,12 @@ function extractServiceSlugs() {
 }
 
 async function main() {
-  const slugs = extractServiceSlugs();
+  const serviceSlugs = extractSlugs("lib/services.ts");
+  const postSlugs = extractSlugs("lib/posts.ts");
   const urlList = [
     ...STATIC_PATHS.map((p) => `https://${HOST}${p}`),
-    ...slugs.map((s) => `https://${HOST}/hizmetler/${s}`),
+    ...serviceSlugs.map((s) => `https://${HOST}/hizmetler/${s}`),
+    ...postSlugs.map((s) => `https://${HOST}/blog/${s}`),
   ];
 
   const body = {
