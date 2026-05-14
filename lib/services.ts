@@ -92,7 +92,7 @@ export const SERVICES: Service[] = [
     image: "/generated/services/sosyal-medya-icerik.jpg",
     heroImage: "/generated/service-hero/sosyal-medya-icerik.jpg",
     imagePrompt: "Abstract dark composition representing social content: floating vertical phone-shaped glass panels in deep black space, blurred glowing reels frames, soft motion trails, warm amber accent glow, minimal cinematic look, no text, no logos.",
-    heroImagePrompt: "Cinematic dark editorial scene of a content studio: ring light glow off camera, vertical smartphone on a tripod silhouetted, soft amber rim light, deep black background, moody premium agency aesthetic, ultra detailed, no text.",
+    heroImagePrompt: "Cinematic top-down editorial flat lay on a matte black desk: a smartphone face-up showing a blurred vertical video grid, scattered storyboard sketch cards, sticky notes, a leather notebook, a coffee cup with steam, headphones, a small clip-on lavalier mic — all arranged casually, warm amber side light, deep blacks, soft volumetric haze, shallow depth of field, ultra detailed, premium editorial agency mood, no readable text, no logos.",
   },
   {
     n: "04",
