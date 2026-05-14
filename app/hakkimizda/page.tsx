@@ -11,7 +11,14 @@ export const metadata: Metadata = {
   title: "Hakkımızda · Creative Factory",
   description:
     "İstanbul merkezli bağımsız kreatif stüdyo Creative Factory. On yıllık deneyim, multidisipliner ekip, sonuç odaklı çalışma.",
-  alternates: { canonical: `${SITE_URL}/hakkimizda` },
+  alternates: {
+    canonical: `${SITE_URL}/hakkimizda`,
+    languages: {
+      "tr-TR": `${SITE_URL}/hakkimizda`,
+      "en-US": `${SITE_URL}/en/about`,
+      "x-default": `${SITE_URL}/hakkimizda`,
+    },
+  },
   openGraph: {
     title: "Hakkımızda · Creative Factory",
     description: "İstanbul merkezli bağımsız kreatif stüdyo.",

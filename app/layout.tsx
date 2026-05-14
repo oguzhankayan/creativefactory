@@ -37,7 +37,14 @@ export const metadata: Metadata = {
   },
   description: SITE_DESC,
   keywords: SITE_KEYWORDS,
-  alternates: { canonical: "/" },
+  alternates: {
+    canonical: "/",
+    languages: {
+      "tr-TR": "/",
+      "en-US": "/en",
+      "x-default": "/",
+    },
+  },
   openGraph: {
     title: SITE_TITLE,
     description: SITE_DESC,
