@@ -8,7 +8,7 @@ const PAIRS = [
   { ord: "Teslim et, unut", us: "Uzun vadeli ortaklık" },
   { ord: "Belirsiz sonuçlar", us: "Ölçülebilir KPI'lar" },
   { ord: "Geç dönüşler", us: "Günlük canlı iletişim" },
-  { ord: "Sadece güzel görünsün", us: "Güzel + sonuç getiren" },
+  { ord: "Yalnız güzel görünüm", us: "Güzel ve sonuç getiren" },
 ];
 
 export default function Comparison() {
@@ -63,7 +63,7 @@ export default function Comparison() {
         <div>
           <Reveal as="div">
             <span className="kicker">
-              Fark — {String(idx + 1).padStart(2, "0")} / {String(PAIRS.length).padStart(2, "0")}
+              Fark · {String(idx + 1).padStart(2, "0")} / {String(PAIRS.length).padStart(2, "0")}
             </span>
           </Reveal>
           <Reveal as="h2" delay={100} className="section-h">
@@ -71,8 +71,7 @@ export default function Comparison() {
           </Reveal>
         </div>
         <Reveal as="p" delay={180} className="section-sub section-sub--right">
-          Aşağıya doğru kaydır — bir markaya yatırdığın saatler, hangi süreçle çalıştığına göre
-          farklı çıktı üretir.
+          Aşağıya kaydır. Aynı saatler, farklı süreçlerle farklı sonuç üretir.
         </Reveal>
       </div>
 

@@ -15,7 +15,7 @@ const TextRevealByWord: FC<TextRevealByWordProps> = ({ text, className }) => {
 
   const { scrollYProgress } = useScroll({
     target: targetRef,
-    offset: ["start start", "end end"],
+    offset: ["start 0.85", "end 0.15"],
   });
   const words = text.split(" ");
 
@@ -23,7 +23,7 @@ const TextRevealByWord: FC<TextRevealByWordProps> = ({ text, className }) => {
     <div
       ref={targetRef}
       className={cn(className)}
-      style={{ position: "relative", zIndex: 0, height: "200vh" }}
+      style={{ position: "relative", zIndex: 0, height: "300vh" }}
     >
       <div
         style={{
@@ -34,6 +34,7 @@ const TextRevealByWord: FC<TextRevealByWordProps> = ({ text, className }) => {
           alignItems: "center",
           justifyContent: "center",
           padding: "0 24px",
+          willChange: "transform",
         }}
       >
         <p
@@ -68,14 +69,16 @@ interface WordProps {
 }
 
 const Word: FC<WordProps> = ({ children, progress, range }) => {
-  const opacity = useTransform(progress, range, [0.2, 1]);
+  const opacity = useTransform(progress, range, [0.15, 1]);
+  const y = useTransform(progress, range, [12, 0]);
   return (
     <motion.span
       style={{
         opacity,
+        y,
         display: "inline-block",
         marginRight: "0.32em",
-        color: "#ffffff",
+        color: "var(--fg-strong)",
       }}
     >
       {children}

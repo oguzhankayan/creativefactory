@@ -8,7 +8,7 @@ export default function TestimonialsSection() {
     <section className="testi" id="referanslar" style={{ borderTop: "1px solid var(--border)" }}>
       <div className="section-head section-head--center">
         <Reveal as="div">
-          <span className="kicker">Referanslar — 03 ses</span>
+          <span className="kicker">Referanslar · 03 ses</span>
         </Reveal>
         <Reveal as="h2" delay={100} className="section-h section-h--center">
           Müşterilerimiz <span className="ink">ne diyor.</span>

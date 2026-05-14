@@ -18,19 +18,15 @@ export default function Hero() {
         style={{
           fontSize: "clamp(40px, 5.8vw, 76px)",
           letterSpacing: "-0.035em",
-          lineHeight: 1.08,
+          lineHeight: 1.05,
           display: "flex",
           flexDirection: "column",
-          gap: "clamp(6px, 0.6vw, 12px)",
-          marginBottom: "clamp(28px, 3vw, 44px)",
+          gap: "clamp(2px, 0.3vw, 6px)",
+          marginBottom: "clamp(22px, 2.2vw, 32px)",
         }}
       >
-        <span className="bg-clip-text text-transparent bg-gradient-to-br from-white via-white/70 to-white/40 drop-shadow-[0_0_24px_rgba(255,255,255,0.12)]">
-          Tasarlamıyoruz.
-        </span>
-        <span className="bg-clip-text text-transparent bg-gradient-to-br from-[#c8ff3d] via-white to-[#c8ff3d]/50 drop-shadow-[0_0_32px_rgba(200,255,61,0.25)]">
-          Marka inşa ederiz.
-        </span>
+        <span style={{ color: "var(--fg-strong)" }}>Sadece tasarlamıyoruz.</span>
+        <span style={{ color: "var(--accent)" }}>Marka inşa ediyoruz.</span>
       </motion.h1>
 
       <motion.p
@@ -39,21 +35,21 @@ export default function Hero() {
         style={{
           display: "block",
           width: "100%",
-          maxWidth: "720px",
+          maxWidth: "640px",
           marginLeft: "auto",
           marginRight: "auto",
           fontSize: "clamp(17px, 1.5vw, 21px)",
           lineHeight: 1.55,
           textAlign: "center",
-          marginBottom: "clamp(40px, 4.5vw, 72px)",
+          marginBottom: "clamp(48px, 5vw, 72px)",
         }}
       >
-        Web, kimlik, içerik ve performans pazarlaması — sözleşmeyle değil sonuçla bağlı.
+        Web, kimlik, içerik ve performans pazarlaması. Sözleşmeyle değil, sonuçla bağlıyız.
       </motion.p>
 
       <motion.div
         {...fadeUp(1.15)}
-        className="flex flex-wrap items-center justify-center gap-6"
+        className="flex flex-col sm:flex-row items-center justify-center gap-x-8 gap-y-5"
       >
         <a href="#iletisim" className="bigbtn">
           <span className="bigbtn__label">Projeni getir</span>
@@ -62,7 +58,7 @@ export default function Hero() {
           </span>
         </a>
         <a href="#hizmetler" className="ghostlink">
-          Hizmetlere göz at
+          Hizmetleri gör
         </a>
       </motion.div>
     </HeroGeometric>

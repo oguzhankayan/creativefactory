@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import Reveal from "./Reveal";
 import type { Service } from "@/lib/services";
 
@@ -25,38 +26,20 @@ function FAQItem({ q, a }: { q: string; a: string }) {
 type Props = {
   service: Service;
   services: Service[];
-  onBack: () => void;
-  onOpen: (slug: string) => void;
 };
 
-export default function ServiceDetail({ service, services, onBack, onOpen }: Props) {
+export default function ServiceDetail({ service, services }: Props) {
   const others = services.filter((s) => s.slug !== service.slug);
 
-  const handleBack = (e: React.MouseEvent) => {
-    e.preventDefault();
-    onBack();
-  };
-  const handleOther = (slug: string) => (e: React.MouseEvent) => {
-    e.preventDefault();
-    onOpen(slug);
-  };
-  const handleContact = (e: React.MouseEvent) => {
-    e.preventDefault();
-    onBack();
-    setTimeout(() => {
-      window.location.hash = "iletisim";
-    }, 40);
-  };
-
   return (
-    <main className="sd" key={service.slug}>
+    <main id="main" className="sd" key={service.slug}>
       <div className="sd__topbar">
-        <a href="#" onClick={handleBack} className="sd__back">
+        <Link href="/" className="sd__back">
           <span className="sd__back-arrow" aria-hidden="true">
             ←
           </span>
           <span>Tüm hizmetler</span>
-        </a>
+        </Link>
         <span className="sd__crumbs">
           <span className="dim">Hizmet</span>
           <span className="sd__crumb-sep" aria-hidden="true">
@@ -64,9 +47,6 @@ export default function ServiceDetail({ service, services, onBack, onOpen }: Pro
           </span>
           <span>{service.title}</span>
         </span>
-        <a href="#iletisim" onClick={handleContact} className="btn btn--pill sd__contact">
-          <span className="btn__dot" /> Konuşalım
-        </a>
       </div>
 
       <section className="sd__hero">
@@ -82,6 +62,20 @@ export default function ServiceDetail({ service, services, onBack, onOpen }: Pro
         <Reveal as="p" delay={300} className="sd__intro">
           {service.intro}
         </Reveal>
+        {service.heroImage && (
+          <Reveal delay={380} className="sd__hero-media">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src={service.heroImage}
+              alt=""
+              width={1600}
+              height={896}
+              loading="eager"
+              decoding="async"
+              className="sd__hero-img"
+            />
+          </Reveal>
+        )}
       </section>
 
       <section className="sd__grid">
@@ -98,20 +92,6 @@ export default function ServiceDetail({ service, services, onBack, onOpen }: Pro
           <span className="kicker">Süre</span>
           <p className="sd__big">{service.timeline}</p>
         </Reveal>
-
-        <Reveal delay={200} className="sd__col">
-          <span className="kicker">Örnek projeler</span>
-          <ul className="sd__cases">
-            {service.cases.map((c) => (
-              <li key={c}>
-                <span>{c}</span>
-                <span className="sd__case-arrow" aria-hidden="true">
-                  ↗
-                </span>
-              </li>
-            ))}
-          </ul>
-        </Reveal>
       </section>
 
       <section className="sd__faq-section">
@@ -121,11 +101,11 @@ export default function ServiceDetail({ service, services, onBack, onOpen }: Pro
               <span className="kicker">Sık sorulanlar</span>
             </Reveal>
             <Reveal as="h2" delay={100} className="section-h">
-              Detaylar.
+              Akla ilk gelenler.
             </Reveal>
           </div>
           <Reveal as="p" delay={180} className="section-sub section-sub--right">
-            Aklındaki soru burada yoksa direkt sor — sıradan bir sorudan başlamak için müthiş bir
+            Aklındaki soru burada yoksa direkt sor; sıradan bir soru bile başlamak için iyi bir
             bahane.
           </Reveal>
         </div>
@@ -140,15 +120,15 @@ export default function ServiceDetail({ service, services, onBack, onOpen }: Pro
         <Reveal className="sd__cta-card">
           <div>
             <span className="kicker">Hazırsan</span>
-            <h2 className="sd__cta-h">{service.title} mu lazım?</h2>
-            <p className="sd__cta-copy">30 dakikalık keşif görüşmesi — bağlayıcı değil.</p>
+            <h2 className="sd__cta-h">Bu işi konuşalım.</h2>
+            <p className="sd__cta-copy">30 dakikalık keşif görüşmesi. Hiçbir taahhüt yok.</p>
           </div>
-          <a href="#iletisim" onClick={handleContact} className="bigbtn">
+          <Link href="/#iletisim" className="bigbtn">
             <span className="bigbtn__label">Konuşalım</span>
             <span className="bigbtn__arrow" aria-hidden="true">
               ↗
             </span>
-          </a>
+          </Link>
         </Reveal>
       </section>
 
@@ -166,18 +146,14 @@ export default function ServiceDetail({ service, services, onBack, onOpen }: Pro
         <ul className="sd__others-list">
           {others.map((s, i) => (
             <Reveal as="li" key={s.slug} delay={i * 60}>
-              <a
-                href={`#/hizmetler/${s.slug}`}
-                onClick={handleOther(s.slug)}
-                className="sd__other"
-              >
+              <Link href={`/hizmetler/${s.slug}`} className="sd__other">
                 <span className="sd__other-n">{s.n}</span>
                 <span className="sd__other-title">{s.title}</span>
                 <span className="sd__other-tags">{s.tags.join(" · ")}</span>
                 <span className="sd__other-arrow" aria-hidden="true">
                   ↗
                 </span>
-              </a>
+              </Link>
             </Reveal>
           ))}
         </ul>

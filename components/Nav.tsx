@@ -1,11 +1,15 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { NAV } from "@/lib/services";
 
 type Props = { onHome?: () => void };
 
 export default function Nav({ onHome }: Props) {
+  const pathname = usePathname();
+  const isHome = pathname === "/";
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
 
@@ -17,6 +21,7 @@ export default function Nav({ onHome }: Props) {
   }, []);
 
   const handleHome = (e: React.MouseEvent) => {
+    if (!isHome) return; // Let Link navigate to "/"
     e.preventDefault();
     if (onHome) onHome();
     window.scrollTo({ top: 0, behavior: "smooth" });
@@ -25,7 +30,12 @@ export default function Nav({ onHome }: Props) {
   return (
     <header className={`nav ${scrolled ? "nav--scrolled" : ""}`}>
       <div className="nav__row">
-        <a className="nav__brand" href="#top" onClick={handleHome} aria-label="Creative Factory ana sayfa">
+        <Link
+          className="nav__brand"
+          href={isHome ? "#top" : "/"}
+          onClick={handleHome}
+          aria-label="Creative Factory ana sayfa"
+        >
           <span className="brand-mark" aria-hidden="true">
             <span className="brand-mark__dot" />
             <span className="brand-mark__dot" />
@@ -35,21 +45,20 @@ export default function Nav({ onHome }: Props) {
           <span className="brand-word">
             Creative Factory<span className="brand-sup">©</span>
           </span>
-        </a>
+        </Link>
 
         <nav className="nav__links" aria-label="Ana menü">
           {NAV.map((l) => (
-            <a key={l.href} href={l.href} className="navlink">
+            <Link key={l.href} href={l.href} className="navlink">
               {l.label}
-            </a>
+            </Link>
           ))}
         </nav>
 
         <div className="nav__meta">
-          <span className="label">Müsait — Q3 2026</span>
-          <a href="#iletisim" className="btn btn--pill">
-            <span className="btn__dot" /> Çalışmaya başla
-          </a>
+          <Link href="/#iletisim" className="btn btn--pill">
+            <span className="btn__dot" /> Konuşalım
+          </Link>
         </div>
 
         <button
@@ -69,7 +78,7 @@ export default function Nav({ onHome }: Props) {
       {open && (
         <div className="nav__sheet" role="dialog" aria-modal="true">
           {NAV.map((l, i) => (
-            <a
+            <Link
               key={l.href}
               href={l.href}
               onClick={() => setOpen(false)}
@@ -77,11 +86,15 @@ export default function Nav({ onHome }: Props) {
               style={{ animationDelay: `${80 + i * 60}ms` }}
             >
               <span>0{i + 1}</span> {l.label}
-            </a>
+            </Link>
           ))}
-          <a href="#iletisim" onClick={() => setOpen(false)} className="btn btn--pill sheet-cta">
-            <span className="btn__dot" /> Çalışmaya başla
-          </a>
+          <Link
+            href="/#iletisim"
+            onClick={() => setOpen(false)}
+            className="btn btn--pill sheet-cta"
+          >
+            <span className="btn__dot" /> Konuşalım
+          </Link>
         </div>
       )}
     </header>

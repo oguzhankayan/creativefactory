@@ -24,17 +24,14 @@ export default function Footer() {
           <span className="footer__sep" aria-hidden="true">
             /
           </span>
-          <a href="#">Instagram</a>
-          <a href="#">LinkedIn</a>
-          <a href="#">Behance</a>
+          <a href="https://www.instagram.com/creativefactory.tr" target="_blank" rel="noopener noreferrer">Instagram</a>
         </nav>
       </div>
       <div className="footer__bottom">
-        <span>© 2026 Creative Factory · Bomonti, İstanbul</span>
+        <span>© 2026 Creative Factory · Silivri, İstanbul</span>
         <span className="footer__legal">
-          <a href="#">KVKK</a>
-          <a href="#">Çerez</a>
-          <a href="#">Kullanım</a>
+          <a href="/kvkk">KVKK</a>
+          <a href="/kullanim-kosullari">Kullanım koşulları</a>
         </span>
         <a href="#top" className="footer__up">
           Yukarı ↑

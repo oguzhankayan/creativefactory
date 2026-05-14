@@ -43,7 +43,7 @@ export function ElegantShape({
             "absolute inset-0 rounded-full",
             "bg-gradient-to-r to-transparent",
             gradient,
-            "backdrop-blur-[2px] border-2 border-white/[0.15]",
+            "border-2 border-white/[0.15]",
             "shadow-[0_8px_32px_0_rgba(255,255,255,0.06)]",
             "after:absolute after:inset-0 after:rounded-full",
             "after:bg-[radial-gradient(circle_at_50%_50%,rgba(255,255,255,0.18),transparent_70%)]"
@@ -70,7 +70,7 @@ export function HeroGeometric({ badge, children }: HeroGeometricProps) {
   return (
     <section
       id="top"
-      className="relative min-h-screen w-full overflow-hidden bg-[#13161c]"
+      className="relative min-h-screen w-full overflow-hidden bg-[var(--bg)]"
     >
       <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-[#c8ff3d]/[0.04] via-transparent to-white/[0.03] blur-3xl" />
 
@@ -109,7 +109,7 @@ export function HeroGeometric({ badge, children }: HeroGeometricProps) {
         />
       </div>
 
-      <div className="relative z-10 flex min-h-screen w-full items-center justify-center px-5 md:px-10 pt-28 md:pt-32 pb-24">
+      <div className="relative z-10 flex min-h-screen w-full items-center justify-center px-5 md:px-10 pt-44 md:pt-52 pb-28 md:pb-32">
         <div className="mx-auto w-full max-w-[1080px] text-center">
           {badge ? (
             <motion.div
@@ -118,7 +118,7 @@ export function HeroGeometric({ badge, children }: HeroGeometricProps) {
               transition={{ duration: 1, delay: 0.5, ease: [0.25, 0.4, 0.25, 1] }}
               className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/[0.03] border border-white/[0.08] mb-10 md:mb-14"
             >
-              <Circle className="h-2 w-2 fill-[#c8ff3d] text-[#c8ff3d]" />
+              <Circle className="h-2 w-2 fill-[var(--accent)] text-[var(--accent)]" />
               <span className="text-[12px] uppercase tracking-[0.14em] text-white/60">{badge}</span>
             </motion.div>
           ) : null}
@@ -127,7 +127,7 @@ export function HeroGeometric({ badge, children }: HeroGeometricProps) {
         </div>
       </div>
 
-      <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#13161c] via-transparent to-[#13161c]/80" />
+      <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[var(--bg)] via-transparent to-[var(--bg)]/80" />
     </section>
   );
 }

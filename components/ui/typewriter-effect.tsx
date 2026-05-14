@@ -56,7 +56,7 @@ export const TypewriterEffect = ({
         animate={{ opacity: 1 }}
         transition={{ duration: 0.8, repeat: Infinity, repeatType: "reverse" }}
         className={cn(
-          "inline-block rounded-sm w-[4px] h-4 md:h-6 lg:h-10 bg-[#c8ff3d]",
+          "inline-block rounded-sm w-[4px] h-4 md:h-6 lg:h-10 bg-[var(--accent)]",
           cursorClassName
         )}
       />
@@ -104,7 +104,7 @@ export const TypewriterEffectSmooth = ({
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.8, repeat: Infinity, repeatType: "reverse" }}
-        className={cn("block rounded-sm w-[4px] h-8 sm:h-10 md:h-14 bg-[#c8ff3d]", cursorClassName)}
+        className={cn("block rounded-sm w-[4px] h-8 sm:h-10 md:h-14 bg-[var(--accent)]", cursorClassName)}
       />
     </div>
   );

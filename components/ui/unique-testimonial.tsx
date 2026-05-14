@@ -6,28 +6,27 @@ import { cn } from "@/lib/utils";
 const testimonials = [
   {
     id: 1,
-    quote: "Sıfırdan brand sistemi kurduk, lansmanda hazırız. Tek elden uçtan uca.",
-    author: "Aylin Karaca",
-    role: "Marka Direktörü · Iconica",
-    avatar:
-      "https://images.unsplash.com/photo-1701615004837-40d8573b6652?q=80&w=400&auto=format&fit=crop",
+    quote:
+      "Creative Factory'den projelerimiz için 360 derece hizmet alabiliyoruz. Bizi hiçbir zaman yarı yolda bırakmadılar.",
+    author: "Özgür Ahmet Köse",
+    role: "Founder · Brand Story Agency",
+    avatar: "/ozgurahmet.jpeg",
   },
   {
     id: 2,
     quote:
-      "Web tarafı hem hızlı hem ölçeklenebilir çıktı. Üç ay süren işi altı haftada bitirdiler.",
-    author: "Burak Demir",
-    role: "CTO · Akasya Token",
-    avatar:
-      "https://plus.unsplash.com/premium_photo-1671656349218-5218444643d8?q=80&w=400&auto=format&fit=crop",
+      "Sürücü kursumuz ve anaokulumuzun tüm reklam projelerinde ve dijital süreçlerinde kendileriyle çalışmak bizim için çok büyük bir mutluluk.",
+    author: "Fatih Maşalacı",
+    role: "Founder · Maşalacı Sürücü Kursu",
+    avatar: "/fatihmasalaci.png",
   },
   {
     id: 3,
-    quote: "Sosyal medya tonu nihayet markamıza benziyor. Topluluk kendini anlatıyor şimdi.",
-    author: "Ezgi Yıldız",
-    role: "Pazarlama · Köpüklü",
-    avatar:
-      "https://images.unsplash.com/photo-1607746882042-944635dfe10e?q=80&w=400&auto=format&fit=crop",
+    quote:
+      "Kişisel markamın oluşmasında ve dijital dünyaya adım attığım ilk süreçte kendileriyle çalıştık. Çok güzel noktalara geldik.",
+    author: "Nurper Özcan",
+    role: "Founder · Fratelli Cheese",
+    avatar: "/nurperozcan.jpg",
   },
 ];
 
@@ -51,34 +50,73 @@ export function Testimonials() {
   };
 
   return (
-    <div className="flex flex-col items-center gap-10 py-16">
+    <div className="flex flex-col items-center py-16" style={{ gap: "clamp(40px, 5vw, 64px)" }}>
       {/* Quote Container */}
-      <div className="relative px-8">
-        <span className="absolute -left-2 -top-6 text-7xl font-serif text-white/[0.06] select-none pointer-events-none">
+      <div className="relative px-10">
+        <span
+          aria-hidden="true"
+          style={{
+            position: "absolute",
+            left: "-4px",
+            top: "-32px",
+            fontSize: "96px",
+            lineHeight: 1,
+            color: "color-mix(in oklab, var(--fg) 5%, transparent)",
+            fontFamily: "Georgia, 'Times New Roman', serif",
+            userSelect: "none",
+            pointerEvents: "none",
+          }}
+        >
           &ldquo;
         </span>
 
         <p
           className={cn(
-            "text-2xl md:text-3xl font-light text-white text-center max-w-xl leading-relaxed transition-all duration-400 ease-out",
+            "text-2xl md:text-3xl font-light text-center max-w-2xl transition-all duration-400 ease-out",
             isAnimating ? "opacity-0 blur-sm scale-[0.98]" : "opacity-100 blur-0 scale-100"
           )}
+          style={{
+            color: "var(--fg)",
+            lineHeight: 1.45,
+            letterSpacing: "-0.005em",
+          }}
         >
           {displayedQuote}
         </p>
 
-        <span className="absolute -right-2 -bottom-8 text-7xl font-serif text-white/[0.06] select-none pointer-events-none">
+        <span
+          aria-hidden="true"
+          style={{
+            position: "absolute",
+            right: "-4px",
+            bottom: "-44px",
+            fontSize: "96px",
+            lineHeight: 1,
+            color: "color-mix(in oklab, var(--fg) 5%, transparent)",
+            fontFamily: "Georgia, 'Times New Roman', serif",
+            userSelect: "none",
+            pointerEvents: "none",
+          }}
+        >
           &rdquo;
         </span>
       </div>
 
-      <div className="flex flex-col items-center gap-6 mt-2">
+      <div className="flex flex-col items-center" style={{ gap: "clamp(20px, 2.4vw, 32px)" }}>
         {/* Role text */}
         <p
           className={cn(
-            "text-xs text-white/55 tracking-[0.2em] uppercase transition-all duration-500 ease-out",
+            "transition-all duration-500 ease-out",
             isAnimating ? "opacity-0 translate-y-2" : "opacity-100 translate-y-0"
           )}
+          style={{
+            fontSize: "11px",
+            color: "var(--fg-muted)",
+            letterSpacing: "0.16em",
+            textTransform: "uppercase",
+            fontWeight: 500,
+            fontVariantNumeric: "tabular-nums",
+          }}
         >
           {displayedRole}
         </p>
@@ -97,19 +135,23 @@ export function Testimonials() {
                 onMouseLeave={() => setHoveredIndex(null)}
                 style={{
                   background: isActive
-                    ? "#ffffff"
+                    ? "var(--fg)"
                     : isHovered
-                      ? "rgba(255,255,255,0.10)"
+                      ? "color-mix(in oklab, var(--fg) 8%, transparent)"
                       : "transparent",
-                  boxShadow: isActive ? "0 10px 25px -5px rgba(0,0,0,0.3)" : "none",
-                  paddingTop: showName ? "8px" : "2px",
-                  paddingBottom: showName ? "8px" : "2px",
-                  paddingLeft: showName ? "8px" : "2px",
-                  paddingRight: showName ? "16px" : "2px",
+                  border: isActive
+                    ? "1px solid transparent"
+                    : "1px solid color-mix(in oklab, var(--fg) 12%, transparent)",
+                  paddingTop: showName ? "6px" : "3px",
+                  paddingBottom: showName ? "6px" : "3px",
+                  paddingLeft: showName ? "6px" : "3px",
+                  paddingRight: showName ? "14px" : "3px",
                   transition:
-                    "background 500ms cubic-bezier(0.4,0,0.2,1), box-shadow 500ms cubic-bezier(0.4,0,0.2,1), padding 500ms cubic-bezier(0.4,0,0.2,1)",
+                    "background 400ms cubic-bezier(0.2,0.7,0.2,1), border-color 400ms cubic-bezier(0.2,0.7,0.2,1), padding 400ms cubic-bezier(0.2,0.7,0.2,1)",
                 }}
                 className="relative flex items-center gap-0 rounded-full cursor-pointer"
+                aria-label={`${testimonial.author}, ${testimonial.role}`}
+                aria-pressed={isActive}
               >
                 {/* Avatar */}
                 <div className="relative flex-shrink-0">
@@ -117,12 +159,16 @@ export function Testimonials() {
                   <img
                     src={testimonial.avatar}
                     alt={testimonial.author}
-                    style={isActive ? { boxShadow: "0 0 0 2px rgba(19,22,28,0.25)" } : undefined}
+                    loading="lazy"
+                    decoding="async"
+                    width={36}
+                    height={36}
                     className={cn(
-                      "w-8 h-8 rounded-full object-cover",
-                      "transition-all duration-500 ease-[cubic-bezier(0.4,0,0.2,1)]",
+                      "rounded-full object-cover",
+                      "transition-transform duration-500 ease-[cubic-bezier(0.2,0.7,0.2,1)]",
                       !isActive && "hover:scale-105"
                     )}
+                    style={{ width: "36px", height: "36px" }}
                   />
                 </div>
 
@@ -131,19 +177,20 @@ export function Testimonials() {
                     display: "grid",
                     gridTemplateColumns: showName ? "1fr" : "0fr",
                     opacity: showName ? 1 : 0,
-                    marginLeft: showName ? "0.625rem" : "0",
+                    marginLeft: showName ? "10px" : "0",
                     transition:
-                      "grid-template-columns 500ms cubic-bezier(0.4,0,0.2,1), opacity 500ms cubic-bezier(0.4,0,0.2,1), margin-left 500ms cubic-bezier(0.4,0,0.2,1)",
+                      "grid-template-columns 400ms cubic-bezier(0.2,0.7,0.2,1), opacity 400ms cubic-bezier(0.2,0.7,0.2,1), margin-left 400ms cubic-bezier(0.2,0.7,0.2,1)",
                   }}
                 >
                   <div style={{ overflow: "hidden" }}>
                     <span
                       style={{
-                        color: isActive ? "#13161c" : "#ffffff",
+                        color: isActive ? "var(--bg)" : "var(--fg)",
                         whiteSpace: "nowrap",
                         display: "block",
-                        fontSize: "0.875rem",
+                        fontSize: "13px",
                         fontWeight: 500,
+                        letterSpacing: "-0.005em",
                         transition: "color 300ms",
                       }}
                     >

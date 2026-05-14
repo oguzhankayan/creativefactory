@@ -59,6 +59,7 @@ export default function Reveal({
   delay = 0,
   as: As = "div",
   className = "",
+  style,
   ...rest
 }: RevealProps) {
   const [ref, shown] = useReveal();
@@ -66,7 +67,7 @@ export default function Reveal({
     <As
       ref={ref}
       className={`reveal ${shown ? "is-in" : ""} ${className}`}
-      style={{ transitionDelay: `${delay}ms` }}
+      style={{ transitionDelay: `${delay}ms`, ...(style as object) }}
       {...rest}
     >
       {children}
