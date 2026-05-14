@@ -20,9 +20,32 @@ const TextRevealByWord: FC<TextRevealByWordProps> = ({ text, className }) => {
   const words = text.split(" ");
 
   return (
-    <div ref={targetRef} className={cn("relative z-0 h-[200vh]", className)}>
-      <div className="sticky top-0 mx-auto flex h-screen max-w-5xl items-center bg-transparent px-4 md:px-8">
-        <p className="flex flex-wrap text-2xl font-bold leading-[1.15] md:text-3xl lg:text-4xl xl:text-5xl">
+    <div
+      ref={targetRef}
+      className={cn(className)}
+      style={{ position: "relative", zIndex: 0, height: "200vh" }}
+    >
+      <div
+        style={{
+          position: "sticky",
+          top: 0,
+          height: "100vh",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          padding: "0 24px",
+        }}
+      >
+        <p
+          style={{
+            maxWidth: "1100px",
+            textAlign: "center",
+            fontWeight: 700,
+            lineHeight: 1.2,
+            fontSize: "clamp(24px, 3.6vw, 48px)",
+            letterSpacing: "-0.02em",
+          }}
+        >
           {words.map((word, i) => {
             const start = i / words.length;
             const end = start + 1 / words.length;
@@ -45,13 +68,18 @@ interface WordProps {
 }
 
 const Word: FC<WordProps> = ({ children, progress, range }) => {
-  const opacity = useTransform(progress, range, [0.18, 1]);
+  const opacity = useTransform(progress, range, [0.2, 1]);
   return (
-    <span className="relative mx-1.5 lg:mx-2.5">
-      <motion.span style={{ opacity }} className="text-white">
-        {children}
-      </motion.span>
-    </span>
+    <motion.span
+      style={{
+        opacity,
+        display: "inline-block",
+        marginRight: "0.32em",
+        color: "#ffffff",
+      }}
+    >
+      {children}
+    </motion.span>
   );
 };
 
