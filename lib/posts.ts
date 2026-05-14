@@ -8,7 +8,7 @@ export type Post = {
   readMinutes: number;
   author: string;
   tags: string[];
-  /** SEO description (140–160ch) */
+  /** SEO description (140-160ch) */
   seoDescription: string;
   /** Meta keywords (Yandex/Naver) */
   keywords: string[];
@@ -42,7 +42,7 @@ export const POSTS: Post[] = [
     slug: "kurumsal-web-sitesi-yenileme-karar-cercevesi",
     title: "Kurumsal Web Sitesi Yenileme: Şirket Sahibinin Karar Çerçevesi",
     excerpt:
-      "Mevcut siteyi yenilemek mi, sıfırdan kurmak mı? Platform seçimi, CMS, SEO devri, lansman sonrası bakım — karar verirken bakılacak yedi başlık.",
+      "Mevcut siteyi yenilemek mi, sıfırdan kurmak mı? Platform seçimi, CMS, SEO devri, lansman sonrası bakım, karar verirken bakılacak yedi başlık.",
     date: "2026-04-22",
     readMinutes: 11,
     author: "Oğuzhan Kayan",

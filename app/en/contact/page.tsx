@@ -7,7 +7,7 @@ const SITE_URL = "https://creativefactory.tr";
 export const metadata: Metadata = {
   title: "Contact · Creative Factory",
   description:
-    "Get in touch with Creative Factory — Istanbul-based independent creative studio. 30-minute discovery call, zero commitment.",
+    "Get in touch with Creative Factory, Istanbul-based independent creative studio. 30-minute discovery call, zero commitment.",
   alternates: {
     canonical: `${SITE_URL}/en/contact`,
     languages: {
@@ -40,7 +40,7 @@ export default function EnContactPage() {
             </h1>
             <p className="en-page-hero__sub">
               Tell us about your project. We reply within one business day. The first call
-              is 30 minutes, zero commitment — just a clear read on whether we&apos;re a fit.
+              is 30 minutes, zero commitment, just a clear read on whether we&apos;re a fit.
             </p>
           </div>
         </section>
@@ -65,7 +65,7 @@ export default function EnContactPage() {
               Türkiye
             </p>
             <p className="en-contact__note">
-              Visits by appointment. Most discovery calls run over video — that&apos;s the
+              Visits by appointment. Most discovery calls run over video, that&apos;s the
               fastest way to start.
             </p>
           </div>
@@ -81,7 +81,7 @@ export default function EnContactPage() {
               WhatsApp ↗
             </a>
             <p className="en-contact__note">
-              Quickest channel during business hours (10:00–19:00 GMT+3, Mon–Fri).
+              Quickest channel during business hours (10:00-19:00 GMT+3, Mon-Fri).
             </p>
           </div>
 

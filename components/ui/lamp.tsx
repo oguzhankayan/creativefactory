@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
 
 /**
- * LampContainer — brand-adapted from the original "lamp" UI component.
+ * LampContainer, brand-adapted from the original "lamp" UI component.
  * Background: var(--bg). Light: var(--accent) (lime).
  */
 export const LampContainer = ({

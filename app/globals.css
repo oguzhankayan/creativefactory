@@ -1838,7 +1838,7 @@ img { display: block; max-width: 100%; }
 }
 
 /* ──────────────────────────────────────────────────────────────────
-   Generated imagery — slots
+   Generated imagery, slots
    ────────────────────────────────────────────────────────────────── */
 
 /* Service card thumbnail */
@@ -1884,7 +1884,7 @@ img { display: block; max-width: 100%; }
 }
 
 /* ──────────────────────────────────────────────────────────────────
-   EN pages — minimal, reuses shared classes
+   EN pages, minimal, reuses shared classes
    ────────────────────────────────────────────────────────────────── */
 .en-hero {
   border-bottom: 1px solid var(--border);
@@ -2244,7 +2244,7 @@ a.en-contact__big:hover { color: var(--accent); }
   border-top: 1px solid var(--border);
 }
 
-/* About — studio image */
+/* About, studio image */
 .about__studio-media {
   max-width: var(--container);
   margin: 0 auto;

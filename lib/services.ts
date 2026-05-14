@@ -34,7 +34,7 @@ export const SERVICES: Service[] = [
     tagline: "Markanın dijital evi.",
     intro: "Her siteyi sıfırdan kurguluyoruz; şablon yok. Hız, erişilebilirlik ve SEO başından dahil. Geliştirme tarafında Next.js, Webflow veya Shopify; projeye göre seçiyoruz.",
     deliverables: ["Bilgi mimarisi ve wireframe", "Tasarım sistemi (Figma)", "Geliştirme (Next.js / Webflow / Shopify)", "Headless CMS yapılandırması", "Lansman, eğitim ve dokümantasyon", "Lansman sonrası 3 ay teknik destek"],
-    timeline: "4–10 hafta",
+    timeline: "4-10 hafta",
     faqs: [
       { q: "Hangi platformu seçiyorsunuz?", a: "İhtiyaca göre Next.js, Webflow veya Shopify; karma çözümler de mümkün. İlk görüşmede uygun olanı birlikte seçiyoruz." },
       { q: "Lansman sonrası bakım var mı?", a: "İlk 3 ay dahil. Sonrası için aylık paket veya saatlik destek; acil müdahale hattı ayrı." },
@@ -57,7 +57,7 @@ export const SERVICES: Service[] = [
     tagline: "Karar dizisi, dosya değil.",
     intro: "Marka, bir logodan çok bir karar dizisi. Hangi kelimeyi seçtiğin, hangi rengi yan yana koyduğun, hangi tonu kullandığın; hepsi birbirine bağlı. Sıfırdan kuruyor, kullanım kılavuzunu yazıyor, ekibinin uygulayabileceği şekilde teslim ediyoruz.",
     deliverables: ["Stratejik konumlandırma", "Naming (gerekirse) ve ses tonu", "Logotype + işaret + tipografi sistemi", "Renk paleti ve görsel sistem", "Uygulama örnekleri (kart, sosyal, sunum)", "Marka kılavuzu (PDF + Figma)"],
-    timeline: "6–8 hafta",
+    timeline: "6-8 hafta",
     faqs: [
       { q: "Sadece logo yapıyor musunuz?", a: "Hayır. Marka sisteminin tamamını kuruyoruz; tek başına logo işi almıyoruz." },
       { q: "Naming desteği veriyor musunuz?", a: "Evet, gerekiyorsa. Domain ve marka tescil kontrolü dahil." },
@@ -92,7 +92,7 @@ export const SERVICES: Service[] = [
     image: "/generated/services/sosyal-medya-icerik.jpg",
     heroImage: "/generated/service-hero/sosyal-medya-icerik.jpg",
     imagePrompt: "Abstract dark composition representing social content: floating vertical phone-shaped glass panels in deep black space, blurred glowing reels frames, soft motion trails, warm amber accent glow, minimal cinematic look, no text, no logos.",
-    heroImagePrompt: "Cinematic top-down editorial flat lay on a matte black desk: a smartphone face-up showing a blurred vertical video grid, scattered storyboard sketch cards, sticky notes, a leather notebook, a coffee cup with steam, headphones, a small clip-on lavalier mic — all arranged casually, warm amber side light, deep blacks, soft volumetric haze, shallow depth of field, ultra detailed, premium editorial agency mood, no readable text, no logos.",
+    heroImagePrompt: "Cinematic top-down editorial flat lay on a matte black desk: a smartphone face-up showing a blurred vertical video grid, scattered storyboard sketch cards, sticky notes, a leather notebook, a coffee cup with steam, headphones, a small clip-on lavalier mic, all arranged casually, warm amber side light, deep blacks, soft volumetric haze, shallow depth of field, ultra detailed, premium editorial agency mood, no readable text, no logos.",
   },
   {
     n: "04",
@@ -126,7 +126,7 @@ export const SERVICES: Service[] = [
     tagline: "Hareketli, kalıcı içerikler.",
     intro: "Tek konseptli reklam filminden 3D motion'a; markanın hikâyesini ekrana taşıyoruz. Prodüksiyon ve post-prodüksiyon iç ekipte.",
     deliverables: ["Konsept ve storyboard", "Çekim (lokasyon + stüdyo)", "Post-prodüksiyon ve renk yönetimi", "2D / 3D motion grafik", "Müzik ve seslendirme", "Platforma özgü formatlar"],
-    timeline: "3–8 hafta",
+    timeline: "3-8 hafta",
     faqs: [
       { q: "Stop motion ya da 3D yapıyor musunuz?", a: "Evet, ikisi de iç ekibimizde. Karmaşık 3D projelerde dış stüdyo desteği alıyoruz." },
       { q: "Sadece kurgu desteği veriyor musunuz?", a: "Evet. Mevcut çekimlerin varsa sadece post-prodüksiyon paketi mümkün." },
@@ -149,7 +149,7 @@ export const SERVICES: Service[] = [
     tagline: "App Store'dan kullanıcıya.",
     intro: "Markaya özel mobil uygulama, sadece bir mobil sürüm değil. UX, performans ve store optimizasyonunu birlikte tasarlıyoruz. Native (Swift, Kotlin) veya cross-platform (React Native, Flutter); ihtiyaca göre seçiyoruz.",
     deliverables: ["UX akışı ve prototip", "UI tasarım sistemi (Figma)", "Geliştirme (iOS / Android / cross-platform)", "Backend ve API entegrasyonu", "App Store ve Play Store yayını", "Lansman sonrası 3 ay teknik destek ve hata düzeltme"],
-    timeline: "8–16 hafta",
+    timeline: "8-16 hafta",
     faqs: [
       { q: "Native mi cross-platform mu?", a: "Performans-kritik (oyun, AR, ağır animasyon) veya platforma özel yetenek gerektiren projelerde native. Çoğu üretkenlik ve içerik uygulaması için React Native daha hızlı ve uygun maliyetli." },
       { q: "Store yayınını siz mi yapıyorsunuz?", a: "Evet. App Store Connect ve Google Play Console kurulumu, metadata, screenshot ve review süreci dahil." },

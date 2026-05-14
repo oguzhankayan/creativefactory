@@ -54,7 +54,7 @@ const PRINCIPLES = [
   {
     n: "04",
     t: "Long-term partnership.",
-    d: "Not a single launch — a sustainable relationship. Some brands have been with us for 8+ years.",
+    d: "Not a single launch, a sustainable relationship. Some brands have been with us for 8+ years.",
   },
 ];
 
@@ -84,7 +84,7 @@ export default function EnAboutPage() {
             </h1>
             <p className="en-page-hero__sub">
               Founded in Istanbul. A decade of brand work in Türkiye and abroad. One team,
-              one table, one set of decisions — for every brand we partner with.
+              one table, one set of decisions, for every brand we partner with.
             </p>
           </div>
         </section>
@@ -151,7 +151,7 @@ export default function EnAboutPage() {
             <h2 className="about__founder-name">Oğuzhan Kayan</h2>
             <p className="about__founder-bio">
               I founded Creative Factory as an independent studio. For over a decade I&apos;ve
-              been working with brands that Türkiye loves — across strategy, social media,
+              been working with brands that Türkiye loves, across strategy, social media,
               and mobile development. One thing I believe: we&apos;re bound by outcomes, not
               contracts.
             </p>
@@ -191,7 +191,7 @@ export default function EnAboutPage() {
               Multidisciplinary. <span className="ink">Under one roof.</span>
             </h2>
             <p className="about__ekip-body">
-              Strategy, design, development, content, production, and performance — all
+              Strategy, design, development, content, production, and performance, all
               in-house. For complex 3D or specialized media we partner externally; the
               rest is here.
             </p>

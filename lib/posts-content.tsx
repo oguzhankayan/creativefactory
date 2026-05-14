@@ -19,7 +19,7 @@ const POST_BODIES: Record<string, ReactNode> = {
       <Tldr>
         <p>
           Türkiye'de ciddi bir marka kimliği yatırımı 2026 itibarıyla{" "}
-          <strong>250.000₺ – 1.500.000₺</strong> bandında yapılıyor. Asıl maliyet
+          <strong>250.000₺ - 1.500.000₺</strong> bandında yapılıyor. Asıl maliyet
           logo değil; strateji, ses tonu, tipografi sistemi ve uygulama
           örneklerini içeren tutarlı bir karar dizisi. Doğru yapıldığında 5-8
           yıl ömürlü; yanlış yapıldığında bir yılda yeniden açılması gerekiyor.
@@ -32,7 +32,7 @@ const POST_BODIES: Record<string, ReactNode> = {
         görsel&quot; olarak düşünür. Oysa bir marka kimliği, şirketin önündeki
         5-8 yıl boyunca alacağı yüzlerce küçük kararı tek bir çerçeveye oturtan
         bir sistemdir. Tipografi seçimi, ses tonu, fotoğraf yönü, ürün
-        ambalajı, sosyal medya paylaşımı, sunum şablonu, e-posta imzası — her
+        ambalajı, sosyal medya paylaşımı, sunum şablonu, e-posta imzası, her
         biri ayrı ayrı düşünüldüğünde tutarsızlaşır, tek bir karar dizisinde
         kuruldukları zaman birbirini güçlendirir.
       </p>
@@ -145,7 +145,7 @@ const POST_BODIES: Record<string, ReactNode> = {
           dayanır: SEO devri, içerik mimarisi, CMS, hız, e-ticaret, entegrasyon
           ve bakım. Çoğu kurumsal projede sıfırdan kurmak,{" "}
           <strong>yenilemekten daha hızlı ve daha ucuz</strong>{" "}
-          bitiyor — şaşırtıcı ama gerçek.
+          bitiyor, şaşırtıcı ama gerçek.
         </p>
       </Tldr>
 
@@ -195,7 +195,7 @@ const POST_BODIES: Record<string, ReactNode> = {
       <h2>SEO devri en sık yapılan hata</h2>
       <p>
         Yeni site lansmandan sonra organik trafiğin %40-70 düşmesi tipik bir
-        senaryodur — <em>SEO devri planlanmadığı zaman</em>. Devir
+        senaryodur, <em>SEO devri planlanmadığı zaman</em>. Devir
         planında bulunması gereken minimum kontroller:
       </p>
       <ol>
@@ -223,7 +223,7 @@ const POST_BODIES: Record<string, ReactNode> = {
         daha hızlı sonuç verir.
       </p>
 
-      <h2>Performans — bir tasarım kararıdır</h2>
+      <h2>Performans, bir tasarım kararıdır</h2>
       <p>
         Core Web Vitals (LCP, INP, CLS) artık ranking sinyali. Lansmandaki
         kayıpların büyük kısmı performans regresyonundan kaynaklanır.
@@ -237,7 +237,7 @@ const POST_BODIES: Record<string, ReactNode> = {
       </ul>
       <p>
         Tasarımcının görsel başına ayırdığı kilobayt, geliştiricinin
-        kullandığı font sayısı, üçüncü taraf scriptlerin yüklenme stratejisi —
+        kullandığı font sayısı, üçüncü taraf scriptlerin yüklenme stratejisi,
         hepsi performans kararıdır.
       </p>
 
@@ -328,7 +328,7 @@ const POST_BODIES: Record<string, ReactNode> = {
         </li>
       </ol>
 
-      <h2>Hibrit model — en az takdir edilen seçenek</h2>
+      <h2>Hibrit model, en az takdir edilen seçenek</h2>
       <p>
         Pratiğin gösterdiği şudur: en başarılı kurguların yarısından çoğu
         hibrit. Şöyle çalışır:
@@ -401,7 +401,7 @@ const POST_BODIES: Record<string, ReactNode> = {
           CAC ve LTV iki tane sayıdan ibaret değil; bir{" "}
           <strong>karar makinesi</strong>. CAC &lt; LTV ×{" "}
           <em>0.33</em> hedefi pazarlamanın sağlık göstergesidir.
-          Attribution yanlış kurulduğunda her şey çöker — Türkiye'de en sık
+          Attribution yanlış kurulduğunda her şey çöker, Türkiye'de en sık
           gördüğümüz sorun GA4 + Meta ile reklam platformu arasındaki yanlı
           atıflama.
         </p>
@@ -461,7 +461,7 @@ const POST_BODIES: Record<string, ReactNode> = {
         Reklam platformları (Meta, Google, TikTok) varsayılan olarak
         atıflamalarını <em>kendi lehlerine</em> yapıyor. Üç platform birden
         aynı satışı &quot;benim&quot; diye sayabilir. Bu yüzden tek doğru
-        kaynak şirketinizin GA4'ü veya — ideal olarak — server-side bir
+        kaynak şirketinizin GA4'ü veya, ideal olarak, server-side bir
         attribution kurgusu.
       </p>
       <p>
@@ -469,7 +469,7 @@ const POST_BODIES: Record<string, ReactNode> = {
       </p>
       <ol>
         <li>GA4'te enhanced measurement + dönüşüm event'ları</li>
-        <li>Meta CAPI (Conversions API) — server-side</li>
+        <li>Meta CAPI (Conversions API), server-side</li>
         <li>Google Ads enhanced conversions</li>
         <li>UTM parametrelerinin sıkı disiplinle kullanılması</li>
         <li>Aylık olarak GA4 ↔ platform raporlarının çapraz kontrolü</li>

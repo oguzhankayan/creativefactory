@@ -14,12 +14,12 @@ const SERVICE_EN: Record<string, { title: string; body: string; tags: string[] }
   },
   "marka-kimligi": {
     title: "Brand Identity",
-    body: "Not a logo — a brand system. Typography, voice, applications, and visual language built to last.",
+    body: "Not a logo, a brand system. Typography, voice, applications, and visual language built to last.",
     tags: ["Logotype", "Voice", "Brand book"],
   },
   "sosyal-medya-icerik": {
     title: "Social & Content",
-    body: "Weekly planning, shooting, editing, community. One consistent voice — under one roof.",
+    body: "Weekly planning, shooting, editing, community. One consistent voice, under one roof.",
     tags: ["Editorial", "Reels", "Community"],
   },
   "dijital-reklam": {
@@ -42,7 +42,7 @@ const SERVICE_EN: Record<string, { title: string; body: string; tags: string[] }
 export const metadata: Metadata = {
   title: "Creative Factory · Independent brand studio · Istanbul",
   description:
-    "Istanbul-based independent creative studio. Brand identity, web, content, performance marketing and mobile — all under one roof.",
+    "Istanbul-based independent creative studio. Brand identity, web, content, performance marketing and mobile, all under one roof.",
   alternates: {
     canonical: `${SITE_URL}/en`,
     languages: {
@@ -53,7 +53,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: "Creative Factory · Independent brand studio",
-    description: "Brand, web, content and performance — one roof, no subcontracting.",
+    description: "Brand, web, content and performance, one roof, no subcontracting.",
     url: `${SITE_URL}/en`,
     type: "website",
     locale: "en_US",
@@ -76,7 +76,7 @@ export default function EnHome() {
               <span className="ink">We build brands.</span>
             </h1>
             <p className="en-hero__sub">
-              Brand, web, content, and performance marketing — under one roof. Bound by
+              Brand, web, content, and performance marketing, under one roof. Bound by
               outcomes, not contracts.
             </p>
             <div className="en-hero__cta">
@@ -98,7 +98,7 @@ export default function EnHome() {
               </h2>
             </div>
             <p className="section-sub section-sub--right">
-              Six things we do well. Everything a brand needs to grow — gathered under one
+              Six things we do well. Everything a brand needs to grow, gathered under one
               roof; no subcontracting.
             </p>
           </div>

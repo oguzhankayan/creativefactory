@@ -13,13 +13,13 @@ const STEPS = [
     n: "02",
     title: "Strateji",
     body: "Konumlandırma, mesajlar ve yol haritası. Verilen her karar tek bir dosyada.",
-    dur: "1–2 hafta",
+    dur: "1-2 hafta",
   },
   {
     n: "03",
     title: "Uygulama",
     body: "Tasarım, geliştirme ve içerik üretimi. Haftalık demo, anında geri bildirim.",
-    dur: "4–8 hafta",
+    dur: "4-8 hafta",
   },
   {
     n: "04",
