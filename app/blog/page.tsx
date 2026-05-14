@@ -72,42 +72,38 @@ export default function BlogIndexPage() {
 
         <section className="blog__list" aria-label="Yazılar">
           {POSTS.map((p, i) => (
-            <Reveal
-              as={Link}
-              key={p.slug}
-              delay={i * 60}
-              href={`/blog/${p.slug}`}
-              className="postcard"
-            >
-              {p.heroImage && (
-                <div className="postcard__media">
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img
-                    src={p.heroImage}
-                    alt=""
-                    width={1600}
-                    height={896}
-                    loading="lazy"
-                    decoding="async"
-                    className="postcard__img"
-                  />
+            <Reveal key={p.slug} delay={i * 60} className="postcard-wrap">
+              <Link href={`/blog/${p.slug}`} className="postcard">
+                {p.heroImage && (
+                  <div className="postcard__media">
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img
+                      src={p.heroImage}
+                      alt=""
+                      width={1600}
+                      height={896}
+                      loading="lazy"
+                      decoding="async"
+                      className="postcard__img"
+                    />
+                  </div>
+                )}
+                <div className="postcard__body">
+                  <div className="postcard__meta">
+                    <span>{formatDate(p.date)}</span>
+                    <span aria-hidden="true">·</span>
+                    <span>{p.readMinutes} dk okuma</span>
+                  </div>
+                  <h2 className="postcard__title">{p.title}</h2>
+                  <p className="postcard__excerpt">{p.excerpt}</p>
+                  <ul className="postcard__tags">
+                    {p.tags.map((t) => (
+                      <li key={t}>{t}</li>
+                    ))}
+                  </ul>
+                  <span className="postcard__detail">Okumaya başla ↗</span>
                 </div>
-              )}
-              <div className="postcard__body">
-                <div className="postcard__meta">
-                  <span>{formatDate(p.date)}</span>
-                  <span aria-hidden="true">·</span>
-                  <span>{p.readMinutes} dk okuma</span>
-                </div>
-                <h2 className="postcard__title">{p.title}</h2>
-                <p className="postcard__excerpt">{p.excerpt}</p>
-                <ul className="postcard__tags">
-                  {p.tags.map((t) => (
-                    <li key={t}>{t}</li>
-                  ))}
-                </ul>
-                <span className="postcard__detail">Okumaya başla ↗</span>
-              </div>
+              </Link>
             </Reveal>
           ))}
         </section>

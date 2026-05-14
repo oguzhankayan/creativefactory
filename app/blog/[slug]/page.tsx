@@ -130,16 +130,18 @@ export default async function PostPage({ params }: Props) {
           </div>
           <ul className="sd__others-list">
             {others.map((o, i) => (
-              <Reveal as="li" key={o.slug} delay={i * 60}>
-                <Link href={`/blog/${o.slug}`} className="sd__other">
-                  <span className="sd__other-n">
-                    {String(POSTS.indexOf(o) + 1).padStart(2, "0")}
-                  </span>
-                  <span className="sd__other-title">{o.title}</span>
-                  <span className="sd__other-tags">{o.tags.join(" · ")}</span>
-                  <span className="sd__other-arrow" aria-hidden="true">↗</span>
-                </Link>
-              </Reveal>
+              <li key={o.slug}>
+                <Reveal delay={i * 60}>
+                  <Link href={`/blog/${o.slug}`} className="sd__other">
+                    <span className="sd__other-n">
+                      {String(POSTS.indexOf(o) + 1).padStart(2, "0")}
+                    </span>
+                    <span className="sd__other-title">{o.title}</span>
+                    <span className="sd__other-tags">{o.tags.join(" · ")}</span>
+                    <span className="sd__other-arrow" aria-hidden="true">↗</span>
+                  </Link>
+                </Reveal>
+              </li>
             ))}
           </ul>
         </section>
