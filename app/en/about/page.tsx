@@ -158,7 +158,7 @@ export default function EnAboutPage() {
             </p>
             <div className="about__founder-meta">
               <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer">
-                LinkedIn ↗
+                LinkedIn ↗︎
               </a>
               <a href="mailto:hi@creativefactory.tr">hi@creativefactory.tr</a>
             </div>
@@ -213,7 +213,7 @@ export default function EnAboutPage() {
             </div>
             <Link href="/en/contact" className="bigbtn">
               <span className="bigbtn__label">Let&apos;s talk</span>
-              <span className="bigbtn__arrow" aria-hidden="true">↗</span>
+              <span className="bigbtn__arrow" aria-hidden="true">↗︎</span>
             </Link>
           </div>
         </section>

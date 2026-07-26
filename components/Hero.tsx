@@ -55,7 +55,7 @@ export default function Hero() {
         <a href="#iletisim" className="bigbtn">
           <span className="bigbtn__label">Projeni getir</span>
           <span className="bigbtn__arrow" aria-hidden="true">
-            ↗
+            ↗︎
           </span>
         </a>
         <a href="#hizmetler" className="ghostlink">

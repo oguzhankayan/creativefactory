@@ -111,7 +111,7 @@ export default function AgencyPage() {
             <Link href="/#iletisim" className="bigbtn">
               <span className="bigbtn__label">Müsaitlik sor</span>
               <span className="bigbtn__arrow" aria-hidden="true">
-                ↗
+                ↗︎
               </span>
             </Link>
             <a
@@ -227,7 +227,7 @@ export default function AgencyPage() {
             <Link href="/#iletisim" className="bigbtn">
               <span className="bigbtn__label">Müsaitlik sor</span>
               <span className="bigbtn__arrow" aria-hidden="true">
-                ↗
+                ↗︎
               </span>
             </Link>
           </Reveal>

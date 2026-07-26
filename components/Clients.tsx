@@ -83,11 +83,11 @@ export default function Clients() {
     <section className="clients-edit">
       <div className="clients-edit__head">
         <Reveal as="div">
-          <span className="kicker">Kariyerimde çalıştığım markalar</span>
+          <span className="kicker">Çalıştığım markalar</span>
         </Reveal>
         <Reveal as="p" delay={80} className="clients-edit__note">
-          On yılı aşkın sürede, ajans ve kurum tarafında bu markaların işlerinde çalıştım.
-          Büyük bir kısmı Creative Factory öncesine ait; hepsi ekip içinde üretilmiş işler.
+          On yılı aşkın sürede bu markaların işlerinde çalıştım. Ajans tarafında, kurum
+          tarafında, kreatif direktör olarak.
         </Reveal>
       </div>
       <div className="clients-edit__grid" ref={gridRef}>

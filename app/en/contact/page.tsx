@@ -78,7 +78,7 @@ export default function EnContactPage() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              WhatsApp ↗
+              WhatsApp ↗︎
             </a>
             <p className="en-contact__note">
               Quickest channel during business hours (10:00-19:00 GMT+3, Mon-Fri).
@@ -93,7 +93,7 @@ export default function EnContactPage() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              Instagram ↗
+              Instagram ↗︎
             </a>
             <p className="en-contact__note">
               Recent work, behind-the-scenes, and short reads from the studio.
@@ -113,7 +113,7 @@ export default function EnContactPage() {
             </div>
             <a href="mailto:hi@creativefactory.tr" className="bigbtn">
               <span className="bigbtn__label">Write to me</span>
-              <span className="bigbtn__arrow" aria-hidden="true">↗</span>
+              <span className="bigbtn__arrow" aria-hidden="true">↗︎</span>
             </a>
           </div>
         </section>

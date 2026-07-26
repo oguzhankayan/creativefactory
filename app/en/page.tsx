@@ -82,7 +82,7 @@ export default function EnHome() {
             <div className="en-hero__cta">
               <Link href="/en/contact" className="bigbtn">
                 <span className="bigbtn__label">Start a project</span>
-                <span className="bigbtn__arrow" aria-hidden="true">↗</span>
+                <span className="bigbtn__arrow" aria-hidden="true">↗︎</span>
               </Link>
               <a href="#services" className="ghostlink">See services</a>
             </div>
@@ -146,7 +146,7 @@ export default function EnHome() {
             </div>
             <Link href="/en/contact" className="bigbtn">
               <span className="bigbtn__label">Let&apos;s talk</span>
-              <span className="bigbtn__arrow" aria-hidden="true">↗</span>
+              <span className="bigbtn__arrow" aria-hidden="true">↗︎</span>
             </Link>
           </div>
         </section>

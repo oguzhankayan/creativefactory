@@ -126,7 +126,7 @@ export default function ServiceDetail({ service, services }: Props) {
           <Link href="/#iletisim" className="bigbtn">
             <span className="bigbtn__label">Konuşalım</span>
             <span className="bigbtn__arrow" aria-hidden="true">
-              ↗
+              ↗︎
             </span>
           </Link>
         </Reveal>
@@ -151,7 +151,7 @@ export default function ServiceDetail({ service, services }: Props) {
                 <span className="sd__other-title">{s.title}</span>
                 <span className="sd__other-tags">{s.tags.join(" · ")}</span>
                 <span className="sd__other-arrow" aria-hidden="true">
-                  ↗
+                  ↗︎
                 </span>
               </Link>
             </Reveal>

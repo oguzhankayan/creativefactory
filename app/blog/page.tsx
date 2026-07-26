@@ -101,7 +101,7 @@ export default function BlogIndexPage() {
                       <li key={t}>{t}</li>
                     ))}
                   </ul>
-                  <span className="postcard__detail">Okumaya başla ↗</span>
+                  <span className="postcard__detail">Okumaya başla ↗︎</span>
                 </div>
               </Link>
             </Reveal>
@@ -119,7 +119,7 @@ export default function BlogIndexPage() {
             </div>
             <Link href="/#iletisim" className="bigbtn">
               <span className="bigbtn__label">Konuşalım</span>
-              <span className="bigbtn__arrow" aria-hidden="true">↗</span>
+              <span className="bigbtn__arrow" aria-hidden="true">↗︎</span>
             </Link>
           </Reveal>
         </section>

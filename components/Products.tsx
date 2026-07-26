@@ -14,8 +14,9 @@ export default function Products() {
           </Reveal>
         </div>
         <Reveal as="p" delay={180} className="section-sub section-sub--right">
-          Hepsi yayında ve para kabul ediyor. Fikrinden tasarımına, kodundan mağaza sayfasına
-          ve reklamına kadar tek başıma çıkardım. Senin işinde de aynı masa çalışıyor.
+          Altı uygulama App Store&apos;da, bir SaaS kendi sitesinde. Fikrinden tasarımına,
+          kodundan mağaza sayfasına kadar hepsini tek başıma çıkardım. Müşteri işini de aynı
+          masa yapıyor.
         </Reveal>
       </div>
 

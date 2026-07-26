@@ -20,6 +20,8 @@
   --display-weight: 700;
   --container: 1440px;
   --gutter: clamp(20px, 4vw, 80px);
+  /* Fixed header height. The hero reserves it so its centring accounts for the nav. */
+  --nav-h: 72px;
 }
 
 [data-tone="noir"]   { --bg: #0a0a0a; --bg-elev: #121212; --bg-elev-2: #181818; --border: #1f1f1d; --border-strong: #2a2a28; }
@@ -347,7 +349,7 @@ img { display: block; max-width: 100%; }
   font-weight: var(--display-weight);
   letter-spacing: -.035em; line-height: 1;
   padding: 28px 0;
-  animation: scrollX 50s linear infinite;
+  animation: scrollX 24s linear infinite;
   white-space: nowrap;
   will-change: transform;
 }

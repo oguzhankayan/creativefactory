@@ -13,12 +13,12 @@ export default function Works() {
             <span className="kicker">İşler · {WORKS.length} müşteri</span>
           </Reveal>
           <Reveal as="h2" delay={100} className="section-h">
-            İsimli işler, <span className="ink">isimli insanlar.</span>
+            Kimin için, <span className="ink">ne yaptım.</span>
           </Reveal>
         </div>
         <Reveal as="p" delay={180} className="section-sub section-sub--right">
-          Müşteri adı vermeden iş örneği paylaşmıyorum. Aşağıdakilerin hepsi izinli, çoğunun
-          sahibi kendi cümlesiyle burada.
+          Ambulans servisinden sürücü kursuna, ajanstan gıda markasına. Dört farklı problem,
+          aynı masa.
         </Reveal>
       </div>
 

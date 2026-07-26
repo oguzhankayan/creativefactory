@@ -10,7 +10,7 @@ const SITE_URL = "https://creativefactory.tr";
 export const metadata: Metadata = {
   title: "İşler",
   description:
-    "Creative Factory'nin müşteri işleri: Etra Ambulans, Maşalacı Sürücü Kursu ve Anaokulu, Brand Story Agency, Fratelli Cheese. Kapsam, karar ve sonuç.",
+    "Creative Factory'nin müşteri işleri: Etra Ambulans, Maşalacı Sürücü Kursu ve Anaokulu, Brand Story Agency, Fratelli Cheese. Kapsam, karar ve yaklaşım.",
   keywords: [
     "kreatif ajans işleri",
     "web tasarım örnekleri",
@@ -21,7 +21,7 @@ export const metadata: Metadata = {
   alternates: { canonical: `${SITE_URL}/isler` },
   openGraph: {
     title: "İşler · Creative Factory",
-    description: "İsimli müşteriler, izinli işler, uydurulmamış sonuçlar.",
+    description: "Ambulans servisinden sürücü kursuna, ajanstan gıda markasına. Dört iş, dört ayrı problem.",
     url: `${SITE_URL}/isler`,
     type: "website",
     locale: "tr_TR",
@@ -39,14 +39,13 @@ export default function WorksPage() {
             <span className="kicker">İşler · {WORKS.length} müşteri</span>
           </Reveal>
           <Reveal as="h1" delay={100} className="wp__title">
-            İsimli işler,
+            Kimin için,
             <br />
-            <span style={{ color: "var(--accent)" }}>isimli insanlar.</span>
+            <span style={{ color: "var(--accent)" }}>ne yaptım.</span>
           </Reveal>
           <Reveal as="p" delay={200} className="wp__lede">
-            Müşteri adı vermeden iş örneği paylaşmıyorum. Anonim vaka çalışması, &ldquo;bir
-            perakende markası&rdquo; diye başlayan hikâye, rakamı doğrulanamayan başarı grafiği
-            yok. Aşağıdakilerin hepsi izinli.
+            Dört müşteri, dört ayrı problem. Bir ambulans servisinin sitesi, iki eğitim
+            kurumunun reklam işi, bir ajansın kapasite yükü ve sıfırdan kurulan bir marka.
           </Reveal>
         </section>
 
@@ -65,7 +64,7 @@ export default function WorksPage() {
               {w.liveUrl && (
                 <Reveal delay={120} className="wcase__live">
                   <a href={w.liveUrl} target="_blank" rel="noopener noreferrer">
-                    {w.liveLabel ?? w.liveUrl} ↗
+                    {w.liveLabel ?? w.liveUrl} ↗︎
                   </a>
                 </Reveal>
               )}
@@ -125,7 +124,7 @@ export default function WorksPage() {
             <Link href="/#iletisim" className="bigbtn">
               <span className="bigbtn__label">Konuşalım</span>
               <span className="bigbtn__arrow" aria-hidden="true">
-                ↗
+                ↗︎
               </span>
             </Link>
           </Reveal>

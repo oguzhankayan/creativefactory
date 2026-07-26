@@ -183,7 +183,7 @@ export default function CTA() {
               <button type="submit" className="cta__submit" disabled={status === "submitting"}>
                 <span>{status === "submitting" ? "Gönderiliyor…" : "Mesajı gönder"}</span>
                 <span aria-hidden="true" className="cta__submit-arrow">
-                  ↗
+                  ↗︎
                 </span>
               </button>
             </>

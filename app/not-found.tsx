@@ -27,7 +27,7 @@ export default function NotFound() {
           <div className="nf__cta">
             <Link href="/" className="bigbtn">
               <span className="bigbtn__label">Ana sayfa</span>
-              <span className="bigbtn__arrow" aria-hidden="true">↗</span>
+              <span className="bigbtn__arrow" aria-hidden="true">↗︎</span>
             </Link>
             <Link href="/#iletisim" className="ghostlink">
               Konuşalım
@@ -44,7 +44,7 @@ export default function NotFound() {
                   <Link href={`/hizmetler/${s.slug}`} className="nf__quick-link">
                     <span className="nf__quick-n">{s.n}</span>
                     <span className="nf__quick-title">{s.title}</span>
-                    <span className="nf__quick-arrow" aria-hidden="true">↗</span>
+                    <span className="nf__quick-arrow" aria-hidden="true">↗︎</span>
                   </Link>
                 </li>
               ))}

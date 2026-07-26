@@ -138,7 +138,7 @@ export default async function PostPage({ params }: Props) {
                     </span>
                     <span className="sd__other-title">{o.title}</span>
                     <span className="sd__other-tags">{o.tags.join(" · ")}</span>
-                    <span className="sd__other-arrow" aria-hidden="true">↗</span>
+                    <span className="sd__other-arrow" aria-hidden="true">↗︎</span>
                   </Link>
                 </Reveal>
               </li>

@@ -146,7 +146,7 @@ export default function AboutPage() {
             </Reveal>
             <Reveal delay={200} className="about__founder-meta">
               <a href="https://www.instagram.com/creativefactory.tr" target="_blank" rel="noopener noreferrer">
-                Instagram ↗
+                Instagram ↗︎
               </a>
               <a href="mailto:hi@creativefactory.tr">hi@creativefactory.tr</a>
             </Reveal>
@@ -217,7 +217,7 @@ export default function AboutPage() {
             </div>
             <Link href="/#iletisim" className="bigbtn">
               <span className="bigbtn__label">Konuşalım</span>
-              <span className="bigbtn__arrow" aria-hidden="true">↗</span>
+              <span className="bigbtn__arrow" aria-hidden="true">↗︎</span>
             </Link>
           </Reveal>
         </section>
