@@ -7,12 +7,11 @@ type GlowColor = "blue" | "purple" | "green" | "red" | "orange";
 
 const CLIENTS: { name: string; glow: GlowColor }[] = [
   { name: "Eurosport Türkiye", glow: "blue" },
-  { name: "Minnesotta Timberwolves", glow: "green" },
+  { name: "Minnesota Timberwolves", glow: "green" },
   { name: "A101", glow: "red" },
   { name: "Avis Rent A Car", glow: "red" },
   { name: "Mavi Jeans", glow: "blue" },
   { name: "İstanbul Büyükşehir Belediyesi", glow: "green" },
-  { name: "Cumhuriyet Halk Partisi", glow: "red" },
   { name: "Bethesda", glow: "orange" },
   { name: "Yemeksepeti", glow: "red" },
   { name: "Galatasaray", glow: "orange" },
@@ -84,7 +83,11 @@ export default function Clients() {
     <section className="clients-edit">
       <div className="clients-edit__head">
         <Reveal as="div">
-          <span className="kicker">Birlikte çalıştığımız markalar</span>
+          <span className="kicker">Kariyerimde çalıştığım markalar</span>
+        </Reveal>
+        <Reveal as="p" delay={80} className="clients-edit__note">
+          On yılı aşkın sürede, ajans ve kurum tarafında bu markaların işlerinde çalıştım.
+          Büyük bir kısmı Creative Factory öncesine ait; hepsi ekip içinde üretilmiş işler.
         </Reveal>
       </div>
       <div className="clients-edit__grid" ref={gridRef}>

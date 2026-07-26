@@ -4,7 +4,7 @@ import LegalPage from "@/components/LegalPage";
 const SITE_URL = "https://creativefactory.tr";
 
 export const metadata: Metadata = {
-  title: "Çerez Politikası · Creative Factory",
+  title: "Çerez Politikası",
   description:
     "Creative Factory web sitesinde kullanılan çerezler, türleri, amaçları ve tercihlerinizi nasıl yönetebileceğinize dair bilgi.",
   alternates: { canonical: `${SITE_URL}/cerez-politikasi` },

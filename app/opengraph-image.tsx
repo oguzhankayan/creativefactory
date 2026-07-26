@@ -1,6 +1,6 @@
 import { ImageResponse } from "next/og";
 
-export const alt = "Creative Factory · Marka inşa ediyoruz.";
+export const alt = "Creative Factory · Kurup yayına alıyorum.";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -127,7 +127,7 @@ export default async function OG() {
                 display: "flex",
               }}
             >
-              tasarlamıyoruz.
+              tasarlamıyorum.
             </div>
             <div
               style={{

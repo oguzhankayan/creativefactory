@@ -79,7 +79,7 @@ export default function CTA() {
           </Reveal>
           <Reveal as="p" delay={180} className="cta__copy">
             30 dakikalık keşif görüşmesinde projeni dinliyor, neye ihtiyacın olduğunu birlikte
-            netleştiriyoruz. Hiçbir taahhüt yok.
+            netleştiriyoruz. Karşında ajans değil, işi yapacak kişi var. Hiçbir taahhüt yok.
           </Reveal>
           <Reveal delay={240} className="cta__contacts">
             <a href="mailto:hi@creativefactory.tr">
@@ -104,7 +104,7 @@ export default function CTA() {
             <div className="cta__success">
               <span className="cta__success-dot" />
               <h3>Mesajın iletildi.</h3>
-              <p>24 saat içinde sana yazıyoruz. Acelen varsa: hi@creativefactory.tr</p>
+              <p>24 saat içinde sana dönüyorum. Acelen varsa: hi@creativefactory.tr</p>
               <button type="button" className="ghostlink" onClick={() => setStatus("idle")}>
                 Yeni mesaj
               </button>

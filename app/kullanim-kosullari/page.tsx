@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import LegalPage from "@/components/LegalPage";
 
 export const metadata: Metadata = {
-  title: "Kullanım Koşulları · Creative Factory",
+  title: "Kullanım Koşulları",
   description: "Creative Factory web sitesi ve hizmetleri için kullanım koşulları.",
 };
 

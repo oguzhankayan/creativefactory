@@ -14,7 +14,7 @@ const hanken = Hanken_Grotesk({
 const SITE_URL = "https://creativefactory.tr";
 const SITE_TITLE = "Creative Factory · İstanbul Kreatif Ajansı";
 const SITE_DESC =
-  "İstanbul merkezli bağımsız kreatif ajans. Web tasarım, marka kimliği, sosyal medya, dijital reklam, motion grafik ve mobil uygulama geliştirme tek elden.";
+  "İstanbul, Silivri merkezli tek kişilik bağımsız kreatif stüdyo. Web tasarım, marka kimliği, sosyal medya, dijital reklam, motion grafik ve mobil uygulama geliştirme tek elden. App Store'da altı canlı uygulama.";
 const SITE_KEYWORDS = [
   "kreatif ajans",
   "kreatif ajans istanbul",

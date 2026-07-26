@@ -6,7 +6,7 @@ const STEPS = [
   {
     n: "01",
     title: "Keşif",
-    body: "Sektörü, rakipleri ve hedefi anlıyoruz. İlk 2 hafta ekibinle iç içe.",
+    body: "Sektörü, rakipleri ve hedefi anlıyorum. İlk 2 hafta ekibinle iç içe.",
     dur: "2 hafta",
   },
   {
@@ -38,11 +38,11 @@ export default function Process() {
             <span className="kicker">Süreç · 04 aşama</span>
           </Reveal>
           <Reveal as="h2" delay={100} className="section-h">
-            Nasıl çalışıyoruz, kısaca.
+            Nasıl çalışıyorum, kısaca.
           </Reveal>
         </div>
         <Reveal as="p" delay={180} className="section-sub section-sub--right">
-          Belirsizliği azaltmak için süreci dörde ayırıyoruz. Her aşamanın sonunda elinde bir karar
+          Belirsizliği azaltmak için süreci dörde ayırıyorum. Her aşamanın sonunda elinde bir karar
           dosyası kalıyor; gerekirse hangi karara döneceğin net.
         </Reveal>
       </div>

@@ -6,7 +6,7 @@ import FooterEn from "@/components/FooterEn";
 const SITE_URL = "https://creativefactory.tr";
 
 export const metadata: Metadata = {
-  title: "About · Creative Factory",
+  title: "About",
   description:
     "Istanbul-based independent creative studio. A decade of experience, a multidisciplinary team, outcome-focused work.",
   alternates: {

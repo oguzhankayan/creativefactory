@@ -3,6 +3,7 @@ import Hero from "@/components/Hero";
 import Marquee from "@/components/Marquee";
 import RevealStatement from "@/components/RevealStatement";
 import Clients from "@/components/Clients";
+import Products from "@/components/Products";
 import Services from "@/components/Services";
 import Process from "@/components/Process";
 import Comparison from "@/components/Comparison";
@@ -21,6 +22,7 @@ export default function Home() {
         <Marquee />
         <RevealStatement />
         <Clients />
+        <Products />
         <Services />
         <Process />
         <Comparison />

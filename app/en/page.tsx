@@ -40,7 +40,7 @@ const SERVICE_EN: Record<string, { title: string; body: string; tags: string[] }
 };
 
 export const metadata: Metadata = {
-  title: "Creative Factory · Independent brand studio · Istanbul",
+  title: { absolute: "Creative Factory · Independent brand studio · Istanbul" },
   description:
     "Istanbul-based independent creative studio. Brand identity, web, content, performance marketing and mobile, all under one roof.",
   alternates: {

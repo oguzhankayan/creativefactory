@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import LegalPage from "@/components/LegalPage";
 
 export const metadata: Metadata = {
-  title: "KVKK · Creative Factory",
+  title: "KVKK",
   description: "Kişisel Verilerin Korunması Kanunu kapsamında aydınlatma metni.",
 };
 

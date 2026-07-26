@@ -10,13 +10,20 @@ const organization = {
   email: "hi@creativefactory.tr",
   telephone: "+90 539 600 43 94",
   description:
-    "İstanbul merkezli bağımsız kreatif stüdyo. Web, kimlik, içerik, performans pazarlaması ve mobil uygulama geliştirme.",
+    "Silivri merkezli, tek kişilik bağımsız kreatif stüdyo. Marka kimliği, web, içerik, performans pazarlaması ve mobil uygulama geliştirme.",
   address: {
     "@type": "PostalAddress",
     addressLocality: "Silivri",
     addressRegion: "İstanbul",
     addressCountry: "TR",
   },
+  founder: {
+    "@type": "Person",
+    name: "Oğuzhan Kayan",
+    jobTitle: "Kreatif Direktör",
+    url: `${SITE_URL}/hakkimizda`,
+  },
+  numberOfEmployees: { "@type": "QuantitativeValue", value: 1 },
   sameAs: ["https://www.instagram.com/creativefactory.tr"],
 };
 

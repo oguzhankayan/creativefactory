@@ -5,7 +5,7 @@ import Footer from "@/components/Footer";
 import { SERVICES } from "@/lib/services";
 
 export const metadata: Metadata = {
-  title: "Sayfa bulunamadı · Creative Factory",
+  title: "Sayfa bulunamadı",
   description: "Aradığın sayfa taşınmış, kaldırılmış veya adresi yanlış yazılmış olabilir.",
   robots: { index: false, follow: true },
 };

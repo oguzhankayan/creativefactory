@@ -18,19 +18,20 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const service = SERVICES.find((s) => s.slug === slug);
   if (!service) {
-    return { title: "Hizmet bulunamadı · Creative Factory" };
+    return { title: "Hizmet bulunamadı" };
   }
   const display = service.seoTitle ?? service.title;
-  const title = `${display} · Creative Factory`;
+  // Root title stays bare; the layout template appends "· Creative Factory".
+  const socialTitle = `${display} · Creative Factory`;
   const description = service.seoDescription ?? service.body;
   const url = `${SITE_URL}/hizmetler/${service.slug}`;
   return {
-    title,
+    title: display,
     description,
     keywords: service.keywords,
     alternates: { canonical: url },
     openGraph: {
-      title,
+      title: socialTitle,
       description,
       url,
       type: "website",
@@ -39,7 +40,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     },
     twitter: {
       card: "summary_large_image",
-      title,
+      title: socialTitle,
       description,
     },
   };

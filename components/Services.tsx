@@ -13,12 +13,12 @@ export default function Services() {
             <span className="kicker">Yetkinlikler · 06 alan</span>
           </Reveal>
           <Reveal as="h2" delay={100} className="section-h">
-            Ne yapıyoruz, <span className="ink">ne yapmıyoruz.</span>
+            Ne yapıyorum, <span className="ink">ne yapmıyorum.</span>
           </Reveal>
         </div>
         <Reveal as="p" delay={180} className="section-sub section-sub--right">
-          İyi yaptığımız altı şey var. Bir markanın büyümesi için gerekenleri tek çatı altında
-          topluyoruz; taşeron yok.
+          İyi yaptığım altı şey var. Bir markanın büyümesi için gerekenleri tek elden
+          topluyorum. Brief'i alan, tasarlayan ve yayına alan aynı kişi.
         </Reveal>
       </div>
 

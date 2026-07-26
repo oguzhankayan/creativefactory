@@ -6,7 +6,7 @@ export default function Marquee() {
     "Sosyal Medya",
     "Strateji",
     "Motion",
-    "Art Direction",
+    "Kreatif Direksiyon",
     "Performans",
   ];
   const row = (

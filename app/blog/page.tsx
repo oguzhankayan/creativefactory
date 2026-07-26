@@ -8,7 +8,7 @@ import { POSTS } from "@/lib/posts";
 const SITE_URL = "https://creativefactory.tr";
 
 export const metadata: Metadata = {
-  title: "Insights · Creative Factory",
+  title: "Insights",
   description:
     "Marka, web, sosyal medya, performans pazarlama ve mobil üzerine uzun soluklu okumalar. Türkiye'de marka inşa edenler için pratik playbook'lar.",
   alternates: { canonical: `${SITE_URL}/blog` },

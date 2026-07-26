@@ -8,9 +8,9 @@ import AboutLampHero from "@/components/AboutLampHero";
 const SITE_URL = "https://creativefactory.tr";
 
 export const metadata: Metadata = {
-  title: "Hakkımızda · Creative Factory",
+  title: "Hakkımızda",
   description:
-    "İstanbul merkezli bağımsız kreatif stüdyo Creative Factory. On yıllık deneyim, multidisipliner ekip, sonuç odaklı çalışma.",
+    "Creative Factory, Oğuzhan Kayan'ın tek kişilik bağımsız kreatif stüdyosu. On yılı aşkın ajans deneyimi, App Store'da altı canlı uygulama, tek elden teslim.",
   alternates: {
     canonical: `${SITE_URL}/hakkimizda`,
     languages: {
@@ -31,31 +31,31 @@ export const metadata: Metadata = {
 
 const STATS = [
   { v: "10+", k: "Yıl" },
-  { v: "80+", k: "Marka" },
+  { v: "06", k: "App Store'da canlı uygulama" },
   { v: "06", k: "Disiplin" },
-  { v: "01", k: "Stüdyo · Silivri" },
+  { v: "01", k: "Kişi · Silivri" },
 ];
 
 const PRINCIPLES = [
   {
     n: "01",
     t: "Şablon yok.",
-    d: "Her marka kendi sistemini hak eder. Hazır kalıplarla değil, sıfırdan kurguyla çalışıyoruz.",
+    d: "Her marka kendi sistemini hak eder. Hazır kalıplarla değil, sıfırdan kurguyla çalışıyorum.",
   },
   {
     n: "02",
-    t: "Taşeron yok.",
-    d: "Tasarım, geliştirme, içerik, reklam, prodüksiyon. Hepsi iç ekipte; kararlar tek masada.",
+    t: "Aracı yok.",
+    d: "Brief'i alan, tasarlayan, kodu yazan ve reklamı kuran aynı kişi. Karar tek masada, dönüş aynı gün.",
   },
   {
     n: "03",
     t: "Sonuç odaklı.",
-    d: "Sözleşme imzaladığımız gün değil, marka büyüdüğü gün biz de büyürüz.",
+    d: "Sözleşmeyi imzaladığımız gün değil, marka büyüdüğü gün kazanmış olurum.",
   },
   {
     n: "04",
     t: "Uzun vadeli ortaklık.",
-    d: "Tek seferlik lansman değil, sürdürülebilir ilişki. Bazı markalarla 8+ yıldır birlikteyiz.",
+    d: "Tek seferlik lansman değil, sürdürülebilir ilişki. Lansmandan sonra da aynı numaradan bana ulaşıyorsun.",
   },
 ];
 
@@ -81,20 +81,25 @@ export default function AboutPage() {
               <span className="kicker">Hikâye</span>
             </Reveal>
             <Reveal as="h2" delay={80} className="about__story-h">
-              On yılda <span className="ink">tek bir şey öğrendik.</span>
+              On yılda <span className="ink">tek bir şey öğrendim.</span>
             </Reveal>
           </div>
           <Reveal delay={160} className="about__story-body">
             <p>
               Markaları büyüten şey tek bir kampanya, tek bir lansman ya da tek bir kreatif fikir
               değil. Tutarlı bir sistemdir: nasıl konuştuğun, nasıl göründüğün, neyi söz verdiğin
-              ve neyi yerine getirdiğin. Biz bu sistemi kurmak için varız.
+              ve neyi yerine getirdiğin. Bu sistemi kurmak için varım.
             </p>
             <p>
               Creative Factory, hizmetleri yan yana satan klasik bir ajans değil. Bir markanın
-              karar dizisini tek elden örgütleyen bir stüdyo. Web ekibi marka ekibinden, performans
-              ekibi içerik ekibinden ayrı değil. Aynı masada oturuyor, aynı dosyayı okuyor, aynı
-              KPI'a bakıyor.
+              karar dizisini baştan sona tek kişinin taşıdığı bir stüdyo. Marka kararıyla web
+              kararı, içerik kararıyla reklam kararı aynı kafada birleşiyor. Brief'i anlatırken
+              kimseye ikinci kez anlatmıyorsun, arada kaybolan bir şey olmuyor.
+            </p>
+            <p>
+              Kendi ürünlerimi de aynı şekilde yapıyorum. App Store'da altı canlı uygulamam var:
+              tasarımından koduna, paywall'ından mağaza sayfasına kadar hepsi bu masadan çıktı.
+              Müşteri işinde verdiğim sözü kendi ürünümde deniyorum.
             </p>
           </Reveal>
         </section>
@@ -133,10 +138,11 @@ export default function AboutPage() {
               Oğuzhan Kayan
             </Reveal>
             <Reveal as="p" delay={140} className="about__founder-bio">
-              Creative Factory'yi bağımsız bir stüdyo olarak kurdum. On yılı aşkın süredir
-              Türkiye'nin sevdiği markalarla; markanın stratejisinden uygulamasına, sosyal medya
-              yönetiminden mobil uygulama geliştirmeye kadar her aşamasında birlikte çalışıyoruz.
-              İnandığım tek şey var: sözleşmeyle değil, sonuçla bağlıyız.
+              Kreatif direktörüm. On yılı aşkın süre reklam, PR, sosyal medya ve dijital
+              pazarlama tarafında çalıştım; Eurosport'tan A101'e, Yemeksepeti'nden Mavi'ye
+              kadar birçok markanın işinde ekip içindeydim. Creative Factory'yi bağımsız bir
+              stüdyo olarak kurdum ve o işleri artık tek elden yapıyorum. İnandığım tek şey
+              var: sözleşmeyle değil, sonuçla bağlıyım.
             </Reveal>
             <Reveal delay={200} className="about__founder-meta">
               <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer">
@@ -153,7 +159,7 @@ export default function AboutPage() {
               <span className="kicker">İlkeler · 04 madde</span>
             </Reveal>
             <Reveal as="h2" delay={80} className="about__principles-h">
-              Nasıl çalıştığımız, <span className="ink">neden farklı olduğumuz.</span>
+              Nasıl çalışıyorum, <span className="ink">neden farklı.</span>
             </Reveal>
           </div>
           <ol className="about__principles-list">
@@ -172,15 +178,16 @@ export default function AboutPage() {
         <section className="about__ekip">
           <div className="about__ekip-head">
             <Reveal as="div">
-              <span className="kicker">Ekip</span>
+              <span className="kicker">Kapsam</span>
             </Reveal>
             <Reveal as="h2" delay={80} className="about__ekip-h">
-              Multidisipliner. <span className="ink">Tek çatı altında.</span>
+              Tek kişi. <span className="ink">Geniş kapsam.</span>
             </Reveal>
             <Reveal as="p" delay={160} className="about__ekip-body">
-              Strateji, tasarım, geliştirme, içerik, prodüksiyon ve performans pazarlama
-              kadrolarının tamamı iç ekipte. Karmaşık 3D ya da özel medya için partner ağımızdan
-              destek; bunun dışında her şey burada.
+              Strateji, tasarım, geliştirme, içerik ve performans pazarlaması. Hepsi aynı
+              masadan çıkıyor. Reklam filmi çekimi, karmaşık 3D ya da özel prodüksiyon
+              gerektiğinde uzun süredir çalıştığım partnerlerle ilerliyorum ve bunu baştan
+              söylüyorum.
             </Reveal>
           </div>
           <Reveal delay={220} className="about__disciplines">

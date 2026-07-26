@@ -25,8 +25,8 @@ export default function Hero() {
           marginBottom: "clamp(22px, 2.2vw, 32px)",
         }}
       >
-        <span style={{ color: "var(--fg-strong)" }}>Sadece tasarlamıyoruz.</span>
-        <span style={{ color: "var(--accent)" }}>Marka inşa ediyoruz.</span>
+        <span style={{ color: "var(--fg-strong)" }}>Sadece tasarlamıyorum.</span>
+        <span style={{ color: "var(--accent)" }}>Kurup yayına alıyorum.</span>
       </motion.h1>
 
       <motion.p
@@ -44,7 +44,8 @@ export default function Hero() {
           marginBottom: "clamp(48px, 5vw, 72px)",
         }}
       >
-        Web, kimlik, içerik ve performans pazarlaması. Sözleşmeyle değil, sonuçla bağlıyız.
+        Marka kimliği, web, içerik, reklam ve mobil uygulama. Arada hesap yöneticisi yok:
+        işi yapanla konuşuyorsun.
       </motion.p>
 
       <motion.div
