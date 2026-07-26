@@ -1,67 +1,82 @@
 "use client";
 
+import Link from "next/link";
 import { motion } from "framer-motion";
-import { HeroGeometric } from "./ui/shape-landing-hero";
 
-const fadeUp = (delay: number) => ({
-  initial: { opacity: 0, y: 30 },
+const EASE = [0.25, 0.4, 0.25, 1] as const;
+
+const up = (delay: number) => ({
+  initial: { opacity: 0, y: 26 },
   animate: { opacity: 1, y: 0 },
-  transition: { duration: 1, delay, ease: [0.25, 0.4, 0.25, 1] as const },
+  transition: { duration: 0.9, delay, ease: EASE },
 });
+
+// Every number here is checkable: the App Store listings and klevia.com.tr are public.
+const PROOF = [
+  { v: "10+", k: "yıl" },
+  { v: "06", k: "uygulama App Store'da" },
+  { v: "01", k: "SaaS canlı" },
+];
 
 export default function Hero() {
   return (
-    <HeroGeometric>
-      <motion.h1
-        {...fadeUp(0.7)}
-        className="font-bold tracking-tight"
-        style={{
-          fontSize: "clamp(40px, 5.8vw, 76px)",
-          letterSpacing: "-0.035em",
-          lineHeight: 1.05,
-          display: "flex",
-          flexDirection: "column",
-          gap: "clamp(2px, 0.3vw, 6px)",
-          marginBottom: "clamp(22px, 2.2vw, 32px)",
-        }}
-      >
-        <span style={{ color: "var(--fg-strong)" }}>Sadece tasarlamıyorum.</span>
-        <span style={{ color: "var(--accent)" }}>Kurup yayına alıyorum.</span>
-      </motion.h1>
+    <section className="hero" id="top">
+      <div className="hero__inner">
+        <div className="hero__col">
+          <motion.span {...up(0.15)} className="kicker hero__kicker">
+            Kreatif Direktör · Silivri, İstanbul
+          </motion.span>
 
-      <motion.p
-        {...fadeUp(0.95)}
-        className="text-white/65 font-light tracking-wide"
-        style={{
-          display: "block",
-          width: "100%",
-          maxWidth: "640px",
-          marginLeft: "auto",
-          marginRight: "auto",
-          fontSize: "clamp(17px, 1.5vw, 21px)",
-          lineHeight: 1.55,
-          textAlign: "center",
-          marginBottom: "clamp(48px, 5vw, 72px)",
-        }}
-      >
-        Marka kimliği, web, içerik, reklam ve mobil uygulama. Arada hesap yöneticisi yok:
-        işi yapanla konuşuyorsun.
-      </motion.p>
+          <motion.h1 {...up(0.25)} className="hero__h">
+            <span>Yarım iş teslim etmiyorum.</span>
+            <span className="hero__h-accent">Uçtan uca bitmiş ürün.</span>
+          </motion.h1>
 
-      <motion.div
-        {...fadeUp(1.15)}
-        className="flex flex-col sm:flex-row items-center justify-center gap-x-8 gap-y-5"
-      >
-        <a href="#iletisim" className="bigbtn">
-          <span className="bigbtn__label">Projeni getir</span>
-          <span className="bigbtn__arrow" aria-hidden="true">
-            ↗︎
+          <motion.p {...up(0.4)} className="hero__sub">
+            Marka kimliği, web sitesi, reklam, mobil uygulama. Sunum dosyasında değil,
+            yayında teslim ediyorum. Konuştuğun kişi işi yapan kişi.
+          </motion.p>
+
+          <motion.div {...up(0.55)} className="hero__cta">
+            <a href="#iletisim" className="bigbtn">
+              <span className="bigbtn__label">Projeni getir</span>
+              <span className="bigbtn__arrow" aria-hidden="true">
+                ↗︎
+              </span>
+            </a>
+            <Link href="/isler" className="ghostlink">
+              İşleri gör
+            </Link>
+          </motion.div>
+        </div>
+
+        <motion.div
+          initial={{ opacity: 0, scale: 1.04 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 1.2, delay: 0.3, ease: EASE }}
+          className="hero__media"
+        >
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src="/founder.png"
+            alt="Oğuzhan Kayan, Creative Factory kurucusu"
+            width={1240}
+            height={1240}
+            loading="eager"
+            decoding="async"
+            className="hero__portrait"
+          />
+        </motion.div>
+      </div>
+
+      <motion.div {...up(0.7)} className="hero__proof">
+        {PROOF.map((p) => (
+          <span key={p.k} className="hero__proof-item">
+            <strong>{p.v}</strong>
+            <span>{p.k}</span>
           </span>
-        </a>
-        <a href="#hizmetler" className="ghostlink">
-          Hizmetleri gör
-        </a>
+        ))}
       </motion.div>
-    </HeroGeometric>
+    </section>
   );
 }

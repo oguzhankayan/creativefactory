@@ -1,6 +1,6 @@
 import { ImageResponse } from "next/og";
 
-export const alt = "Creative Factory · Kurup yayına alıyorum.";
+export const alt = "Creative Factory · Uçtan uca bitmiş ürün.";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -115,7 +115,7 @@ export default async function OG() {
                 display: "flex",
               }}
             >
-              Sadece
+              Yarım iş
             </div>
             <div
               style={{
@@ -127,7 +127,7 @@ export default async function OG() {
                 display: "flex",
               }}
             >
-              tasarlamıyorum.
+              teslim etmiyorum.
             </div>
             <div
               style={{
@@ -141,7 +141,7 @@ export default async function OG() {
                 display: "flex",
               }}
             >
-              Marka inşa.
+              Bitmiş ürün.
             </div>
           </div>
 

@@ -71,13 +71,13 @@ export default function EnHome() {
           <div className="en-hero__inner">
             <span className="kicker">Independent studio · Istanbul</span>
             <h1 className="en-hero__h">
-              I don&apos;t just design.
+              I don&apos;t hand over files.
               <br />
-              <span className="ink">I ship it too.</span>
+              <span className="ink">I hand over finished products.</span>
             </h1>
             <p className="en-hero__sub">
-              Brand identity, web, content, advertising, and mobile. No account manager in
-              between: you talk to the person doing the work.
+              Brand identity, website, advertising, mobile app. Delivered live, not as a deck.
+              The person you talk to is the person who builds it.
             </p>
             <div className="en-hero__cta">
               <Link href="/en/contact" className="bigbtn">
