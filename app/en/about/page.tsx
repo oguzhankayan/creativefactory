@@ -8,7 +8,7 @@ const SITE_URL = "https://creativefactory.tr";
 export const metadata: Metadata = {
   title: "About",
   description:
-    "Istanbul-based independent creative studio. A decade of experience, a multidisciplinary team, outcome-focused work.",
+    "Creative Factory is Oğuzhan Kayan's one-person independent studio in Istanbul. A decade of agency work, six apps live on the App Store, delivered end to end.",
   alternates: {
     canonical: `${SITE_URL}/en/about`,
     languages: {
@@ -30,31 +30,31 @@ export const metadata: Metadata = {
 
 const STATS = [
   { v: "10+", k: "Years" },
-  { v: "80+", k: "Brands" },
+  { v: "06", k: "Apps live on the App Store" },
   { v: "06", k: "Disciplines" },
-  { v: "01", k: "Studio · Silivri" },
+  { v: "01", k: "Person · Silivri" },
 ];
 
 const PRINCIPLES = [
   {
     n: "01",
     t: "No templates.",
-    d: "Every brand deserves its own system. We work from scratch, not pre-made kits.",
+    d: "Every brand deserves its own system. I work from scratch, not from pre-made kits.",
   },
   {
     n: "02",
-    t: "No subcontracting.",
-    d: "Design, development, content, advertising, production. All in-house; one table for decisions.",
+    t: "No middle layer.",
+    d: "The person who takes the brief designs it, writes the code and runs the ads. One table, same-day answers.",
   },
   {
     n: "03",
     t: "Outcome-focused.",
-    d: "We don't grow when the contract is signed; we grow when the brand does.",
+    d: "I don't win when the contract is signed. I win when the brand grows.",
   },
   {
     n: "04",
     t: "Long-term partnership.",
-    d: "Not a single launch, a sustainable relationship. Some brands have been with us for 8+ years.",
+    d: "Not a single launch, a lasting relationship. After launch you still reach me on the same number.",
   },
 ];
 
@@ -80,11 +80,12 @@ export default function EnAboutPage() {
           <div className="en-page-hero__inner">
             <span className="kicker">About · Creative Factory</span>
             <h1 className="en-page-hero__h">
-              An independent <span className="ink">creative studio.</span>
+              A one-person <span className="ink">creative studio.</span>
             </h1>
             <p className="en-page-hero__sub">
-              Founded in Istanbul. A decade of brand work in Türkiye and abroad. One team,
-              one table, one set of decisions, for every brand we partner with.
+              I&apos;m Oğuzhan Kayan, a creative director with more than ten years in advertising,
+              PR and digital marketing. I work out of Silivri, Istanbul: brand identity, web,
+              social and mobile, done by hand.
             </p>
           </div>
         </section>
@@ -102,20 +103,20 @@ export default function EnAboutPage() {
           <div className="about__story-left">
             <span className="kicker">Story</span>
             <h2 className="about__story-h">
-              Ten years taught us <span className="ink">one thing.</span>
+              Ten years taught me <span className="ink">one thing.</span>
             </h2>
           </div>
           <div className="about__story-body">
             <p>
               What grows a brand is never a single campaign, a single launch, or a single
               creative idea. It&apos;s a consistent system: how you speak, how you look, what
-              you promise, and what you deliver. We exist to build that system.
+              you promise, and what you deliver. I exist to build that system.
             </p>
             <p>
-              Creative Factory isn&apos;t a classic agency selling services side by side. We&apos;re
-              a studio that organizes a brand&apos;s decision sequence from one place. The web
-              team isn&apos;t separated from the brand team, performance isn&apos;t separated from
-              content. Same table, same brief, same KPI.
+              Creative Factory isn&apos;t a classic agency selling services side by side. It&apos;s a
+              studio where one person carries a brand&apos;s whole decision sequence. The web
+              decision meets the brand decision in the same head. You never explain the brief
+              twice, and nothing gets lost in the handoff.
             </p>
           </div>
         </section>
@@ -168,7 +169,7 @@ export default function EnAboutPage() {
           <div className="about__principles-head">
             <span className="kicker">Principles · 04 rules</span>
             <h2 className="about__principles-h">
-              How we work, <span className="ink">why it&apos;s different.</span>
+              How I work, <span className="ink">why it&apos;s different.</span>
             </h2>
           </div>
           <ol className="about__principles-list">
@@ -186,14 +187,14 @@ export default function EnAboutPage() {
 
         <section className="about__ekip">
           <div className="about__ekip-head">
-            <span className="kicker">Team</span>
+            <span className="kicker">Scope</span>
             <h2 className="about__ekip-h">
-              Multidisciplinary. <span className="ink">Under one roof.</span>
+              One person. <span className="ink">Wide scope.</span>
             </h2>
             <p className="about__ekip-body">
-              Strategy, design, development, content, production, and performance, all
-              in-house. For complex 3D or specialized media we partner externally; the
-              rest is here.
+              Strategy, design, development, content and performance marketing all come off the
+              same desk. For film shoots, heavy 3D or specialised production I work with
+              long-standing partners, and I say so upfront.
             </p>
           </div>
           <div className="about__disciplines">

@@ -15,6 +15,8 @@ const ENDPOINT = "https://api.indexnow.org/indexnow";
 
 const STATIC_PATHS = [
   "/",
+  "/isler",
+  "/ajanslar-icin",
   "/hakkimizda",
   "/blog",
   "/en",

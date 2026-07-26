@@ -18,6 +18,50 @@ export type Post = {
 
 export const POSTS: Post[] = [
   {
+    slug: "app-store-red-sebepleri",
+    title: "App Store Reddi: Altı Uygulama Yayınlarken Öğrendiklerim",
+    excerpt:
+      "Apple bir uygulamayı hangi gerekçeyle geri çevirir? 4.3(b) doymuş kategori reddi, canlı olması gereken privacy URL'i, kategori değiştirmenin bedeli ve review takvimi.",
+    date: "2026-07-26",
+    readMinutes: 8,
+    author: "Oğuzhan Kayan",
+    tags: ["Mobil", "App Store", "Deneyim"],
+    seoDescription:
+      "App Store red gerekçeleri ve çözümleri: 4.3(b) spam reddi, privacy policy URL zorunluluğu, kategori değişikliğinin ranking maliyeti ve review süreleri.",
+    keywords: [
+      "app store reddi",
+      "app store 4.3b",
+      "uygulama reddedildi ne yapmalı",
+      "app store review süresi",
+      "app store connect yayın",
+      "ios uygulama yayınlama",
+      "app store guideline ihlali",
+    ],
+    heroImage: "/generated/service-hero/mobil-uygulama-gelistirme.jpg",
+  },
+  {
+    slug: "kids-category-uygulama-kurallari",
+    title: "Çocuk Uygulaması Yaptırmadan Önce: Kids Category'nin 10 Kuralı",
+    excerpt:
+      "Apple'ın Kids Category'si normal bir uygulamadan başka kurallarla işliyor. Üçüncü parti SDK yasağı, sıfır tracking, parent gate ve bunların ölçümlemeye faturası.",
+    date: "2026-07-26",
+    readMinutes: 7,
+    author: "Oğuzhan Kayan",
+    tags: ["Mobil", "Kids Category", "Eğitim"],
+    seoDescription:
+      "App Store Kids Category kuralları: 3. parti SDK yasağı, tracking yasağı, parent gate, PrivacyInfo ve bu kısıtların analitiğe etkisi. Yaşanmış deneyimden.",
+    keywords: [
+      "kids category app store",
+      "çocuk uygulaması geliştirme",
+      "made for kids uygulama",
+      "parent gate nedir",
+      "çocuk uygulaması kvkk",
+      "eğitim uygulaması yaptırma",
+      "coppa uyumluluk",
+    ],
+    heroImage: "/generated/services/mobil-uygulama-gelistirme.jpg",
+  },
+  {
     slug: "marka-kimligi-yatirimi-playbook-2026",
     title: "Türkiye'de Marka Kimliği Yatırımı: 2026 Playbook'u",
     excerpt:

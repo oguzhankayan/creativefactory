@@ -6,7 +6,7 @@ const STEPS = [
   {
     n: "01",
     title: "Keşif",
-    body: "Sektörü, rakipleri ve hedefi anlıyorum. İlk 2 hafta ekibinle iç içe.",
+    body: "Sektörü, rakipleri ve hedefi anlıyorum. İlk 2 hafta senin ekibinle iç içe.",
     dur: "2 hafta",
   },
   {

@@ -39,7 +39,7 @@ export default function EnContactPage() {
               Let&apos;s start <span className="ink">a conversation.</span>
             </h1>
             <p className="en-page-hero__sub">
-              Tell us about your project. We reply within one business day. The first call
+              Tell me about your project. I reply within one business day. The first call
               is 30 minutes, zero commitment, just a clear read on whether we&apos;re a fit.
             </p>
           </div>
@@ -112,7 +112,7 @@ export default function EnContactPage() {
               </p>
             </div>
             <a href="mailto:hi@creativefactory.tr" className="bigbtn">
-              <span className="bigbtn__label">Write us</span>
+              <span className="bigbtn__label">Write to me</span>
               <span className="bigbtn__arrow" aria-hidden="true">↗</span>
             </a>
           </div>

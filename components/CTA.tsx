@@ -13,6 +13,17 @@ const HEADLINE_WORDS = [
 
 const FORMSPREE_ENDPOINT = "https://formspree.io/f/xlgzkzrj";
 
+// Optional on purpose. Asking for a range qualifies the lead without publishing
+// a price list; "Henüz bilmiyorum" stays a valid answer so nobody bounces here.
+const BUDGETS = [
+  "Henüz bilmiyorum",
+  "50.000 ₺ altı",
+  "50.000 - 150.000 ₺",
+  "150.000 - 400.000 ₺",
+  "400.000 ₺ üzeri",
+  "Aylık devam eden iş",
+];
+
 type Status = "idle" | "submitting" | "sent" | "error";
 
 export default function CTA() {
@@ -138,7 +149,23 @@ export default function CTA() {
                       {s.title}
                     </option>
                   ))}
+                  <option value="Ajans için beyaz etiket üretim">
+                    Ajans için beyaz etiket üretim
+                  </option>
                   <option value="Başka bir konu">Başka bir konu</option>
+                </select>
+              </div>
+              <div className="cta__field">
+                <label htmlFor="cf-budget">Bütçe aralığı</label>
+                <select id="cf-budget" name="budget" defaultValue="">
+                  <option value="" disabled>
+                    Aklındaki aralık
+                  </option>
+                  {BUDGETS.map((b) => (
+                    <option key={b} value={b}>
+                      {b}
+                    </option>
+                  ))}
                 </select>
               </div>
               <div className="cta__field">

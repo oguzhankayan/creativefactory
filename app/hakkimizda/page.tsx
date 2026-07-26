@@ -145,8 +145,8 @@ export default function AboutPage() {
               var: sözleşmeyle değil, sonuçla bağlıyım.
             </Reveal>
             <Reveal delay={200} className="about__founder-meta">
-              <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer">
-                LinkedIn ↗
+              <a href="https://www.instagram.com/creativefactory.tr" target="_blank" rel="noopener noreferrer">
+                Instagram ↗
               </a>
               <a href="mailto:hi@creativefactory.tr">hi@creativefactory.tr</a>
             </Reveal>

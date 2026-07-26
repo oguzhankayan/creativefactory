@@ -105,7 +105,7 @@ export const SERVICES: Service[] = [
     deliverables: ["Kanal stratejisi (Meta, Google, TikTok)", "Reklam görseli ve video üretimi", "Hedefleme, segment ve A/B testler", "Attribution kurulumu (GA4, server-side)", "Aylık ölçeklendirme planı", "Haftalık ve aylık raporlar"],
     timeline: "Aylık · 3 ay min.",
     faqs: [
-      { q: "Minimum reklam bütçesi var mı?", a: "Genellikle aylık ₺100.000 reklam bütçesinin altında verimli ölçeklemiyoruz. Şart değil ama tavsiye." },
+      { q: "Minimum reklam bütçesi var mı?", a: "Hayır. Yerel bir işletmenin aylık ₺10.000 bütçesiyle de, ulusal bir markanın ₺500.000'iyle de çalışıyorum; sadece beklenti farklı oluyor. Küçük bütçede tek kanal ve tek mesajla başlarız, kanal çeşitlendirmesi bütçe büyüdükçe gelir." },
       { q: "Reklam içeriği üretimi dahil mi?", a: "Evet. Statik görsel ve video reklam dahil; karmaşık prodüksiyon ek pakette." },
       { q: "Hangi raporu alıyorum?", a: "Haftalık özet (Slack) ve aylık derinlemesine dashboard (Looker Studio)." },
     ],
@@ -166,9 +166,11 @@ export const SERVICES: Service[] = [
 ];
 
 export const NAV = [
+  { label: "İşler", href: "/isler" },
   { label: "Ürünler", href: "/#urunler" },
   { label: "Hizmetler", href: "/#hizmetler" },
   { label: "Süreç", href: "/#surec" },
   { label: "Insights", href: "/blog" },
+  { label: "Ajanslar için", href: "/ajanslar-icin" },
   { label: "Hakkımızda", href: "/hakkimizda" },
 ];

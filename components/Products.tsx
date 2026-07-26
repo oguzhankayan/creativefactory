@@ -7,15 +7,15 @@ export default function Products() {
       <div className="section-head section-head--split">
         <div>
           <Reveal as="div">
-            <span className="kicker">Kendi ürünlerim · {PRODUCTS.length} canlı uygulama</span>
+            <span className="kicker">Kendi ürünlerim · 01 SaaS + 06 uygulama</span>
           </Reveal>
           <Reveal as="h2" delay={100} className="section-h">
             Anlatmıyorum, <span className="ink">gösteriyorum.</span>
           </Reveal>
         </div>
         <Reveal as="p" delay={180} className="section-sub section-sub--right">
-          Hepsi App Store&apos;da yayında. Fikrinden tasarımına, kodundan mağaza sayfasına ve
-          reklamına kadar tek başıma çıkardım. Senin işinde de aynı masa çalışıyor.
+          Hepsi yayında ve para kabul ediyor. Fikrinden tasarımına, kodundan mağaza sayfasına
+          ve reklamına kadar tek başıma çıkardım. Senin işinde de aynı masa çalışıyor.
         </Reveal>
       </div>
 
@@ -45,7 +45,7 @@ export default function Products() {
             </div>
             <h3 className="prod__title">{p.name}</h3>
             <p className="prod__body">{p.body}</p>
-            <span className="prod__link">App Store&apos;da gör ↗</span>
+            <span className="prod__link">{p.linkLabel}</span>
           </Reveal>
         ))}
       </div>

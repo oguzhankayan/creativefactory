@@ -3,6 +3,7 @@ import { Hanken_Grotesk } from "next/font/google";
 import "./globals.css";
 import CookieConsent from "@/components/CookieConsent";
 import WhatsAppFab from "@/components/WhatsAppFab";
+import LocaleSync from "@/components/LocaleSync";
 
 const hanken = Hanken_Grotesk({
   subsets: ["latin", "latin-ext"],
@@ -38,12 +39,11 @@ export const metadata: Metadata = {
   description: SITE_DESC,
   keywords: SITE_KEYWORDS,
   alternates: {
+    // No `languages` here on purpose. Only three pages have an English
+    // counterpart (/, /hakkimizda and the contact anchor); declaring the pair
+    // globally made every TR page claim an English version that doesn't exist.
+    // The pairs are declared per page instead.
     canonical: "/",
-    languages: {
-      "tr-TR": "/",
-      "en-US": "/en",
-      "x-default": "/",
-    },
   },
   openGraph: {
     title: SITE_TITLE,
@@ -75,7 +75,7 @@ export default function RootLayout({
   return (
     <html lang="tr" className={hanken.variable}>
       <body>
-        <a href="#main" className="skip-link">Ana içeriğe atla</a>
+        <LocaleSync />
         {children}
         <WhatsAppFab />
         <CookieConsent />

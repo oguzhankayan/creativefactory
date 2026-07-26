@@ -14,6 +14,196 @@ const Tldr = ({ children }: { children: ReactNode }) => (
 );
 
 const POST_BODIES: Record<string, ReactNode> = {
+  "app-store-red-sebepleri": (
+    <>
+      <Tldr>
+        <p>
+          App Store reddi çoğunlukla koddan gelmiyor. En pahalı red gerekçesi{" "}
+          <strong>4.3(b)</strong>: uygulaman çalışıyor, güzel, ama Apple onu doymuş bir
+          kategoride bir benzeri daha sayıyor. İkinci en yaygın tökezleme çok daha basit:
+          gönderim anında canlı olmayan bir gizlilik politikası adresi. İkisi de
+          gönderimden önce çözülebilecek şeyler.
+        </p>
+      </Tldr>
+
+      <h2>Bu yazı nereden çıkıyor</h2>
+      <p>
+        App Store&apos;da yayında altı uygulamam var ve hepsini kendim gönderdim. Bu
+        süreçte reddedilmeyi de gördüm, sorunsuz geçmeyi de. Aşağıdakiler teorik rehber
+        değil, tek tek yaşanmış maddeler. Bir markanın uygulama yaptırmadan önce bilmesi
+        gereken şeyler bunlar, çünkü maddelerin çoğu kod yazılmadan önce alınan
+        kararlarda gizli.
+      </p>
+
+      <h2>1. En pahalı red: 4.3(b) doymuş kategori</h2>
+      <p>
+        Apple, bir uygulamanın mağazada zaten fazlasıyla bulunan bir şeyin bir kopyası
+        olduğuna kanaat getirirse 4.3 başlığı altında reddediyor. Bunun (b) fıkrası
+        özellikle can yakıcı: uygulamanın kusurlu olduğunu söylemiyor, sadece kategorinin
+        dolu olduğunu söylüyor. Bir tarot uygulamasını bu gerekçeyle kaybettim.
+      </p>
+      <p>
+        Bunun düzeltmesi &quot;bir hata giderip yeniden gönder&quot; değil. Ya
+        farklılaştırıcı gerçek bir özellik seti eklenecek ya da kategori değişecek. Ses
+        testi uygulamamı bu dersle kurdum: tek işlevli bir araç olarak değil, on beş ayrı
+        aracı içeren bir set olarak gönderdim ve sorunsuz geçti.
+      </p>
+      <p>
+        <strong>Marka tarafına çevirisi:</strong> uygulama fikri masaya geldiğinde ilk
+        soru bütçe değil, kategori olmalı. Doymuş bir kategoriye girecekseniz farkı baştan
+        tasarlayın, redden sonra değil.
+      </p>
+
+      <h2>2. Gizlilik politikası adresi gönderim anında canlı olmalı</h2>
+      <p>
+        App Store Connect bu adresi gerçekten kontrol ediyor. &quot;Site yayına girince
+        koyarız&quot; işlemiyor. Uygulamanın tanıtım sitesi hazır değilse bile gizlilik
+        metninin durduğu tek sayfalık bir adres yayında olmalı.
+      </p>
+
+      <h2>3. Kategori değiştirmek sıralamayı sıfırlar</h2>
+      <p>
+        Yayındaki bir uygulamanın kategorisini değiştirmek teknik olarak tek tık. Bedeli
+        tek tık değil: o kategoride biriktirdiğiniz sıralama sıfırlanır. Kategori kararı
+        lansmandan önce verilir, sonra düzeltilecek bir şey değildir.
+      </p>
+
+      <h2>4. Review süresi bir ile iki hafta, çocuk kategorisinde daha uzun</h2>
+      <p>
+        Lansman takvimi kurarken bunu tampon olarak koyun. Reklam bütçesini, basın planını
+        ve içerik takvimini &quot;onay geldi&quot; gününe değil, onaydan sonraki haftaya
+        bağlayın. Kampanyayı henüz onaylanmamış bir uygulamanın üstüne kurmak, red
+        geldiğinde iki kere maliyet çıkarıyor.
+      </p>
+
+      <h2>5. Reddin asıl maliyeti moral</h2>
+      <p>
+        Teknik olarak bir red, bir gönderim daha demek. Pratikte çok daha fazlası. Bir
+        reddin ardından projeyi rafa kaldıran çok insan tanıyorum, kendim de yaşadım. Bunu
+        bir ajansla çalışırken sözleşmeye yazın: red senaryosunda ne olacağı, kimin neyi
+        düzelteceği ve takvimin nasıl kayacağı baştan belli olsun.
+      </p>
+
+      <h2>Kısa kontrol listesi</h2>
+      <ul>
+        <li>Kategori doymuş mu, farklılaştırıcı ne?</li>
+        <li>Gizlilik politikası adresi şu an canlı mı?</li>
+        <li>Yaş sınıflandırması ve &quot;Made for Kids&quot; seçimi doğru mu?</li>
+        <li>Ekran görüntüleri uygulamanın gerçek ekranları mı?</li>
+        <li>Satın alma varsa geri yükleme çalışıyor mu?</li>
+        <li>Lansman takvimi onaydan sonraki haftaya mı bağlı?</li>
+      </ul>
+
+      <p>
+        Uygulama tarafında bir şey planlıyorsanız{" "}
+        <Link href="/hizmetler/mobil-uygulama-gelistirme">mobil uygulama geliştirme</Link>{" "}
+        sayfasına bakabilir ya da{" "}
+        <Link href="/#iletisim">doğrudan yazabilirsiniz</Link>. Bu süreci defalarca
+        yürüttüm, nerede tökezleneceğini biliyorum.
+      </p>
+    </>
+  ),
+
+  "kids-category-uygulama-kurallari": (
+    <>
+      <Tldr>
+        <p>
+          Kids Category&apos;de üçüncü parti hiçbir SDK kullanılamıyor. Analitik yok,
+          çökme raporlama yok, abonelik için hazır servis yok. Bu, çocuk uygulamasını daha
+          temiz bir yazılım yapıyor ama ölçümlemeyi neredeyse kapatıyor. Karar bütçeden
+          önce burada veriliyor.
+        </p>
+      </Tldr>
+
+      <h2>Neden ayrı bir yazı</h2>
+      <p>
+        Bir anaokulu, bir eğitim markası ya da çocuklara ürün satan bir marka &quot;bize
+        de bir uygulama yapalım&quot; dediğinde konuşulması gereken ilk şey özellik listesi
+        değil. Apple&apos;ın Kids Category&apos;si kendi kural setiyle çalışıyor ve bu
+        kurallar projenin mimarisini baştan belirliyor. Aşağıdakiler yayına aldığım bir
+        çocuk uygulamasından çıktı.
+      </p>
+
+      <h2>On kural</h2>
+      <ol>
+        <li>
+          <strong>Üçüncü parti SDK yok.</strong> Abonelik yönetimi için yaygın kullanılan
+          servisler bile giremiyor. Ödeme tarafı doğrudan Apple&apos;ın kendi altyapısıyla
+          kurulur.
+        </li>
+        <li>
+          <strong>Tracking yok.</strong> Analitik yok, çökme raporlama yok. Kullanıcının
+          ne yaptığını göremezsiniz.
+        </li>
+        <li>
+          <strong>Ağ çağrısı yok.</strong> Sözlük, ses, içerik; hepsi cihazın içinde
+          durur.
+        </li>
+        <li>
+          <strong>Mikrofon ve kamera yok.</strong> Ses varsa sadece çıkış yönünde.
+        </li>
+        <li>
+          <strong>Dış bağlantı yasağı.</strong> Uygulamadan dışarı çıkan tek şey, ebeveyn
+          kapısının arkasındaki e-posta adresi olabilir.
+        </li>
+        <li>
+          <strong>Çocuğun verisi cihazdan çıkmaz.</strong> Bulut senkronu kapalı kurulur.
+        </li>
+        <li>
+          <strong>Gizlilik bildirimi doğru olmalı.</strong> &quot;Veri toplanmıyor&quot;
+          beyanı veriliyorsa gerçekten toplanmıyor olmalı, tek bir istisna bile geçmez.
+        </li>
+        <li>
+          <strong>Ebeveyn kapısı geniş kapsamlı.</strong> Satın alma, geri yükleme ve
+          ayarlar; her birinin önünde.
+        </li>
+        <li>
+          <strong>Gizlilik politikası adresi gönderim anında canlı.</strong>
+        </li>
+        <li>
+          <strong>Yaş aralığı ve &quot;Made for Kids&quot; seçimi doğru.</strong> Yanlış
+          seçim tek başına red sebebi.
+        </li>
+      </ol>
+
+      <h2>Bunun size faturası</h2>
+      <p>
+        Kazanç tarafı gerçek: daha az bağımlılık, daha temiz mimari, daha düşük altyapı
+        maliyeti ve Apple&apos;ın kategoriye verdiği görünürlük. Ama şunları kaybediyorsunuz
+        ve bunu baştan bilmek gerekiyor:
+      </p>
+      <ul>
+        <li>
+          Kullanıcı davranışını göremezsiniz, elinizde yalnızca App Store metrikleri kalır
+        </li>
+        <li>Abonelik iptallerini yakından takip etmek zorlaşır</li>
+        <li>A/B testi yapılamaz, tasarım kararları veriyle değil kararla verilir</li>
+        <li>Reklam yatırımının geri dönüşünü ölçmek zorlaşır</li>
+      </ul>
+      <p>
+        Bu tabloyu gördükten sonra bazı markalar çocuk uygulamasından vazgeçiyor, bazıları
+        tam da bu yüzden istiyor. İkisi de doğru karar olabilir. Yanlış olan, bunu proje
+        ortasında öğrenmek.
+      </p>
+
+      <h2>Bir de tasarım tarafı var</h2>
+      <p>
+        Çocuk uygulamalarında en sık yapılan hata, ilgiyi ödül yağmuruyla tutmaya
+        çalışmak. Sürekli rozet, sürekli bildirim, sürekli kutlama. Kendi çocuk uygulamamı
+        tersine kurdum: arayüz varsayılan olarak sessiz, kutlama sadece gerçek bir eşik
+        geçildiğinde çıkıyor. Ödül, çocuğun kendi ilerlemesini görmesi. Uygulama bunu
+        görünür kılar, üretmeye çalışmaz.
+      </p>
+
+      <p>
+        Çocuklara yönelik bir ürün düşünüyorsanız{" "}
+        <Link href="/hizmetler/mobil-uygulama-gelistirme">mobil uygulama geliştirme</Link>{" "}
+        sayfasına bakın ya da <Link href="/#iletisim">projeyi anlatın</Link>. Bu kategoride
+        bir uygulama yayınladım, nerede sıkışacağını biliyorum.
+      </p>
+    </>
+  ),
+
   "marka-kimligi-yatirimi-playbook-2026": (
     <>
       <Tldr>
@@ -130,7 +320,7 @@ const POST_BODIES: Record<string, ReactNode> = {
 
       <p className="prose-cf__cta-line">
         Bu konuda 30 dakikalık keşif görüşmesi için{" "}
-        <Link href="/hizmetler/marka-kimligi">marka kimliği hizmet sayfamıza</Link>{" "}
+        <Link href="/hizmetler/marka-kimligi">marka kimliği hizmet sayfasına</Link>{" "}
         veya{" "}
         <Link href="/#iletisim">iletişim bölümüne</Link> bakabilirsiniz.
       </p>
@@ -189,7 +379,7 @@ const POST_BODIES: Record<string, ReactNode> = {
         Karma çözümler de yaygın: Pazarlama sayfaları Webflow'da, dinamik
         ürün/uygulama Next.js'de.{" "}
         <Link href="/hizmetler/web-tasarim-gelistirme">Web tasarım & geliştirme</Link>{" "}
-        sayfamızda detaylı bakıyoruz.
+        sayfasında detaylı bakıyorum.
       </p>
 
       <h2>SEO devri en sık yapılan hata</h2>
@@ -211,7 +401,7 @@ const POST_BODIES: Record<string, ReactNode> = {
         Headless CMS (Sanity, Contentful, Storyblok) marka için iki büyük
         kazanım sağlar: <strong>içerik ile sunumun ayrılması</strong> ve{" "}
         <strong>çok kanallı dağıtım</strong> (web, mobil, ekran). Ama her marka
-        bunu yarın kullanmıyor. Headless CMS'i şu durumlarda öneriyoruz:
+        bunu yarın kullanmıyor. Headless CMS'i şu durumlarda öneriyorum:
       </p>
       <ul>
         <li>Yılda 200'den fazla içerik güncellemesi yapılıyorsa</li>
@@ -261,11 +451,11 @@ const POST_BODIES: Record<string, ReactNode> = {
       </ul>
 
       <p className="prose-cf__cta-line">
-        Mevcut sitenizi değerlendirmemizi ister misiniz?{" "}
+        Mevcut sitenizi değerlendirmemi ister misiniz?{" "}
         <Link href="/hizmetler/web-tasarim-gelistirme">Web tasarım & geliştirme</Link>{" "}
-        sayfamızdan veya{" "}
+        sayfasından veya{" "}
         <Link href="/#iletisim">iletişim bölümünden</Link> ulaşın; 30 dakikalık
-        ücretsiz keşif görüşmesi yapıyoruz.
+        ücretsiz keşif görüşmesi yapıyorum.
       </p>
     </>
   ),
@@ -388,7 +578,7 @@ const POST_BODIES: Record<string, ReactNode> = {
       <p className="prose-cf__cta-line">
         Modelinizi birlikte değerlendirmek isterseniz{" "}
         <Link href="/hizmetler/sosyal-medya-icerik">sosyal medya & içerik</Link>{" "}
-        sayfamıza veya{" "}
+        hizmet sayfasına veya{" "}
         <Link href="/#iletisim">iletişim bölümüne</Link> bakabilirsiniz.
       </p>
     </>
@@ -528,7 +718,7 @@ const POST_BODIES: Record<string, ReactNode> = {
 
       <p className="prose-cf__cta-line">
         Mevcut attribution kurulumunuzu birlikte gözden geçirelim mi?{" "}
-        <Link href="/hizmetler/dijital-reklam">Dijital reklam hizmet sayfamıza</Link>{" "}
+        <Link href="/hizmetler/dijital-reklam">Dijital reklam hizmet sayfasına</Link>{" "}
         veya doğrudan{" "}
         <Link href="/#iletisim">iletişim bölümüne</Link> bakın.
       </p>
@@ -660,7 +850,7 @@ const POST_BODIES: Record<string, ReactNode> = {
       <p className="prose-cf__cta-line">
         Projenizin doğru yaklaşımını birlikte değerlendirelim mi?{" "}
         <Link href="/hizmetler/mobil-uygulama-gelistirme">Mobil uygulama geliştirme</Link>{" "}
-        sayfamıza veya{" "}
+        hizmet sayfasına veya{" "}
         <Link href="/#iletisim">iletişim bölümüne</Link> ulaşın.
       </p>
     </>
